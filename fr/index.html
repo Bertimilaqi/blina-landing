@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blina Desk — Arrêtez de chercher. Commencez à trouver.</title>
+<meta name="description" content="Plateforme business avec IA. Recherche sémantique, OCR, IA chat générative — tout on-premise. Modulaire : Juridique, CRM, HR, Immobilier, Cabinet médical, Automatisations, Comptabilité.">
+<link rel="canonical" href="https://blina-desk.com/fr">
+<link rel="alternate" hreflang="en" href="https://blina-desk.com/">
+<link rel="alternate" hreflang="de" href="https://blina-desk.com/de">
+<link rel="alternate" hreflang="it" href="https://blina-desk.com/it">
+<link rel="alternate" hreflang="fr" href="https://blina-desk.com/fr">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --accent:      #e85c2a;
+  --accent-h:    #d4501f;
+  --accent-glow: rgba(232,92,42,0.13);
+  --accent-soft: rgba(232,92,42,0.07);
+
+  --bg:       #eef0f4;
+  --bg2:      #e6e8ec;
+  --bg-card:  #ffffff;
+  --bg-card2: #f6f7f9;
+  --grid:     rgba(0,0,0,0.052);
+  --gs:       40px;
+
+  --ink:  #0d1117;
+  --ink2: #374151;
+  --ink3: #6b7280;
+  --ink4: #9ca3af;
+
+  --brd:  rgba(0,0,0,0.085);
+  --brd2: rgba(0,0,0,0.055);
+
+  --green:  #16a34a; --green-s: rgba(22,163,74,0.09);
+  --blue:   #2563eb; --blue-s:  rgba(37,99,235,0.09);
+  --purple: #7c3aed; --purple-s:rgba(124,58,237,0.09);
+  --amber:  #d97706; --amber-s: rgba(217,119,6,0.09);
+  --red:    #dc2626; --red-s:   rgba(220,38,38,0.09);
+  --teal:   #0d9488; --teal-s:  rgba(13,148,136,0.09);
+  --indigo: #4f46e5; --indigo-s:rgba(79,70,229,0.09);
+  --sky:    #0284c7; --sky-s:   rgba(2,132,199,0.09);
+  --sky:    #0284c7; --sky-s:   rgba(2,132,199,0.09);
+  --rose:   #e11d48; --rose-s:  rgba(225,29,72,0.09);
+
+  --font: 'Plus Jakarta Sans', -apple-system, system-ui, sans-serif;
+  --mono: 'Geist Mono', 'Fira Code', monospace;
+  --r: 10px; --r2: 16px; --r3: 24px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font);
+  background-color:var(--bg);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:var(--gs) var(--gs);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  font-size:16px;line-height:1.6;
+}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+img,svg{display:block;max-width:100%}
+
+/* ── UTIL ── */
+.container{max-width:1180px;margin:0 auto;padding:0 40px}
+
+.tag{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent);background:var(--accent-soft);
+  border:1px solid rgba(232,92,42,0.18);padding:4px 12px;border-radius:100px;
+}
+
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font);font-size:14px;font-weight:600;
+  padding:10px 20px;border-radius:var(--r);cursor:pointer;
+  transition:all .2s;border:none;white-space:nowrap;
+}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 2px 10px var(--accent-glow)}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);box-shadow:0 6px 22px var(--accent-glow)}
+.btn-outline{background:var(--bg-card);color:var(--ink2);border:1px solid var(--brd);box-shadow:0 1px 4px rgba(0,0,0,0.05)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+.btn-lg{font-size:15px;padding:12px 26px}
+.btn svg{width:15px;height:15px;flex-shrink:0}
+
+.card{background:var(--bg-card);border:1px solid var(--brd);border-radius:var(--r2);box-shadow:0 1px 3px rgba(0,0,0,0.05),0 4px 16px rgba(0,0,0,0.04)}
+
+/* ── NAV ── */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(238,240,244,0.88);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--brd);transition:box-shadow .3s;
+}
+.nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,0.08)}
+.nav-inner{
+  display:flex;align-items:center;
+  max-width:1280px;margin:0 auto;padding:0 32px;height:58px;
+}
+.nav-brand{
+  display:flex;align-items:center;gap:9px;
+  font-size:15px;font-weight:800;color:var(--ink);
+  letter-spacing:-.025em;margin-right:28px;flex-shrink:0;
+}
+.nav-links{display:flex;align-items:center;gap:2px;margin-right:auto}
+.nav-links a{
+  font-size:13px;font-weight:500;color:var(--ink3);
+  padding:6px 13px;border-radius:8px;transition:all .15s;
+}
+.nav-links a:hover{color:var(--ink);background:rgba(0,0,0,0.05)}
+.nav-right{display:flex;align-items:center;gap:6px}
+.nav-langs{display:flex;gap:1px;padding-right:8px;margin-right:4px;border-right:1px solid var(--brd)}
+.lang-btn{
+  font-size:11px;font-weight:700;color:var(--ink4);
+  padding:5px 8px;border-radius:6px;cursor:pointer;
+  border:none;background:none;transition:all .15s;font-family:var(--font);
+}
+.lang-btn:hover{color:var(--ink);background:rgba(0,0,0,0.06)}
+.lang-btn.active{color:var(--ink);background:rgba(0,0,0,0.08)}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;color:var(--ink);padding:6px;border-radius:8px}
+
+/* ── HERO ── */
+.hero-split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;width:100%;max-width:1100px;margin:0 auto;margin-top:52px;opacity:0;animation:fadeUp .7s .65s ease forwards}
+.hero-left-col{text-align:left}
+.hero-right-col{}
+.orgchart{display:flex;flex-direction:column;align-items:center;gap:14px;width:100%}
+.org-node{position:relative;background:#fff;border:1px solid var(--brd);box-shadow:0 2px 8px rgba(0,0,0,0.07);border-radius:var(--r);padding:14px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;min-width:120px;transition:all .2s}
+.org-node:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.1)}
+.org-root{background:var(--accent);border-color:var(--accent);padding:16px 28px;min-width:200px;box-shadow:0 6px 24px var(--accent-glow)}
+.org-root .on-lbl{color:#fff;font-size:16px;font-weight:800}
+.org-root .on-sub{color:rgba(255,255,255,0.75);font-size:11px}
+.org-node .on-icon{font-size:22px;margin-bottom:6px;line-height:1}
+.org-node .on-lbl{font-size:13px;font-weight:700;color:var(--ink);line-height:1.2}
+.org-node .on-sub{font-size:10px;color:var(--ink3);margin-top:3px}
+.org-row{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;width:100%;padding-top:10px;position:relative}
+.org-row.connected::before{content:"";position:absolute;top:5px;left:12%;right:12%;height:1px;background:#000}
+.org-row.connected .org-node::before{content:"";position:absolute;left:50%;top:-10px;width:1px;height:10px;background:#000}
+.org-connector-line{width:1px;height:10px;background:#000;margin:0 auto;display:block}
+.org-embed{background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:var(--r);padding:9px 16px;min-width:240px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.org-embed .on-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink2)}
+.org-embed .on-sub{font-size:9px;color:var(--ink3);margin-top:2px}
+.org-hub{background:rgba(232,92,42,0.07);border:1px solid rgba(232,92,42,0.25);border-radius:var(--r);padding:9px 16px;min-width:180px;text-align:center}
+.org-hub .on-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--accent)}
+.org-hub .on-sub{font-size:9px;color:var(--ink3);margin-top:2px}
+.org-mods .org-node{min-width:88px;padding:9px 12px}
+.org-mods .on-icon{font-size:17px;margin-bottom:4px}
+.org-mods .on-lbl{font-size:11px}
+.org-mods-node{min-width:88px!important;padding:10px 13px!important}
+.org-mods-node .on-icon{font-size:19px!important;margin-bottom:5px!important}
+.org-mods-node .on-lbl{font-size:11px!important;font-weight:700!important;color:var(--ink)!important}
+@media(max-width:1024px){.hero-split{grid-template-columns:1fr;gap:32px}.hero-left-col{text-align:center}}
+@media(max-width:768px){.hero-split{grid-template-columns:1fr}}
+.hero{
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:108px 40px 60px;text-align:center;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:15%;left:50%;transform:translateX(-50%);
+  width:800px;height:500px;
+  background:radial-gradient(ellipse at center,rgba(232,92,42,0.07) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--bg-card);border:1px solid var(--brd);border-radius:100px;
+  padding:5px 16px 5px 8px;font-size:12px;font-weight:600;color:var(--ink2);
+  margin-bottom:24px;box-shadow:0 1px 6px rgba(0,0,0,0.06);
+  opacity:0;animation:fadeUp .5s .05s ease forwards;
+}
+.hero-eyebrow-dot{
+  width:22px;height:22px;background:var(--accent);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:11px;
+}
+.hero-title{
+  font-size:clamp(36px,5.2vw,68px);font-weight:800;
+  line-height:1.06;letter-spacing:-.04em;
+  color:var(--ink);max-width:800px;margin:0 auto 18px;
+  opacity:0;animation:fadeUp .6s .15s ease forwards;
+}
+.hero-title em{font-style:italic;color:var(--accent)}
+.hero-sub{
+  font-size:17px;line-height:1.7;color:var(--ink2);
+  max-width:540px;margin:0 auto 32px;
+  opacity:0;animation:fadeUp .6s .25s ease forwards;
+}
+.hero-sub strong{color:var(--ink);font-weight:600}
+.hero-actions{
+  display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;
+  opacity:0;animation:fadeUp .6s .35s ease forwards;
+}
+.hero-note{
+  margin-top:12px;font-size:12px;color:var(--ink4);
+  opacity:0;animation:fadeUp .5s .45s ease forwards;
+}
+.hero-note strong{color:var(--green);font-weight:600}
+
+/* STATS */
+.hero-stats{
+  display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:48px;
+  opacity:0;animation:fadeUp .5s .55s ease forwards;
+}
+.hstat{
+  background:var(--bg-card);border:1px solid var(--brd);border-radius:var(--r2);
+  padding:14px 20px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,0.05);min-width:100px;
+}
+.hstat-num{font-size:22px;font-weight:800;letter-spacing:-.03em;color:var(--ink);line-height:1}
+.hstat-num span{color:var(--accent)}
+.hstat-lbl{font-size:11px;color:var(--ink4);margin-top:2px}
+
+/* ── HERO MOCKUP — fedele allo screenshot ── */
+.hero-mockup{
+  margin-top:52px;width:100%;max-width:1000px;
+  border-radius:var(--r2);overflow:hidden;
+  box-shadow:0 8px 60px rgba(0,0,0,0.14),0 1px 3px rgba(0,0,0,0.1);
+  border:1px solid var(--brd);
+  opacity:0;animation:fadeUp .7s .65s ease forwards;
+}
+
+/* Top bar bianca — come lo screenshot */
+.mock-topbar{
+  background:#ffffff;border-bottom:1px solid var(--brd);
+  height:44px;display:flex;align-items:center;padding:0 16px;gap:12px;
+}
+.mock-tabs{display:flex;gap:1px;align-items:center;flex:1}
+.mock-tab{
+  display:flex;align-items:center;gap:6px;
+  font-size:12px;font-weight:500;color:var(--ink3);
+  padding:6px 14px;border-radius:8px 8px 0 0;
+  background:var(--bg-card2);border:1px solid var(--brd);border-bottom:none;
+}
+.mock-tab.active{background:#ffffff;color:var(--ink);font-weight:600;border-color:var(--brd)}
+.mock-tab-icon{font-size:13px}
+.mock-search{
+  display:flex;align-items:center;gap:8px;flex:1;max-width:260px;
+  background:var(--bg-card2);border:1px solid var(--brd);border-radius:8px;
+  padding:5px 12px;font-size:12px;color:var(--ink3);
+}
+.mock-search-key{
+  margin-left:auto;font-family:var(--mono);font-size:10px;
+  background:var(--brd);border-radius:4px;padding:1px 5px;color:var(--ink3);
+}
+.mock-topbar-right{display:flex;align-items:center;gap:10px}
+.mock-icon-btn{
+  width:28px;height:28px;border-radius:8px;background:var(--bg-card2);
+  border:1px solid var(--brd);display:flex;align-items:center;justify-content:center;
+  font-size:13px;cursor:default;
+}
+.mock-avatar{
+  width:28px;height:28px;border-radius:50%;background:var(--accent);
+  display:flex;align-items:center;justify-content:center;font-size:11px;
+  color:#fff;font-weight:700;
+}
+
+/* Body del mockup */
+.mock-body{
+  display:flex;height:420px;
+  background:var(--bg);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:var(--gs) var(--gs);
+}
+
+/* Sidebar — esattamente come lo screenshot */
+.mock-sidebar{
+  width:168px;flex-shrink:0;
+  background:rgba(255,255,255,0.96);border-right:1px solid var(--brd);
+  padding:10px 6px;display:flex;flex-direction:column;gap:1px;
+  overflow:hidden;
+}
+.mock-sidebar-logo{
+  display:flex;align-items:center;gap:7px;padding:6px 8px;margin-bottom:6px;
+}
+.mock-sidebar-logo-name{font-size:11px;font-weight:700;color:var(--ink)}
+.mock-sidebar-logo-sub{font-size:9px;color:var(--ink4)}
+.msi{
+  display:flex;align-items:center;gap:7px;padding:5px 8px;border-radius:7px;
+  font-size:11px;color:var(--ink3);cursor:default;transition:all .15s;
+}
+.msi:hover,.msi.active{background:var(--accent-soft);color:var(--accent)}
+.msi.active{font-weight:600}
+.msi-icon{font-size:12px;width:14px;flex-shrink:0}
+.mock-sidebar-section{
+  font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink4);padding:8px 8px 3px;
+}
+
+/* Content area */
+.mock-content{flex:1;padding:16px;overflow:hidden}
+.mock-greeting{margin-bottom:12px}
+.mock-greeting-row{display:flex;align-items:center;gap:10px;margin-bottom:2px}
+.mock-avatar-lg{
+  width:36px;height:36px;background:linear-gradient(135deg,#2e6ab8,#fbbf24);
+  border-radius:10px;display:flex;align-items:center;justify-content:center;
+  font-size:16px;
+}
+.mock-greeting-name{font-size:16px;font-weight:700;color:var(--ink)}
+.mock-greeting-date{font-size:11px;color:var(--ink3)}
+.mock-wa-label{
+  font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink4);margin-bottom:6px;
+}
+.mock-wa-pills{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
+.mock-wa-pill{
+  display:flex;align-items:center;gap:5px;
+  background:var(--bg-card);border:1px solid var(--brd);border-radius:8px;
+  padding:4px 10px;font-size:11px;color:var(--ink2);font-weight:500;
+}
+.mock-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:8px}
+.mock-mini{
+  background:var(--bg-card);border:1px solid var(--brd);border-radius:var(--r);
+  padding:10px 12px;
+}
+.mock-mini-label{font-size:9px;color:var(--ink3);margin-bottom:2px}
+.mock-mini-num{font-size:18px;font-weight:800;color:var(--ink);line-height:1}
+.mock-widgets{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.mock-widget{
+  background:var(--bg-card);border:1px solid var(--brd);border-radius:var(--r);
+  padding:10px 10px;
+}
+.mock-widget-head{
+  font-size:10px;font-weight:600;color:var(--ink2);margin-bottom:6px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.mock-widget-view{font-size:9px;color:var(--ink4)}
+.mock-widget-row{
+  font-size:10px;color:var(--ink2);padding:3px 0;
+  border-bottom:1px solid var(--brd2);display:flex;align-items:center;gap:4px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.mock-widget-row:last-child{border-bottom:none}
+.mock-pdf-icon{font-size:11px}
+.mock-widget-empty{text-align:center;padding:10px;font-size:10px;color:var(--ink4)}
+.mock-widget-empty-icon{font-size:20px;margin-bottom:4px;opacity:.4}
+.mock-widget-btn{
+  display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;
+  color:var(--blue);margin-top:6px;
+}
+
+/* ── SECTIONS ── */
+.section{padding:88px 40px}
+.sec-inner{max-width:1100px;margin:0 auto}
+.sec-head{text-align:center;max-width:620px;margin:0 auto 52px}
+.sec-head.left{text-align:left;margin-left:0}
+.sec-title{
+  font-size:clamp(24px,3.3vw,40px);font-weight:800;letter-spacing:-.03em;
+  line-height:1.1;color:var(--ink);margin-bottom:12px;
+}
+.sec-title em{font-style:italic;color:var(--accent)}
+.sec-sub{font-size:15px;color:var(--ink2);line-height:1.7}
+
+/* ── VANTAGGI ── */
+.vantaggi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.vantaggio{
+  background:var(--bg-card);border:1px solid var(--brd);border-radius:var(--r2);
+  padding:28px 24px;box-shadow:0 1px 4px rgba(0,0,0,0.04);
+  transition:all .25s;
+}
+.vantaggio:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.09)}
+.vant-icon{
+  width:44px;height:44px;border-radius:var(--r);
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+  margin-bottom:16px;
+}
+.vant-title{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.vant-desc{font-size:13px;color:var(--ink2);line-height:1.7}
+
+/* ── SEARCH ── */
+.search-split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.search-queries{display:flex;flex-direction:column;gap:10px}
+.sq-item{
+  background:var(--bg-card);border:1px solid var(--brd);border-radius:var(--r2);
+  padding:16px 18px;display:flex;align-items:flex-start;gap:12px;
+  box-shadow:0 1px 4px rgba(0,0,0,0.04);transition:all .25s;
+}
+.sq-item:hover{border-color:var(--accent);transform:translateX(3px)}
+.sq-icon{
+  width:32px;height:32px;border-radius:8px;background:var(--accent-soft);
+  border:1px solid rgba(232,92,42,0.18);display:flex;align-items:center;
+  justify-content:center;font-size:15px;flex-shrink:0;
+}
+.sq-query{font-size:14px;font-style:italic;color:var(--ink2);line-height:1.5;margin-bottom:5px}
+.sq-result{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.sq-time{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--green)}
+.sq-badge{
+  font-size:9px;font-weight:700;letter-spacing:.08em;
+  padding:2px 8px;border-radius:4px;text-transform:uppercase;
+}
+.bq-found {background:var(--green-s);color:var(--green)}
+.bq-ai    {background:var(--purple-s);color:var(--purple)}
+.bq-legal {background:var(--blue-s);color:var(--blue)}
+.sq-note{font-size:12px;color:var(--ink3);line-height:1.5}
+.search-panel{display:flex;flex-direction:column;gap:16px}
+.search-card{
+  background:var(--bg-card);border:1px solid var(--brd);border-radius:var(--r2);
+  padding:22px;box-shadow:0 1px 4px rgba(0,0,0,0.04);
+}
+.search-big-num{font-size:38px;font-weight:900;letter-spacing:-.04em;color:var(--ink);line-height:1}
+.search-big-num span{color:var(--accent)}
+.search-providers{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+.sp-chip{
+  font-size:11px;font-weight:600;padding:3px 10px;border-radius:6px;
+  border:1px solid var(--brd);background:var(--bg-card2);color:var(--ink2);
+}
+
+/* ── FEAT GRID ── */
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.feat-card{
+  background:var(--bg-card);border:1px solid var(--brd);border-radius:var(--r2);
+  padding:24px 20px;position:relative;transition:all .25s;overflow:hidden;
+  box-shadow:0 1px 4px rgba(0,0,0,0.04);
+}
+.feat-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s;
+}
+.feat-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,0.09)}
+.feat-card:hover::after{transform:scaleX(1)}
+.feat-icon{
+  width:42px;height:42px;background:var(--bg-card2);border:1px solid var(--brd);
+  border-radius:var(--r);display:flex;align-items:center;justify-content:center;
+  font-size:19px;margin-bottom:16px;
+}
+.feat-name{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:7px}
+.feat-desc{font-size:13px;color:var(--ink2);line-height:1.7;margin-bottom:14px}
+.feat-ex{
+  border-top:1px solid var(--brd2);padding-top:12px;
+  font-size:12px;color:var(--ink3);line-height:1.6;font-style:italic;
+}
+.feat-ex-lbl{
+  font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:4px;font-style:normal;display:block;
+}
+
+/* ── MODULE CARDS ── */
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.mod-card{
+  background:var(--bg-card);border:1px solid var(--brd);border-radius:var(--r2);
+  padding:24px;display:flex;flex-direction:column;
+  transition:all .25s;box-shadow:0 1px 4px rgba(0,0,0,0.04);
+}
+.mod-card:hover{
+  transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.09);
+  border-color:var(--mc,var(--accent));
+}
+.mod-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.mod-icon{
+  width:38px;height:38px;border-radius:10px;display:flex;align-items:center;
+  justify-content:center;font-size:18px;flex-shrink:0;
+  background:var(--mi-bg,var(--accent-soft));
+  border:1px solid var(--mi-brd,rgba(232,92,42,0.18));
+}
+.mod-name{font-size:15px;font-weight:700;color:var(--ink)}
+.mod-desc{
+  font-size:13px;color:var(--ink2);line-height:1.68;flex:1;margin-bottom:14px;
+}
+.mod-desc strong{color:var(--ink);font-weight:600}
+.mod-ai{
+  display:flex;align-items:flex-start;gap:7px;padding:8px 10px;
+  background:var(--accent-soft);border:1px solid rgba(232,92,42,0.14);
+  border-radius:8px;font-size:11px;color:var(--ink2);line-height:1.45;margin-bottom:12px;
+}
+.mod-ai strong{color:var(--accent);font-weight:700}
+.mod-ex{border-top:1px solid var(--brd2);padding-top:11px}
+.mod-ex-lbl{
+  font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:4px;display:block;
+}
+.mod-ex-txt{font-size:12px;color:var(--ink4);line-height:1.55;font-style:italic}
+
+/* ── AUTOMAZIONI ── */
+.auto-section{
+  background:var(--ink);
+  background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
+  background-size:40px 40px;
+}
+.auto-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.auto-left .tag{color:#fbbf24;background:rgba(251,191,36,0.1);border-color:rgba(251,191,36,0.2)}
+.auto-left .sec-title{color:#fff}
+.auto-left .sec-sub{color:rgba(255,255,255,0.65)}
+.auto-steps{display:flex;flex-direction:column;gap:16px;margin-top:24px}
+.auto-step{
+  display:flex;align-items:flex-start;gap:14px;padding:16px;
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
+  border-radius:var(--r2);transition:all .25s;
+}
+.auto-step:hover{background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.14)}
+.auto-step-num{
+  width:28px;height:28px;background:var(--accent);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;color:#fff;flex-shrink:0;
+}
+.auto-step-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:3px}
+.auto-step-desc{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.5}
+.auto-right{display:flex;flex-direction:column;gap:12px}
+.auto-trigger{
+  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);
+  border-radius:var(--r2);padding:18px 20px;transition:all .25s;
+}
+.auto-trigger:hover{background:rgba(255,255,255,0.08);border-color:var(--accent)}
+.auto-trigger-head{
+  display:flex;align-items:center;gap:10px;margin-bottom:8px;
+}
+.auto-trigger-icon{
+  width:32px;height:32px;border-radius:8px;background:var(--accent);
+  display:flex;align-items:center;justify-content:center;font-size:14px;
+}
+.auto-trigger-title{font-size:13px;font-weight:700;color:#fff}
+.auto-trigger-flow{
+  display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+}
+.auto-flow-node{
+  font-size:11px;font-weight:600;padding:3px 10px;border-radius:6px;
+  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);
+  color:rgba(255,255,255,0.8);
+}
+.auto-flow-arrow{font-size:12px;color:var(--accent);font-weight:700}
+.auto-bottom-note{
+  padding:14px;background:rgba(232,92,42,0.12);
+  border:1px solid rgba(232,92,42,0.25);border-radius:var(--r);
+  font-size:13px;color:rgba(255,255,255,0.8);line-height:1.5;
+  font-style:italic;
+}
+.auto-bottom-note strong{color:#fbbf24;font-style:normal}
+
+/* ── PRICING ── */
+.pricing-hero{
+  background:var(--accent);border-radius:var(--r3);padding:36px 40px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:28px;flex-wrap:wrap;margin-bottom:24px;
+  box-shadow:0 8px 40px rgba(232,92,42,0.22);
+}
+.pricing-hero-info{}
+.pricing-hero-lbl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-bottom:6px}
+.pricing-hero-name{font-size:22px;font-weight:800;color:#fff;margin-bottom:8px}
+.pricing-hero-desc{font-size:13px;color:rgba(255,255,255,0.82);line-height:1.65;max-width:500px}
+.pricing-hero-amount{font-size:52px;font-weight:900;color:#fff;letter-spacing:-.04em;line-height:1}
+.pricing-hero-per{font-size:12px;color:rgba(255,255,255,0.6);margin-top:3px}
+
+.pricing-perks{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+.pricing-perk{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink2)}
+.pricing-perk-ck{
+  width:18px;height:18px;background:var(--green-s);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;color:var(--green);flex-shrink:0;
+}
+
+.addons-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:28px}
+.addon{
+  background:var(--bg-card);border:1px solid var(--brd);border-radius:var(--r);
+  padding:14px 16px;display:flex;align-items:center;justify-content:space-between;
+  box-shadow:0 1px 4px rgba(0,0,0,0.04);transition:all .2s;
+}
+.addon:hover{border-color:var(--accent);transform:translateY(-1px)}
+.addon-name{font-size:13px;font-weight:700;color:var(--ink)}
+.addon-sub{font-size:11px;color:var(--ink4);margin-top:2px;max-width:150px}
+.addon-price{font-size:20px;font-weight:900;color:var(--ink);flex-shrink:0}
+.addon-unit{font-size:10px;color:var(--ink4);text-align:right}
+
+.volume-bar{
+  background:var(--bg-card);border:1px solid var(--brd);border-radius:var(--r2);
+  padding:18px 22px;margin-bottom:28px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;flex-wrap:wrap;box-shadow:0 1px 4px rgba(0,0,0,0.04);
+}
+.vtiers{display:flex;gap:8px}
+.vtier{
+  text-align:center;background:var(--bg-card2);border:1px solid var(--brd);
+  border-radius:var(--r);padding:7px 12px;min-width:52px;
+}
+.vtier-n{font-size:17px;font-weight:800;color:var(--ink);line-height:1}
+.vtier-l{font-size:10px;color:var(--ink4)}
+.vtier-d{font-size:12px;font-weight:700;color:var(--green)}
+.vtier.hot{border-color:var(--accent);background:var(--accent-soft)}
+.vtier.hot .vtier-d{color:var(--accent)}
+
+.deploy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.deploy-card{
+  background:var(--bg-card);border:1px solid var(--brd);border-radius:var(--r2);
+  padding:26px 22px;position:relative;box-shadow:0 1px 4px rgba(0,0,0,0.04);
+  transition:all .25s;
+}
+.deploy-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.09)}
+.deploy-card.rec{border-color:var(--accent);box-shadow:0 4px 24px rgba(232,92,42,0.12)}
+.deploy-badge{
+  position:absolute;top:-10px;left:50%;transform:translateX(-50%);
+  background:var(--ink);color:var(--accent);font-size:10px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;padding:4px 14px;
+  border-radius:100px;white-space:nowrap;
+}
+.deploy-tier{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:10px}
+.deploy-name{font-size:18px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.deploy-desc{font-size:13px;color:var(--ink2);line-height:1.6;margin-bottom:18px}
+.deploy-list{display:flex;flex-direction:column;gap:7px}
+.deploy-list li{font-size:13px;color:var(--ink2);display:flex;gap:7px;align-items:flex-start}
+.deploy-list li::before{content:'✓';color:var(--accent);flex-shrink:0;font-weight:700;font-size:12px;margin-top:1px}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:start}
+.contact-feat{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:14px 0;border-bottom:1px solid var(--brd2);
+}
+.contact-feat:last-child{border-bottom:none}
+.contact-feat-icon{
+  width:36px;height:36px;border-radius:10px;background:var(--accent-soft);
+  border:1px solid rgba(232,92,42,0.18);display:flex;align-items:center;
+  justify-content:center;font-size:16px;flex-shrink:0;
+}
+.contact-feat-title{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:2px}
+.contact-feat-sub{font-size:13px;color:var(--ink3);line-height:1.5}
+.cf-form{
+  background:var(--bg-card);border:1px solid var(--brd);
+  border-radius:var(--r3);padding:30px;box-shadow:0 2px 16px rgba(0,0,0,0.06);
+}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.cf-field{display:flex;flex-direction:column;gap:5px;margin-bottom:13px}
+.cf-label{font-size:12px;font-weight:600;color:var(--ink2)}
+.cf-input{
+  background:var(--bg-card2);border:1px solid var(--brd);border-radius:var(--r);
+  padding:10px 13px;font-size:14px;font-family:var(--font);
+  color:var(--ink);transition:all .2s;outline:none;
+}
+.cf-input::placeholder{color:var(--ink4)}
+.cf-input:focus{border-color:var(--accent);background:#fff;box-shadow:0 0 0 3px rgba(232,92,42,0.1)}
+.cf-textarea{resize:vertical;min-height:88px}
+select.cf-input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M2 4l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px}
+
+/* ── LANGS ── */
+.langs-bar{
+  background:var(--bg2);border-top:1px solid var(--brd);border-bottom:1px solid var(--brd);
+  padding:18px 40px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:var(--gs) var(--gs);
+}
+.langs-lbl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4)}
+.lang-pills{display:flex;gap:7px;flex-wrap:wrap}
+.lpill{
+  display:flex;align-items:center;gap:6px;background:var(--bg-card);
+  border:1px solid var(--brd);border-radius:8px;padding:6px 13px;
+  font-size:12px;font-weight:500;color:var(--ink2);transition:all .2s;
+}
+.lpill .flag{font-size:15px}
+.lpill:hover{border-color:var(--accent);color:var(--accent)}
+.lpill.on{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--bg2);border-top:1px solid var(--brd);padding:28px 40px;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:var(--gs) var(--gs);
+}
+.footer-inner{max-width:1280px;margin:0 auto}
+.footer-top{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:20px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid var(--brd);margin-bottom:14px;
+}
+.footer-brand-row{display:flex;align-items:center;gap:8px}
+.footer-brand-name{font-size:14px;font-weight:700;color:var(--ink)}
+.footer-tagline{font-size:11px;color:var(--ink4);margin-top:2px}
+.footer-links{display:flex;gap:18px;align-items:center}
+.footer-link{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--ink3);font-weight:500;transition:color .15s}
+.footer-link:hover{color:var(--accent)}
+.footer-link-icon{width:24px;height:24px;background:rgba(0,0,0,0.06);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;transition:all .15s}
+.footer-link:hover .footer-link-icon{background:var(--accent);color:#fff}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.footer-copy{font-size:13px;color:var(--ink2);font-weight:500}
+.footer-copy a:hover{color:var(--accent)}
+.footer-legal{display:flex;gap:12px;align-items:center;padding:6px 14px;background:rgba(0,0,0,0.05);border-radius:100px}
+.footer-legal a{font-size:12px;color:var(--ink2);font-weight:500;transition:color .15s;padding:2px 0}
+.footer-legal a:hover{color:var(--accent)}
+.footer-legal .sep{color:var(--ink4);font-size:12px}
+.footer-status{
+  display:flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,0.6);border:1px solid var(--brd);
+  border-radius:100px;padding:4px 12px;font-size:11px;color:var(--ink3);
+}
+.status-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* ── MOBILE NAV ── */
+.mobile-nav{
+  display:none;position:fixed;inset:0;z-index:999;
+  background:rgba(238,240,244,0.97);backdrop-filter:blur(16px);
+  flex-direction:column;align-items:center;justify-content:center;gap:6px;
+  overflow-y:auto;padding:60px 20px 32px;
+}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-size:17px;font-weight:600;color:var(--ink2);padding:11px 28px;border-radius:10px;transition:all .15s}
+.mobile-nav a:hover{color:var(--ink);background:rgba(0,0,0,0.06)}
+.mobile-nav-close{position:absolute;top:18px;right:20px;background:none;border:none;color:var(--ink);font-size:26px;cursor:pointer}
+.mobile-nav-langs{display:flex;gap:6px;margin-top:16px;padding-top:16px;border-top:1px solid var(--brd)}
+.mobile-nav-langs .lang-btn{font-size:12px;font-weight:700;color:var(--ink4);padding:6px 12px;border-radius:6px;background:none;border:none;text-decoration:none}
+.mobile-nav-langs .lang-btn.active{color:var(--ink);background:rgba(0,0,0,0.08)}
+.mobile-nav-langs .lang-btn:hover{color:var(--ink);background:rgba(0,0,0,0.06)}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}
+.d4{transition-delay:.28s}.d5{transition-delay:.35s}.d6{transition-delay:.42s}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  section.hero{grid-template-columns:1fr!important;text-align:center!important;padding:96px 32px 48px!important}
+  section.hero > div:first-child{align-items:center}
+  section.hero > div:first-child p{margin-left:auto;margin-right:auto}
+  section.hero > div:first-child .hero-stats{justify-content:center}
+  section.hero > div:last-child{display:none}
+  .feat-grid{grid-template-columns:1fr 1fr}
+  .mod-grid{grid-template-columns:1fr 1fr}
+  .vantaggi-grid{grid-template-columns:1fr 1fr}
+  .search-split{grid-template-columns:1fr;gap:24px}
+  .contact-grid{grid-template-columns:1fr}
+  .addons-grid{grid-template-columns:repeat(2,1fr)}
+  .deploy-grid{grid-template-columns:1fr 1fr}
+  .auto-grid{grid-template-columns:1fr;gap:32px}
+  .section{padding:68px 32px}
+  .mock-cards{grid-template-columns:repeat(2,1fr)}
+  .mock-widgets{grid-template-columns:repeat(2,1fr)}
+  .suite-grid{grid-template-columns:1fr 1fr!important}
+  .deploy-duo{grid-template-columns:1fr 1fr!important}
+  .admin-split{grid-template-columns:1fr!important;gap:28px!important}
+}
+@media(max-width:768px){
+  section.hero{grid-template-columns:1fr!important;padding:88px 20px 40px!important}
+  .nav-links{display:none}
+  .nav-hamburger{display:block}
+  .nav-langs{padding-right:0;margin-right:0;border-right:none}
+  .hero{padding:96px 20px 52px}
+  .hero-title{font-size:32px}
+  .feat-grid,.mod-grid,.vantaggi-grid,.addons-grid,.deploy-grid{grid-template-columns:1fr}
+  .pricing-hero{flex-direction:column;text-align:center}
+  .section{padding:52px 20px}
+  .cf-row{grid-template-columns:1fr}
+  .mock-sidebar{display:none}
+  .mock-body{height:auto}
+  .mock-content{padding:12px;margin-left:0}
+  .mock-cards{grid-template-columns:repeat(2,1fr)}
+  .mock-widgets{grid-template-columns:repeat(2,1fr)}
+  footer,.langs-bar{padding:18px 20px}
+  .footer-top{flex-direction:column;align-items:flex-start}
+  .suite-grid,.deploy-duo{grid-template-columns:1fr!important}
+  .admin-split{grid-template-columns:1fr!important;gap:24px!important}
+  .hero-logo-main{width:240px!important;height:auto!important}
+  .volume-bar{flex-direction:column!important;align-items:stretch!important;text-align:center}
+  .vtiers{justify-content:center}
+  .admin-tbl-row{grid-template-columns:1fr 1fr!important;gap:4px!important}
+  .admin-tbl-head{display:none!important}
+  .langs-bar{flex-direction:column;align-items:flex-start;gap:10px}
+  .langs-bar div[style*="margin-left"]{margin-left:0!important}
+}
+@media(max-width:480px){
+  .hero-title{font-size:27px}
+  .hero-stats{gap:6px}
+  .hstat{padding:11px 14px;min-width:82px}
+  .hero-logo-main{width:180px!important}
+  .hstat-num{font-size:18px}
+  .addon{flex-direction:column!important;align-items:flex-start!important;gap:6px}
+  .pricing-hero-amount{font-size:38px}
+  .org-mods-row{flex-wrap:wrap!important}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0s!important;transition-duration:0s!important}}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/fr/" class="nav-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="28" height="28" style="flex-shrink:0">
+        <defs>
+          <linearGradient id="nb1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3a6a9a"/><stop offset="100%" stop-color="#1e3a5a"/></linearGradient>
+          <linearGradient id="npf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2e6ab8"/><stop offset="100%" stop-color="#1a4a8a"/></linearGradient>
+          <linearGradient id="npg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="60%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+          <linearGradient id="nmr" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#c0d8f0"/></linearGradient>
+        </defs>
+        <rect width="200" height="200" rx="38" fill="#0d1e36"/>
+        <rect x="18" y="44" width="58" height="74" rx="5" fill="url(#nb1)" opacity="0.55" transform="rotate(-24 47 140)"/>
+        <rect x="26" y="36" width="58" height="74" rx="5" fill="url(#nb1)" opacity="0.72" transform="rotate(-12 55 132)"/>
+        <rect x="36" y="30" width="58" height="74" rx="5" fill="url(#nb1)" transform="rotate(0 65 128)"/>
+        <rect x="70" y="16" width="62" height="82" rx="6" fill="url(#npg)" transform="rotate(18 101 50)"/>
+        <rect x="44" y="34" width="64" height="120" rx="6" fill="url(#npf)"/>
+        <line x1="56" y1="68" x2="98" y2="68" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
+        <line x1="56" y1="82" x2="94" y2="82" stroke="#fff" stroke-width="1.8" stroke-linecap="round" opacity="0.42"/>
+        <line x1="56" y1="96" x2="96" y2="96" stroke="#fff" stroke-width="1.8" stroke-linecap="round" opacity="0.34"/>
+        <circle cx="130" cy="106" r="40" fill="none" stroke="url(#nmr)" stroke-width="7"/>
+        <line x1="160" y1="136" x2="186" y2="166" stroke="url(#nmr)" stroke-width="13" stroke-linecap="round"/>
+        <circle cx="130" cy="106" r="6.5" fill="#fbbf24"/>
+        <circle cx="130" cy="106" r="2.6" fill="#fff" opacity="0.95"/>
+      </svg>
+      Blina Desk
+    </a>
+    <ul class="nav-links">
+      <li><a href="#search">Recherche IA</a></li>
+      <li><a href="#modules">Modules</a></li>
+      <li><a href="#automazioni">Automatisations</a></li>
+      <li><a href="#pricing">Tarifs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-langs">
+        <a class="lang-btn" href="/">EN</a>
+        <a class="lang-btn" href="/de/">DE</a>
+        <a class="lang-btn" href="/it/">IT</a>
+        <a class="lang-btn active" href="/fr/">FR</a>
+      </div>
+      <a href="https://app.blina-desk.com/fr/auth/login" class="btn btn-outline" style="font-size:13px;padding:7px 15px">Connexion</a>
+    </div>
+    <button class="nav-hamburger" onclick="document.getElementById('mNav').classList.add('open')">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><rect y="3" width="20" height="2" rx="1"/><rect y="9" width="20" height="2" rx="1"/><rect y="15" width="20" height="2" rx="1"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mNav">
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('open')">✕</button>
+  <a href="#search" onclick="this.parentElement.classList.remove('open')">Recherche IA</a>
+  <a href="#modules" onclick="this.parentElement.classList.remove('open')">Modules</a>
+  <a href="#automazioni" onclick="this.parentElement.classList.remove('open')">Automatisations</a>
+  <a href="#pricing" onclick="this.parentElement.classList.remove('open')">Tarifs</a>
+  <a href="#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
+  <div class="mobile-nav-langs">
+    <a class="lang-btn" href="/">EN</a><a class="lang-btn" href="/de/">DE</a>
+    <a class="lang-btn" href="/it/">IT</a><a class="lang-btn active" href="/fr/">FR</a>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<section class="hero" style="min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:100px 60px 60px;gap:40px;text-align:left;position:relative;overflow:hidden;">
+
+  <!-- Glow -->
+  <div style="position:absolute;top:10%;left:30%;width:600px;height:400px;background:radial-gradient(ellipse,rgba(232,92,42,0.07) 0%,transparent 65%);pointer-events:none;"></div>
+
+  <!-- ── LEFT: Logo + Testo + Stats ── -->
+  <div style="display:flex;flex-direction:column;justify-content:center;z-index:2;">
+
+    <!-- Logo grande identico all'originale -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="hero-logo-main" viewBox="0 0 640 200" width="360" height="113"
+      style="display:block;margin-bottom:16px;opacity:0;animation:fadeUp .5s .05s ease forwards">
+      <defs>
+        <linearGradient id="hpb1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2a4a6a"/><stop offset="100%" stop-color="#1a3450"/></linearGradient>
+        <linearGradient id="hpb2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1e3d5e"/><stop offset="100%" stop-color="#132840"/></linearGradient>
+        <linearGradient id="hpm" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563a0"/><stop offset="100%" stop-color="#1a4880"/></linearGradient>
+        <linearGradient id="hpg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="50%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+        <linearGradient id="hmr" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#60aee8"/><stop offset="100%" stop-color="#3a80c0"/></linearGradient>
+        <linearGradient id="hmh" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#60aee8"/><stop offset="100%" stop-color="#2a6aaa"/></linearGradient>
+        <linearGradient id="hwg" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1a2a3a"/><stop offset="100%" stop-color="#2a4a6a"/></linearGradient>
+        <linearGradient id="hrl" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#3a6a9a"/><stop offset="65%" stop-color="#1a4a7a"/><stop offset="100%" stop-color="#1a4a7a" stop-opacity="0"/></linearGradient>
+      </defs>
+      <!-- Libro/pagine impilate -->
+      <rect x="10" y="28" width="52" height="68" rx="4" fill="url(#hpb1)" opacity="0.55" transform="rotate(-28 36 130)"/>
+      <rect x="18" y="22" width="52" height="68" rx="4" fill="url(#hpb2)" opacity="0.7" transform="rotate(-17 44 126)"/>
+      <rect x="28" y="18" width="52" height="68" rx="4" fill="url(#hpm)" opacity="0.82" transform="rotate(-6 54 122)"/>
+      <rect x="40" y="18" width="52" height="68" rx="4" fill="url(#hpm)" transform="rotate(5 66 120)"/>
+      <!-- Copertina gialla -->
+      <rect x="66" y="10" width="56" height="74" rx="5" fill="url(#hpg)" transform="rotate(18 94 46)"/>
+      <g transform="rotate(18 94 46)">
+        <line x1="74" y1="28" x2="112" y2="28" stroke="#92400e" stroke-width="1.6" stroke-linecap="round" opacity="0.45"/>
+        <line x1="74" y1="37" x2="112" y2="37" stroke="#92400e" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/>
+        <line x1="74" y1="46" x2="108" y2="46" stroke="#92400e" stroke-width="1.4" stroke-linecap="round" opacity="0.22"/>
+      </g>
+      <!-- Libro principale blu -->
+      <rect x="38" y="28" width="58" height="116" rx="5" fill="url(#hpm)"/>
+      <line x1="48" y1="56" x2="87" y2="56" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+      <line x1="48" y1="66" x2="84" y2="66" stroke="#fff" stroke-width="1.4" stroke-linecap="round" opacity="0.45"/>
+      <line x1="48" y1="75" x2="86" y2="75" stroke="#fff" stroke-width="1.4" stroke-linecap="round" opacity="0.38"/>
+      <line x1="48" y1="84" x2="82" y2="84" stroke="#fff" stroke-width="1.4" stroke-linecap="round" opacity="0.28"/>
+      <!-- Lente di ingrandimento -->
+      <circle cx="112" cy="84" r="34" fill="none" stroke="url(#hmr)" stroke-width="6"/>
+      <line x1="136" y1="108" x2="160" y2="136" stroke="url(#hmh)" stroke-width="11" stroke-linecap="round"/>
+      <circle cx="112" cy="84" r="5.5" fill="#fbbf24"/>
+      <circle cx="112" cy="84" r="2.2" fill="#fff" opacity="0.95"/>
+      <!-- Separatore -->
+      <line x1="186" y1="30" x2="186" y2="165" stroke="#4a7aaa" stroke-width="1.2" opacity="0.4"/>
+      <!-- Testo Blina -->
+      <text x="206" y="108" font-family="Georgia,'Times New Roman',serif" font-size="64" font-weight="700" letter-spacing="-2.5" fill="url(#hwg)">Blina</text>
+      <rect x="206" y="117" width="370" height="1.8" rx="1" fill="url(#hrl)" opacity="0.4"/>
+      <text x="208" y="144" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="300" letter-spacing="17" fill="#3a6a9a" opacity="0.9">DESK</text>
+      <text x="362" y="144" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" letter-spacing="1" fill="#d97706">AI</text>
+      <rect x="206" y="153" width="370" height="0.8" fill="#000" opacity="0.04"/>
+    </svg>
+
+    <!-- Overline tag -->
+    <div class="tag" style="margin-bottom:16px;opacity:0;animation:fadeUp .5s .1s ease forwards;align-self:flex-start">
+      Plateforme Business avec IA
+    </div>
+
+    <!-- Titolo -->
+    <h1 style="font-size:clamp(34px,4.5vw,60px);font-weight:800;line-height:1.06;letter-spacing:-.04em;color:var(--ink);margin-bottom:16px;opacity:0;animation:fadeUp .6s .2s ease forwards;">
+      Arrêtez de chercher.<br>Commencez à <em style="font-style:italic;color:var(--accent)">trouver</em>.
+    </h1>
+
+    <!-- Sottotitolo -->
+    <p style="font-size:17px;line-height:1.7;color:var(--ink2);max-width:480px;margin-bottom:28px;opacity:0;animation:fadeUp .6s .3s ease forwards;">
+      <strong style="color:var(--ink);font-weight:600">Connaissances, documents et processus métier</strong> dans un seul système — avec OCR automatique, recherche sémantique et IA générative intégrée.
+    </p>
+
+    <!-- CTA buttons -->
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;opacity:0;animation:fadeUp .6s .38s ease forwards;">
+      <a href="https://app.blina-desk.com/fr/auth/login" class="btn btn-primary btn-lg">
+        Commencer gratuitement
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <a href="#search" class="btn btn-outline btn-lg">Comment ça marche</a>
+    </div>
+
+    <p style="margin-top:12px;font-size:12px;color:var(--ink4);opacity:0;animation:fadeUp .5s .46s ease forwards;">
+      <strong style="color:var(--green);font-weight:600">14 jours gratuits</strong> · Tous les modules · Sans carte de crédit
+    </p>
+
+    <!-- Stats mini -->
+    <div style="display:flex;gap:8px;margin-top:32px;flex-wrap:wrap;opacity:0;animation:fadeUp .5s .54s ease forwards;">
+      <div class="hstat"><div class="hstat-num">2<span>sec</span></div><div class="hstat-lbl">au lieu de 20+ min</div></div>
+      <div class="hstat"><div class="hstat-num">11<span>+</span></div><div class="hstat-lbl">Modules métier</div></div>
+      <div class="hstat"><div class="hstat-num">100<span>%</span></div><div class="hstat-lbl">On-premise</div></div>
+      <div class="hstat"><div class="hstat-num">4</div><div class="hstat-lbl">Langues</div></div>
+    </div>
+  </div>
+
+  <!-- ── RIGHT: Orgchart ── -->
+  <div style="display:flex;align-items:flex-start;justify-content:center;z-index:2;padding-top:0;margin-top:-10px;">
+    <div class="orgchart" aria-label="Blina Desk module map">
+      <div class="org-node org-root">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="22" height="22" style="margin-bottom:4px;flex-shrink:0">
+          <rect width="200" height="200" rx="38" fill="rgba(255,255,255,0.15)"/>
+          <rect x="44" y="34" width="64" height="120" rx="6" fill="rgba(255,255,255,0.9)"/>
+          <line x1="56" y1="68" x2="98" y2="68" stroke="#0d1e36" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+          <line x1="56" y1="82" x2="94" y2="82" stroke="#0d1e36" stroke-width="1.8" stroke-linecap="round" opacity="0.4"/>
+          <line x1="56" y1="96" x2="96" y2="96" stroke="#0d1e36" stroke-width="1.8" stroke-linecap="round" opacity="0.3"/>
+          <circle cx="130" cy="106" r="40" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="8"/>
+          <line x1="160" y1="136" x2="186" y2="166" stroke="rgba(255,255,255,0.9)" stroke-width="14" stroke-linecap="round"/>
+          <circle cx="130" cy="106" r="6" fill="#fbbf24"/>
+        </svg>
+        <div class="on-lbl" style="font-size:13px;color:#fff;letter-spacing:.04em;font-weight:700">Blina Desk</div>
+      </div>
+      <div class="org-connector-line"></div>
+      <div class="org-row connected" style="gap:6px">
+        <div class="org-node"><div class="on-icon">🔍</div><div class="on-lbl">Recherche IA</div><div class="on-sub">Sémantique + FTS</div></div>
+        <div class="org-node"><div class="on-icon">📄</div><div class="on-lbl">Documents</div><div class="on-sub">OCR multilingue</div></div>
+        <div class="org-node"><div class="on-icon">💬</div><div class="on-lbl">IA Chat</div><div class="on-sub">RAG + Sources</div></div>
+      </div>
+      <div class="org-connector-line"></div>
+      <div class="org-embed">
+        <div class="on-lbl">Embeddings &amp; Vector Index</div>
+        <div class="on-sub">Chunking · Semantic Vector Search (pgvector)</div>
+      </div>
+      <div class="org-connector-line"></div>
+      <div class="org-hub">
+        <div class="on-lbl">Hub Modules</div>
+        <div class="on-sub">Activez uniquement ce dont vous avez besoin</div>
+      </div>
+      <div class="org-connector-line"></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:100%;padding-top:14px;position:relative;">
+        <div style="position:absolute;top:0;left:50%;width:1px;height:10px;background:#000"></div>
+        <div class="org-mods-row" style="display:flex;gap:5px;justify-content:center;flex-wrap:nowrap;">
+          <div class="org-node org-mods-node"><div class="on-icon">💰</div><div class="on-lbl">Ventes</div></div>
+          <div class="org-node org-mods-node"><div class="on-icon">📦</div><div class="on-lbl">Achats</div></div>
+          <div class="org-node org-mods-node"><div class="on-icon">📒</div><div class="on-lbl">Comptabilité</div></div>
+          <div class="org-node org-mods-node"><div class="on-icon">👥</div><div class="on-lbl">HR</div></div>
+          <div class="org-node org-mods-node"><div class="on-icon">🎧</div><div class="on-lbl">Helpdesk</div></div>
+          <div class="org-node org-mods-node"><div class="on-icon">📧</div><div class="on-lbl">E-mail &amp; Tél</div></div>
+        </div>
+        <div class="org-mods-row" style="display:flex;gap:5px;justify-content:center;flex-wrap:nowrap;">
+          <div class="org-node org-mods-node"><div class="on-icon">⚖️</div><div class="on-lbl">Juridique</div></div>
+          <div class="org-node org-mods-node"><div class="on-icon">🏠</div><div class="on-lbl">Immobilier</div></div>
+          <div class="org-node org-mods-node"><div class="on-icon">🏥</div><div class="on-lbl">Cabinet méd.</div></div>
+          <div class="org-node org-mods-node"><div class="on-icon">🤝</div><div class="on-lbl">Associations</div></div>
+          <div class="org-node org-mods-node"><div class="on-icon">📋</div><div class="on-lbl">Projets</div></div>
+        </div>
+      </div>
+      <div class="org-connector-line"></div>
+      <div class="org-hub" style="background:rgba(232,92,42,0.1);border-color:rgba(232,92,42,0.35)">
+        <div class="on-lbl" style="color:var(--accent)">⚡ Automatisations</div>
+        <div class="on-sub">Décrivez-le → Blina le crée</div>
+      </div>
+      <div class="org-connector-line"></div>
+      <div class="org-row connected org-mods" style="gap:5px">
+        <div class="org-node"><div class="on-icon">📧</div><div class="on-lbl">E-mail</div></div>
+        <div class="org-node"><div class="on-icon">💬</div><div class="on-lbl">WhatsApp</div></div>
+        <div class="org-node"><div class="on-icon">🔔</div><div class="on-lbl">Notification</div></div>
+        <div class="org-node"><div class="on-icon">✏️</div><div class="on-lbl">Mettre à jour</div></div>
+        <div class="org-node"><div class="on-icon">➕</div><div class="on-lbl">Créer Enreg.</div></div>
+      </div>
+    </div>
+  </div>
+
+
+
+</section>
+
+<!-- ── VANTAGGI (al posto di "compatibili con") ── -->
+<section class="section" style="background:var(--bg-card);border-top:1px solid var(--brd);border-bottom:1px solid var(--brd)" id="vantaggi">
+  <div class="sec-inner">
+    <div class="sec-head reveal">
+      <div class="tag" style="margin-bottom:14px">Pourquoi choisir Blina Desk</div>
+      <h2 class="sec-title">Tout ce qu'il faut. <em>Rien de superflu.</em></h2>
+      <p class="sec-sub">La plateforme business avec IA conçue pour les PME et cabinets professionnels DACH et italiens — sérieuse, modulaire, sécurisée.</p>
+    </div>
+    <div class="vantaggi-grid">
+      <div class="vantaggio reveal">
+        <div class="vant-icon" style="background:var(--blue-s)">🔒</div>
+        <div class="vant-title">100% On-Premise possible</div>
+        <div class="vant-desc">Installez Blina sur vos serveurs. Les données ne quittent jamais votre réseau. Idéal pour les cabinets d'avocats, cabinets médicaux, comptables et entreprises avec des exigences RGPD strictes. Aucun cloud obligatoire.</div>
+      </div>
+      <div class="vantaggio reveal d1">
+        <div class="vant-icon" style="background:var(--green-s)">💶</div>
+        <div class="vant-title">Prix forfaitaire — zéro par utilisateur</div>
+        <div class="vant-desc">Paiement par session, pas par poste. 5 ou 500 utilisateurs ? Le même prix. Aucun coût caché, aucune limite d'utilisateurs, aucun lock-in. Comparez avec n'importe quel autre SaaS du marché.</div>
+      </div>
+      <div class="vantaggio reveal d2">
+        <div class="vant-icon" style="background:var(--amber-s)">🧠</div>
+        <div class="vant-title">IA dans chaque module — incluse</div>
+        <div class="vant-desc">Chaque module inclut Ask AI : posez des questions en langage naturel et obtenez des réponses à partir de vos données avec les sources citées. OpenAI, Claude, Gemini ou Ollama local — vous choisissez le fournisseur.</div>
+      </div>
+      <div class="vantaggio reveal d3">
+        <div class="vant-icon" style="background:var(--purple-s)">🔍</div>
+        <div class="vant-title">Recherche sémantique + OCR</div>
+        <div class="vant-desc">Trouvez n'importe quel document en 2 secondes — même s'il est numérisé. L'OCR multilingue rend chaque PDF, photo et numérisation recherchable. La recherche comprend le sens, pas seulement les mots-clés.</div>
+      </div>
+      <div class="vantaggio reveal d4">
+        <div class="vant-icon" style="background:var(--teal-s)">🔧</div>
+        <div class="vant-title">Modulaire — activez uniquement ce que vous utilisez</div>
+        <div class="vant-desc">La plateforme de base inclut CRM, OCR, Recherche IA et RAG Chat. Ajoutez Ventes, HR, Juridique, Helpdesk ou tout autre module quand vous en avez besoin. Aucun forfait surdimensionné.</div>
+      </div>
+      <div class="vantaggio reveal d5">
+        <div class="vant-icon" style="background:var(--red-s)">⚡</div>
+        <div class="vant-title">Automatisations sans code</div>
+        <div class="vant-desc">Décrivez le workflow que vous souhaitez — Blina le crée. Déclenchement sur chaque événement : nouveau document, échéance, paiement, ticket. E-mails, WhatsApp, notifications et mises à jour automatiques.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SEARCH ── -->
+<section class="section" id="search">
+  <div class="sec-inner">
+    <div class="sec-head left reveal">
+      <div class="tag" style="margin-bottom:14px">Recherche Sémantique + IA Chat</div>
+      <h2 class="sec-title">Trouvez n'importe quel document en <em>2 secondes</em>.</h2>
+      <p class="sec-sub">La recherche comprend le sens, pas seulement les mots-clés. Fonctionne hors ligne — entièrement on-premise.</p>
+    </div>
+    <div class="search-split">
+      <div class="search-queries">
+        <div class="sq-item reveal">
+          <div class="sq-icon">🔍</div>
+          <div style="flex:1">
+            <div class="sq-query">"Contrat de fourniture Müller — non signé — 2023"</div>
+            <div class="sq-result"><span class="sq-time">2 sec</span><span class="sq-badge bq-found">Trouvé</span></div>
+            <div class="sq-note">Recherche sémantique sur 3 000+ documents. Lien direct + extrait mis en évidence.</div>
+          </div>
+        </div>
+        <div class="sq-item reveal d1">
+          <div class="sq-icon">💬</div>
+          <div style="flex:1">
+            <div class="sq-query">"Quelle est notre politique de remboursement de frais ?"</div>
+            <div class="sq-result"><span class="sq-badge bq-ai">IA Chat</span></div>
+            <div class="sq-note">L'IA répond à partir de vos documents — avec lien au fichier et numéro de page.</div>
+          </div>
+        </div>
+        <div class="sq-item reveal d2">
+          <div class="sq-icon">⚖️</div>
+          <div style="flex:1">
+            <div class="sq-query">"Affaires gagnées pour inexécution contractuelle depuis 2022"</div>
+            <div class="sq-result"><span style="font-size:12px;color:var(--ink3)">5 dossiers trouvés</span><span class="sq-badge bq-legal">Juridique</span></div>
+            <div class="sq-note">Recherche dans tous les dossiers — résultats, dates et documents en quelques secondes.</div>
+          </div>
+        </div>
+        <div class="sq-item reveal d3">
+          <div class="sq-icon">📋</div>
+          <div style="flex:1">
+            <div class="sq-query">"Fiche de paie Rossi Mars 2024"</div>
+            <div class="sq-result"><span class="sq-time">1 sec</span><span class="sq-badge bq-found">OCR + IA</span></div>
+            <div class="sq-note">Chaque PDF, photo et numérisation devient instantanément recherchable.</div>
+          </div>
+        </div>
+      </div>
+      <div class="search-panel">
+        <div class="search-card reveal d1">
+          <div class="search-big-num"><span>2</span> sec</div>
+          <div style="font-size:13px;color:var(--ink3);margin-top:4px">Temps moyen sur 3 000+ documents</div>
+          <div style="margin-top:10px;font-size:13px;color:var(--ink2)">Par rapport aux <strong style="color:var(--ink)">20+ minutes</strong> de recherche manuelle dans les dossiers et e-mails.</div>
+          <div style="margin-top:14px;padding:11px;background:var(--accent-soft);border:1px solid rgba(232,92,42,0.15);border-radius:var(--r);font-size:13px;color:var(--ink2)">
+            🧠 <strong style="color:var(--accent)">RAG intégré</strong> — interrogez vos données en langage naturel avec sources citées.
+          </div>
+        </div>
+        <div class="search-card reveal d2">
+          <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:10px">Compatible avec tout fournisseur IA</div>
+          <div class="search-providers">
+            <span class="sp-chip">🤖 OpenAI GPT-4o</span>
+            <span class="sp-chip">🤖 Claude</span>
+            <span class="sp-chip">🤖 Gemini</span>
+            <span class="sp-chip">🦙 Ollama local</span>
+            <span class="sp-chip">🔒 Zéro cloud</span>
+          </div>
+          <div style="margin-top:11px;font-size:12px;color:var(--ink3)">Apportez votre clé API ou utilisez Ollama pour du 100% on-premise — aucune donnée ne quitte le réseau.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CORE FEATURES ── -->
+<section class="section" style="background:var(--bg-card);border-top:1px solid var(--brd);border-bottom:1px solid var(--brd)" id="core">
+  <div class="sec-inner">
+    <div class="sec-head reveal">
+      <div class="tag" style="margin-bottom:14px">Fonctionnalités de base</div>
+      <h2 class="sec-title">Vos archives deviennent <em>intelligentes</em>.</h2>
+      <p class="sec-sub">Chaque plan inclut CRM, Recherche IA, OCR et RAG Chat — le maximum d'IA à ce prix. Zéro lock-in cloud.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card reveal">
+        <div class="feat-icon">🔍</div>
+        <div class="feat-name">Recherche Hybride</div>
+        <div class="feat-desc">Full-text + sémantique vectorielle avec pgvector. Trouvez des documents même sans mots-clés exacts — Blina comprend le sens, pas seulement les mots. Fonctionne entièrement hors ligne.</div>
+        <div class="feat-ex"><span class="feat-ex-lbl">Exemple</span>Vous cherchez "RGPD vie privée", le document dit "protection des données européenne" — Blina comprend.</div>
+      </div>
+      <div class="feat-card reveal d1">
+        <div class="feat-icon">🤖</div>
+        <div class="feat-name">IA Chat (RAG)</div>
+        <div class="feat-desc">Questions en langage naturel → réponses à partir de VOS données avec liens vers les sources. Pas un chatbot générique : un RAG entraîné sur vos documents, contacts, affaires et tickets.</div>
+        <div class="feat-ex"><span class="feat-ex-lbl">Exemple</span>"Comment fonctionnent les retours ?" → réponse du manuel avec lien vers le document exact.</div>
+      </div>
+      <div class="feat-card reveal d2">
+        <div class="feat-icon">📄</div>
+        <div class="feat-name">Documents &amp; OCR</div>
+        <div class="feat-desc">Chargez des PDF, Word ou numérisations — OCR multilingue instantané. Chaque document devient recherchable par l'IA. Historique complet des versions, corbeille et archivage structuré.</div>
+        <div class="feat-ex"><span class="feat-ex-lbl">Exemple</span>200 factures numérisées : chargez → OCR → recherchez par montant, fournisseur et date.</div>
+      </div>
+      <div class="feat-card reveal d3">
+        <div class="feat-icon">👥</div>
+        <div class="feat-name">CRM inclus</div>
+        <div class="feat-desc">Contacts, entreprises, prospects et historique complet des interactions — inclus dans chaque plan. L'IA génère des résumés client à travers tous les modules : affaires, e-mails, tickets, factures.</div>
+        <div class="feat-ex"><span class="feat-ex-lbl">Exemple</span>Ouvrez un contact → l'IA affiche : contrats, e-mails, tâches, factures impayées en une seule vue.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MODULES ── -->
+<section class="section" id="modules">
+  <div class="sec-inner">
+    <div class="sec-head reveal">
+      <div class="tag" style="margin-bottom:14px">Modules métier</div>
+      <h2 class="sec-title">Activez uniquement ce dont vous avez <em>besoin</em>.</h2>
+      <p class="sec-sub">Chaque module dispose d'un IA Chat intégré (Ask AI) qui comprend vos données. Activez les modules indépendamment — la Plateforme de Base avec CRM, Recherche, OCR et RAG est toujours incluse.</p>
+    </div>
+    <div class="mod-grid">
+
+      <div class="mod-card reveal" style="--mc:var(--green);--mi-bg:var(--green-s);--mi-brd:rgba(22,163,74,0.2)">
+        <div class="mod-header"><div class="mod-icon">💰</div><div class="mod-name">Ventes</div></div>
+        <div class="mod-desc">Gestion des ventes complète — prix forfaitaire pour toute l'équipe, utilisateurs illimités.<br><br>
+          <strong>✓</strong> Catalogue produits, fichier clients, devis, commandes et factures<br>
+          <strong>✓</strong> Paiements, expéditions et retours (RMA) avec suivi complet<br>
+          <strong>✓</strong> Tableau de bord ventes avec chiffre d'affaires en temps réel, meilleurs clients et impayés<br>
+          <strong>✓</strong> IA : "Combien le client X a-t-il commandé cette année ?" — réponse instantanée<br>
+          <strong>✓</strong> Résumés IA par client — commandes, paiements, interactions en un coup d'œil<br>
+          <strong>✓</strong> Rapports par période, client, produit ou commercial</div>
+        <div class="mod-ai"><span>🧠</span><div><strong>Demandez à l'IA :</strong> "Résumé client Müller — commandes ouvertes, factures impayées, retours et dernières interactions."</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Exemple</span><div class="mod-ex-txt">Nouvelle commande → facture automatique → paiement suivi → expédition confirmée → le client demande un retour → RMA créé en un clic → IA : "Client Müller — 12 commandes, 1 retour ouvert, 42K€ CA total."</div></div>
+      </div>
+
+      <div class="mod-card reveal d1" style="--mc:var(--amber);--mi-bg:var(--amber-s);--mi-brd:rgba(217,119,6,0.2)">
+        <div class="mod-header"><div class="mod-icon">📦</div><div class="mod-name">Achats &amp; Stock</div></div>
+        <div class="mod-desc">Approvisionnement et stock complets — niveaux de stock en temps réel, alerte de réapprovisionnement, OCR sur chaque facture.<br><br>
+          <strong>✓</strong> Commandes d'achat, gestion fournisseurs et réceptions marchandises<br>
+          <strong>✓</strong> Stock avec niveaux en temps réel et alerte stock minimum<br>
+          <strong>✓</strong> L'OCR numérise reçus et factures — recherchables instantanément par l'IA<br>
+          <strong>✓</strong> Comparaison de prix entre fournisseurs et suivi des livraisons<br>
+          <strong>✓</strong> Historique complet des mouvements de stock<br>
+          <strong>✓</strong> IA : "Quel fournisseur a le meilleur prix pour l'article X ?"</div>
+        <div class="mod-ai"><span>🧠</span><div><strong>Demandez à l'IA :</strong> "Quels fournisseurs ont livré en retard plus de deux fois ce trimestre ?"</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Exemple</span><div class="mod-ex-txt">Stock sous le minimum → brouillon de commande d'achat automatique au fournisseur avec le meilleur prix → le responsable approuve en un clic.</div></div>
+      </div>
+
+      <div class="mod-card reveal d2" style="--mc:var(--purple);--mi-bg:var(--purple-s);--mi-brd:rgba(124,58,237,0.2)">
+        <div class="mod-header"><div class="mod-icon">👥</div><div class="mod-name">HR</div></div>
+        <div class="mod-desc">Gestion HR complète — prix forfaitaire, aucun coût par employé. Chaque document indexé par l'IA.<br><br>
+          <strong>✓</strong> Profils employés, contrats et checklist d'intégration<br>
+          <strong>✓</strong> Fiches de paie recherchables via OCR — chargez et trouvez instantanément<br>
+          <strong>✓</strong> Certifications avec alertes d'expiration automatiques (90/30/7 jours)<br>
+          <strong>✓</strong> Calendrier des congés et gestion des absences<br>
+          <strong>✓</strong> IA : "Quand expire la certification incendie de Rossi ?" — réponse instantanée<br>
+          <strong>✓</strong> Planification des équipes, évaluations de performance et recrutement</div>
+        <div class="mod-ai"><span>🧠</span><div><strong>Demandez à l'IA :</strong> "Quels employés ont des certifications qui expirent dans les 60 prochains jours ?"</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Exemple</span><div class="mod-ex-txt">"Quand expire la formation incendie de Rossi ?" — réponse immédiate + alerte automatique 30 jours avant l'expiration.</div></div>
+      </div>
+
+      <div class="mod-card reveal" style="--mc:var(--blue);--mi-bg:var(--blue-s);--mi-brd:rgba(37,99,235,0.2)">
+        <div class="mod-header"><div class="mod-icon">🎧</div><div class="mod-name">Helpdesk</div></div>
+        <div class="mod-desc">Système de tickets intelligent avec base de connaissances IA — tarif forfaitaire, pas par agent.<br><br>
+          <strong>✓</strong> Tickets avec suivi SLA et files de priorité<br>
+          <strong>✓</strong> L'IA recherche dans vos archives et suggère des réponses à partir des documents existants<br>
+          <strong>✓</strong> Suggestions automatiques de rendez-vous basées sur la disponibilité<br>
+          <strong>✓</strong> Création de tâches de suivi et notifications en temps réel<br>
+          <strong>✓</strong> Suivi de la satisfaction client<br>
+          <strong>✓</strong> Votre équipe résout les problèmes en secondes, pas en heures</div>
+        <div class="mod-ai"><span>🧠</span><div><strong>Demandez à l'IA :</strong> "Résume tous les tickets ouverts du client Rossi et suggère les prochaines étapes."</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Exemple</span><div class="mod-ex-txt">Demande client → l'IA prépare une réponse depuis la KB → suggère un créneau libre → l'agent confirme en 1 clic.</div></div>
+      </div>
+
+      <div class="mod-card reveal d1" style="--mc:var(--sky);--mi-bg:var(--sky-s);--mi-brd:rgba(2,132,199,0.2)">
+        <div class="mod-header"><div class="mod-icon">📧</div><div class="mod-name">E-mail &amp; Téléphone</div></div>
+        <div class="mod-desc">Boîte de réception unifiée pour e-mails et appels — chaque conversation indexée par l'IA et liée au CRM.<br><br>
+          <strong>✓</strong> Historique complet des conversations par client<br>
+          <strong>✓</strong> Modèles d'e-mail et journal d'appels avec notes<br>
+          <strong>✓</strong> Appel manqué → tâche automatique + résumé IA des interactions récentes<br>
+          <strong>✓</strong> Synchronisation avec Google Calendar et Office 365<br>
+          <strong>✓</strong> IA : "Quelles sont les 5 dernières conversations avec l'entreprise ABC ?"<br>
+          <strong>✓</strong> Résumé IA de chaque conversation — contexte en un coup d'œil</div>
+        <div class="mod-ai"><span>🧠</span><div><strong>Demandez à l'IA :</strong> "De quoi parlaient les 5 dernières conversations avec l'entreprise ABC ?"</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Exemple</span><div class="mod-ex-txt">Appel manqué → journal auto + tâche de suivi + IA : "Les 3 dernières interactions concernaient le renouvellement du contrat."</div></div>
+      </div>
+
+      <div class="mod-card reveal d2" style="--mc:var(--indigo);--mi-bg:var(--indigo-s);--mi-brd:rgba(79,70,229,0.2)">
+        <div class="mod-header"><div class="mod-icon">⚖️</div><div class="mod-name">Juridique</div></div>
+        <div class="mod-desc">Gestion des dossiers professionnels avec IA — dossiers, contrats, échéances, tout recherchable.<br><br>
+          <strong>✓</strong> Dossiers, contrats, clients, obligations et documents judiciaires<br>
+          <strong>✓</strong> Alertes d'échéance multiniveaux : 90/30/7/3/1 jours avant chaque obligation<br>
+          <strong>✓</strong> Piste d'audit complète et versionnement des documents<br>
+          <strong>✓</strong> L'OCR rend recherchables même les actes judiciaires numérisés<br>
+          <strong>✓</strong> IA : "Trouvez toutes les affaires d'inexécution contractuelle depuis 2022"<br>
+          <strong>✓</strong> Assistant juridique IA avec recherche sémantique sur tous les dossiers</div>
+        <div class="mod-ai"><span>🧠</span><div><strong>Demandez à l'IA :</strong> "Aperçu du dossier #2024-15 — statut, échéances, documents et prochaines actions."</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Exemple</span><div class="mod-ex-txt">"Trouvez les affaires d'inexécution depuis 2022" → 5 affaires avec résultats, dates et documents liés en quelques secondes.</div></div>
+      </div>
+
+      <div class="mod-card reveal" style="--mc:var(--amber);--mi-bg:var(--amber-s);--mi-brd:rgba(217,119,6,0.2)">
+        <div class="mod-header"><div class="mod-icon">🏠</div><div class="mod-name">Immobilier</div></div>
+        <div class="mod-desc">Gestion de portefeuille immobilier avec IA — biens, unités, baux, locataires, tout en un.<br><br>
+          <strong>✓</strong> Biens, unités, baux et gestion des locataires<br>
+          <strong>✓</strong> Demandes de maintenance avec attribution et suivi<br>
+          <strong>✓</strong> Alertes multiniveaux : renouvellements de baux, certificats énergétiques, inspections (90/30/7 j)<br>
+          <strong>✓</strong> Aperçu des revenus et dépenses par bien<br>
+          <strong>✓</strong> IA : "Quels baux expirent dans les 6 prochains mois ?"<br>
+          <strong>✓</strong> IA incluse — aucun coût supplémentaire pour l'analyse du portefeuille</div>
+        <div class="mod-ai"><span>🧠</span><div><strong>Demandez à l'IA :</strong> "Biens avec baux expirant dans les 6 prochains mois et leur chiffre d'affaires."</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Exemple</span><div class="mod-ex-txt">Certificat énergétique expirant dans 90j → alerte auto → locataire notifié → tâche de renouvellement assignée.</div></div>
+      </div>
+
+      <div class="mod-card reveal d1" style="--mc:var(--red);--mi-bg:var(--red-s);--mi-brd:rgba(220,38,38,0.2)">
+        <div class="mod-header"><div class="mod-icon">🏥</div><div class="mod-name">Cabinet médical</div></div>
+        <div class="mod-desc">Dossiers médicaux numériques avec recherche IA — conforme RGPD, accès basé sur les rôles.<br><br>
+          <strong>✓</strong> Dossiers patients, plans thérapeutiques et anamnèse complète<br>
+          <strong>✓</strong> OCR sur les résultats d'examens et prescriptions — recherchables par patient, diagnostic, date<br>
+          <strong>✓</strong> Prise de rendez-vous avec synchronisation calendrier et rappels automatiques<br>
+          <strong>✓</strong> Accès différencié pour médecins, infirmiers et administration<br>
+          <strong>✓</strong> Journal d'audit complet pour conformité RGPD<br>
+          <strong>✓</strong> IA : "Tous les traitements du patient Rossi ces 12 derniers mois"</div>
+        <div class="mod-ai"><span>🧠</span><div><strong>Demandez à l'IA :</strong> "Historique patient Rossi — diagnostics, traitements et rendez-vous futurs."</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Exemple</span><div class="mod-ex-txt">Numérisez un résultat d'examen → l'OCR extrait les valeurs → recherchable par patient, médecin, diagnostic et date.</div></div>
+      </div>
+
+      <div class="mod-card reveal d2" style="--mc:var(--teal);--mi-bg:var(--teal-s);--mi-brd:rgba(13,148,136,0.2)">
+        <div class="mod-header"><div class="mod-icon">🤝</div><div class="mod-name">Associations</div></div>
+        <div class="mod-desc">Gestion des membres avec suivi des cotisations — communications e-mail et WhatsApp intégrées.<br><br>
+          <strong>✓</strong> Fichier membres avec état des paiements et rappels de renouvellement automatiques<br>
+          <strong>✓</strong> Organisation d'événements avec RSVP et présences<br>
+          <strong>✓</strong> Listes de communication par e-mail et WhatsApp<br>
+          <strong>✓</strong> Archives de documents partagées — statuts, procès-verbaux, rapports<br>
+          <strong>✓</strong> IA : "Quels membres n'ont pas payé cette année ?" — liste instantanée<br>
+          <strong>✓</strong> Génération automatique de reçus et aperçu des cotisations annuelles</div>
+        <div class="mod-ai"><span>🧠</span><div><strong>Demandez à l'IA :</strong> "Combien de membres n'ont pas renouvelé cette année ? Génère une liste de relance."</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Exemple</span><div class="mod-ex-txt">Cotisation → rappel e-mail+WhatsApp → paiement suivi → reçu généré.</div></div>
+      </div>
+
+      <div class="mod-card reveal" style="--mc:var(--green);--mi-bg:var(--green-s);--mi-brd:rgba(22,163,74,0.2)">
+        <div class="mod-header"><div class="mod-icon">📒</div><div class="mod-name">Comptabilité</div></div>
+        <div class="mod-desc">Comptabilité complète augmentée par l'IA — tout ce qu'il faut, utilisateurs illimités.<br><br>
+          <strong>✓</strong> Plan comptable, journal, compte de résultat, bilan, échéancier et budget<br>
+          <strong>✓</strong> Facture électronique — FatturaPA (SDI) et XRechnung (DE) gratuit<br>
+          <strong>✓</strong> Numérisation de reçus — photo → OCR → l'IA propose l'écriture comptable<br>
+          <strong>✓</strong> Import CSV / MT940 — importez les transactions bancaires<br>
+          <strong>✓</strong> Rapprochement bancaire avec auto-matching IA<br>
+          <strong>✓</strong> Prévision de trésorerie, détection d'anomalies IA<br>
+          <strong>✓</strong> "Enregistre 500€ de loyer pour mars" — langage naturel<br>
+          <strong>✓</strong> Export DATEV pour le comptable en un clic</div>
+        <div class="mod-ai"><span>🧠</span><div><strong>Demandez à l'IA :</strong> "Top 5 des dépenses du trimestre ? Anomalies dans les écritures de ce mois ?"</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Exemple</span><div class="mod-ex-txt">Synchronisation bancaire nocturne → l'IA rapproche 47/50 transactions → signale 2 doublons et TVA manquante → export DATEV en 1 clic.</div></div>
+      </div>
+
+      <div class="mod-card reveal d1" style="--mc:var(--blue);--mi-bg:var(--blue-s);--mi-brd:rgba(37,99,235,0.2)">
+        <div class="mod-header"><div class="mod-icon">📋</div><div class="mod-name">Projets</div></div>
+        <div class="mod-desc">Gestion de projets + pointage GPS — inclut un portail mobile pour les ouvriers.<br><br>
+          <strong>✓</strong> Phases, Kanban tâches, équipes, matériaux et budget<br>
+          <strong>✓</strong> Pointage intégré : GPS clock-in/out avec alarmes de géofencing<br>
+          <strong>✓</strong> Portail ouvrier avec connexion PIN mobile — pointe, charge des photos, enregistre les matériaux<br>
+          <strong>✓</strong> Gestion des absences et approbation en masse des pointages<br>
+          <strong>✓</strong> Carte GPS en temps réel — qui est sur le chantier<br>
+          <strong>✓</strong> IA : "Quels projets dépassent le budget ? Heures totales de l'équipe ce mois ?"</div>
+        <div class="mod-ai"><span>🧠</span><div><strong>Demandez à l'IA :</strong> "Projets au-delà de 80% du budget. Heures supplémentaires de l'équipe ce mois."</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Exemple</span><div class="mod-ex-txt">Nouveau chantier → créer projet → assigner ouvriers avec PIN → la carte GPS montre qui est sur le chantier → le manager approuve les pointages en fin de semaine.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── AUTOMAZIONI ── -->
+<section class="section auto-section" id="automazioni">
+  <div class="sec-inner">
+    <div class="auto-grid">
+      <div class="auto-left">
+        <div class="tag reveal" style="margin-bottom:16px">⚡ Automatisations</div>
+        <h2 class="sec-title reveal" style="color:#fff">Décrivez-le.<br>Blina le <em style="color:#fbbf24">crée</em>.</h2>
+        <p class="sec-sub reveal" style="color:rgba(255,255,255,0.6)">Créez des workflows automatiques sur n'importe quel événement — sans écrire une seule ligne de code. Déclenchement sur documents, échéances, paiements, tickets et bien plus.</p>
+        <div class="auto-steps reveal">
+          <div class="auto-step">
+            <div class="auto-step-num">1</div>
+            <div><div class="auto-step-title">Choisissez le déclencheur</div><div class="auto-step-desc">Nouveau document, échéance imminente, ticket ouvert, paiement reçu, formulaire rempli...</div></div>
+          </div>
+          <div class="auto-step">
+            <div class="auto-step-num">2</div>
+            <div><div class="auto-step-title">Définissez les conditions</div><div class="auto-step-desc">Filtres, seuils, modules concernés, utilisateurs ou départements. L'IA suggère les conditions les plus utiles.</div></div>
+          </div>
+          <div class="auto-step">
+            <div class="auto-step-num">3</div>
+            <div><div class="auto-step-title">Exécutez les actions</div><div class="auto-step-desc">E-mail, WhatsApp, notification push, créer tâche, mettre à jour un champ, créer enregistrement — tout automatiquement.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="auto-right reveal d1">
+        <div class="auto-trigger">
+          <div class="auto-trigger-head">
+            <div class="auto-trigger-icon">📄</div>
+            <div class="auto-trigger-title">Nouveau document chargé</div>
+          </div>
+          <div class="auto-trigger-flow">
+            <span class="auto-flow-node">OCR automatique</span>
+            <span class="auto-flow-arrow">→</span>
+            <span class="auto-flow-node">Indexer dans l'IA</span>
+            <span class="auto-flow-arrow">→</span>
+            <span class="auto-flow-node">Notifier l'équipe</span>
+          </div>
+        </div>
+        <div class="auto-trigger">
+          <div class="auto-trigger-head">
+            <div class="auto-trigger-icon">⏰</div>
+            <div class="auto-trigger-title">Expiration certification (30 jours)</div>
+          </div>
+          <div class="auto-trigger-flow">
+            <span class="auto-flow-node">E-mail à l'employé</span>
+            <span class="auto-flow-arrow">→</span>
+            <span class="auto-flow-node">Tâche HR</span>
+            <span class="auto-flow-arrow">→</span>
+            <span class="auto-flow-node">Rappel -7j</span>
+          </div>
+        </div>
+        <div class="auto-trigger">
+          <div class="auto-trigger-head">
+            <div class="auto-trigger-icon">🎧</div>
+            <div class="auto-trigger-title">Ticket SLA expiré</div>
+          </div>
+          <div class="auto-trigger-flow">
+            <span class="auto-flow-node">Notifier le manager</span>
+            <span class="auto-flow-arrow">→</span>
+            <span class="auto-flow-node">Priorité haute</span>
+            <span class="auto-flow-arrow">→</span>
+            <span class="auto-flow-node">WhatsApp</span>
+          </div>
+        </div>
+        <div class="auto-trigger">
+          <div class="auto-trigger-head">
+            <div class="auto-trigger-icon">💰</div>
+            <div class="auto-trigger-title">Paiement en retard (facture)</div>
+          </div>
+          <div class="auto-trigger-flow">
+            <span class="auto-flow-node">E-mail de relance</span>
+            <span class="auto-flow-arrow">→</span>
+            <span class="auto-flow-node">+7j deuxième relance</span>
+            <span class="auto-flow-arrow">→</span>
+            <span class="auto-flow-node">Alerte commercial</span>
+          </div>
+        </div>
+        <div class="auto-bottom-note">
+          <strong>Décrivez-le en français :</strong> "Quand une facture n'est pas payée dans les 7 jours, envoyez un e-mail de relance et créez une tâche pour le commercial." — Blina crée l'automatisation.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICING ── -->
+<section class="section" style="background:var(--bg-card);border-top:1px solid var(--brd);border-bottom:1px solid var(--brd)" id="pricing">
+  <div class="sec-inner">
+    <div class="sec-head reveal">
+      <div class="tag" style="margin-bottom:14px">Tarifs</div>
+      <h2 class="sec-title">Construisez votre <em>plan parfait</em>.</h2>
+      <p class="sec-sub">Avec 49€/session vous avez la Plateforme de Base complète avec <strong>utilisateurs illimités et zéro coût par poste</strong>. Ajoutez uniquement les modules nécessaires.</p>
+    </div>
+
+    <div class="pricing-hero reveal">
+      <div class="pricing-hero-info">
+        <div class="pricing-hero-lbl">Toujours inclus</div>
+        <div class="pricing-hero-name">Plateforme de Base</div>
+        <div class="pricing-hero-desc">CRM + Recherche Sémantique IA + Scanner OCR + RAG Chat + Documents + Notes + Tâches + Rendez-vous — le tout augmenté par l'IA, tout inclus.</div>
+      </div>
+      <div style="text-align:center;flex-shrink:0">
+        <div class="pricing-hero-amount">€49</div>
+        <div class="pricing-hero-per">/session/mois</div>
+      </div>
+    </div>
+
+    <div class="pricing-perks reveal">
+      <div class="pricing-perk"><div class="pricing-perk-ck">✓</div><span><strong>Paiement par session</strong> — pas par utilisateur. Un prix, toute l'équipe.</span></div>
+      <div class="pricing-perk"><div class="pricing-perk-ck">✓</div><span><strong>Utilisateurs illimités</strong> — 5 ou 500 personnes, même prix.</span></div>
+      <div class="pricing-perk"><div class="pricing-perk-ck">✓</div><span><strong>14 jours gratuits</strong> — tous les modules, sans carte.</span></div>
+    </div>
+
+    <div style="font-size:12px;font-weight:700;color:var(--ink3);margin-bottom:12px;text-transform:uppercase;letter-spacing:.08em">Modules complémentaires</div>
+    <div class="addons-grid reveal">
+      <div class="addon"><div><div class="addon-name">💰 Ventes</div><div class="addon-sub">Pipeline, affaires, factures — prix forfaitaire équipe</div></div><div style="text-align:right"><div class="addon-price">€25</div><div class="addon-unit">/sess/mois</div></div></div>
+      <div class="addon"><div><div class="addon-name">📦 Achats</div><div class="addon-sub">Commandes, fournisseurs, stocks en TR, OCR factures</div></div><div style="text-align:right"><div class="addon-price">€29</div><div class="addon-unit">/sess/mois</div></div></div>
+      <div class="addon"><div><div class="addon-name">👥 HR</div><div class="addon-sub">Employés, contrats, certifications</div></div><div style="text-align:right"><div class="addon-price">€19</div><div class="addon-unit">/sess/mois</div></div></div>
+      <div class="addon"><div><div class="addon-name">🎧 Helpdesk</div><div class="addon-sub">Tickets, SLA, base de connaissances IA — forfait</div></div><div style="text-align:right"><div class="addon-price">€19</div><div class="addon-unit">/sess/mois</div></div></div>
+      <div class="addon"><div><div class="addon-name">⚖️ Juridique</div><div class="addon-sub">Dossiers, contrats, échéances</div></div><div style="text-align:right"><div class="addon-price">€39</div><div class="addon-unit">/sess/mois</div></div></div>
+      <div class="addon"><div><div class="addon-name">🏠 Immobilier</div><div class="addon-sub">Portefeuille, baux, maintenance</div></div><div style="text-align:right"><div class="addon-price">€39</div><div class="addon-unit">/sess/mois</div></div></div>
+      <div class="addon"><div><div class="addon-name">🏥 Cabinet médical</div><div class="addon-sub">Dossiers médicaux, OCR résultats, RGPD</div></div><div style="text-align:right"><div class="addon-price">€46</div><div class="addon-unit">/sess/mois</div></div></div>
+      <div class="addon"><div><div class="addon-name">🤝 Associations</div><div class="addon-sub">Membres, cotisations, événements, e-mail/WhatsApp</div></div><div style="text-align:right"><div class="addon-price">€25</div><div class="addon-unit">/sess/mois</div></div></div>
+      <div class="addon" style="grid-column:span 1"><div><div class="addon-name">📒 Comptabilité</div><div class="addon-sub">CR, bilan, FatturaPA, import CSV, DATEV</div><div style="font-size:10px;color:var(--ink3);margin-top:3px">Facture électronique · OCR reçus · IA · DATEV</div></div><div style="text-align:right;flex-shrink:0"><div class="addon-price">€39</div><div class="addon-unit">/sess/mois</div></div></div>
+      <div class="addon"><div><div class="addon-name">📧 E-mail &amp; Téléphone</div><div class="addon-sub">Boîte unifiée, appels, modèles, sync CRM</div></div><div style="text-align:right"><div class="addon-price">€13</div><div class="addon-unit">/sess/mois</div></div></div>
+      <div class="addon"><div><div class="addon-name">📋 Projets</div><div class="addon-sub">Kanban, pointage GPS, portail ouvrier</div></div><div style="text-align:right"><div class="addon-price">€35</div><div class="addon-unit">/sess/mois</div></div></div>
+      <div class="addon" style="border-color:rgba(232,92,42,0.3);background:var(--accent-soft)"><div><div class="addon-name">⚡ Automatisations <span style="font-size:9px;background:var(--accent);color:#fff;padding:2px 6px;border-radius:4px;margin-left:4px">NOUVEAU</span></div><div class="addon-sub">Workflows IA, 50+ modèles prêts</div></div><div style="text-align:right"><div class="addon-price">€39</div><div class="addon-unit">/sess/mois</div></div></div>
+    </div>
+
+    <div class="volume-bar reveal">
+      <span style="font-size:13px;font-weight:600;color:var(--ink2)">Remises volume sessions</span>
+      <div class="vtiers">
+        <div class="vtier"><div class="vtier-n">1</div><div class="vtier-l">sess</div><div class="vtier-d" style="color:var(--ink4)">—</div></div>
+        <div class="vtier"><div class="vtier-n">3</div><div class="vtier-l">sess</div><div class="vtier-d">-10%</div></div>
+        <div class="vtier"><div class="vtier-n">5</div><div class="vtier-l">sess</div><div class="vtier-d">-15%</div></div>
+        <div class="vtier hot"><div class="vtier-n">10</div><div class="vtier-l">sess</div><div class="vtier-d">-20%</div></div>
+        <div class="vtier hot"><div class="vtier-n">15</div><div class="vtier-l">sess</div><div class="vtier-d">-25%</div></div>
+      </div>
+      <span style="font-size:12px;color:var(--ink3)">15+ sessions ? <a href="#contact" style="color:var(--accent);font-weight:600">Contactez-nous</a> pour entreprise.</span>
+    </div>
+
+
+    <!-- SUITE BUNDLES -->
+    <div style="margin-bottom:28px">
+      <div style="font-size:12px;font-weight:700;color:var(--ink3);margin-bottom:14px;text-transform:uppercase;letter-spacing:.08em;text-align:center">Packs Suite — Économisez ~12%</div>
+      <div class="suite-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+        <div class="addon reveal" style="flex-direction:column;align-items:flex-start;gap:4px">
+          <div><div class="addon-name">🏢 Business</div><div class="addon-sub">Base + Ventes + Achats + E-mail</div></div>
+          <div style="display:flex;align-items:baseline;gap:5px;margin-top:6px"><span style="font-size:22px;font-weight:900;color:var(--ink)">€99</span><span style="font-size:12px;color:var(--ink4);text-decoration:line-through">€116</span><span style="font-size:11px;color:var(--green);font-weight:600">/sess</span></div>
+        </div>
+        <div class="addon reveal d1" style="flex-direction:column;align-items:flex-start;gap:4px">
+          <div><div class="addon-name">🏢 Business Plus</div><div class="addon-sub">Base + Ventes + Achats + HR + Helpdesk + E-mail</div></div>
+          <div style="display:flex;align-items:baseline;gap:5px;margin-top:6px"><span style="font-size:22px;font-weight:900;color:var(--ink)">€129</span><span style="font-size:12px;color:var(--ink4);text-decoration:line-through">€154</span><span style="font-size:11px;color:var(--green);font-weight:600">/sess</span></div>
+        </div>
+        <div class="addon reveal d2" style="flex-direction:column;align-items:flex-start;gap:4px">
+          <div><div class="addon-name">⚖️ Legal Suite</div><div class="addon-sub">Base + Juridique + E-mail</div></div>
+          <div style="display:flex;align-items:baseline;gap:5px;margin-top:6px"><span style="font-size:22px;font-weight:900;color:var(--ink)">€89</span><span style="font-size:12px;color:var(--ink4);text-decoration:line-through">€101</span><span style="font-size:11px;color:var(--green);font-weight:600">/sess</span></div>
+        </div>
+        <div class="addon reveal" style="flex-direction:column;align-items:flex-start;gap:4px">
+          <div><div class="addon-name">🏥 Healthcare</div><div class="addon-sub">Base + Cabinet médical + E-mail</div></div>
+          <div style="display:flex;align-items:baseline;gap:5px;margin-top:6px"><span style="font-size:22px;font-weight:900;color:var(--ink)">€95</span><span style="font-size:12px;color:var(--ink4);text-decoration:line-through">€108</span><span style="font-size:11px;color:var(--green);font-weight:600">/sess</span></div>
+        </div>
+        <div class="addon reveal d1" style="flex-direction:column;align-items:flex-start;gap:4px">
+          <div><div class="addon-name">🏠 Real Estate</div><div class="addon-sub">Base + Immobilier + E-mail</div></div>
+          <div style="display:flex;align-items:baseline;gap:5px;margin-top:6px"><span style="font-size:22px;font-weight:900;color:var(--ink)">€89</span><span style="font-size:12px;color:var(--ink4);text-decoration:line-through">€101</span><span style="font-size:11px;color:var(--green);font-weight:600">/sess</span></div>
+        </div>
+        <div class="addon reveal d2" style="flex-direction:column;align-items:flex-start;gap:4px;border-color:rgba(232,92,42,0.35);background:var(--accent-soft)">
+          <div><div class="addon-name">🚀 All-in-One PME <span style="font-size:9px;background:var(--accent);color:#fff;padding:2px 6px;border-radius:4px;margin-left:4px">TOP</span></div><div class="addon-sub">Base + Ventes + Achats + Comptabilité + HR + E-mail + Automatisations</div></div>
+          <div style="display:flex;align-items:baseline;gap:5px;margin-top:6px"><span style="font-size:22px;font-weight:900;color:var(--ink)">€179</span><span style="font-size:12px;color:var(--ink4);text-decoration:line-through">€213</span><span style="font-size:11px;color:var(--green);font-weight:600">/sess</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-bottom:36px">
+      <a href="https://app.blina-desk.com/fr/auth/login" class="btn btn-primary btn-lg">
+        Essai gratuit 14 jours
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <div style="font-size:12px;color:var(--ink4);margin-top:10px">Tous les modules · 3 sessions · Sans carte de crédit</div>
+    </div>
+
+    <!-- Cloud vs On-premise -->
+    <div class="deploy-duo" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:36px">
+      <div class="deploy-card rec reveal" style="background:var(--accent);border-color:var(--accent)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <div style="width:38px;height:38px;background:rgba(255,255,255,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px">☁️</div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.7)">Cloud SaaS</div>
+        </div>
+        <div style="font-size:19px;font-weight:800;color:#fff;margin-bottom:10px">Cloud Géré</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:20px">
+          <li style="font-size:13px;color:rgba(255,255,255,0.87);display:flex;gap:7px;align-items:flex-start"><span style="font-weight:700;color:#fff;flex-shrink:0">✓</span>Aucun serveur — nous gérons tout</li>
+          <li style="font-size:13px;color:rgba(255,255,255,0.87);display:flex;gap:7px;align-items:flex-start"><span style="font-weight:700;color:#fff;flex-shrink:0">✓</span>Accès de partout, n'importe quel appareil</li>
+          <li style="font-size:13px;color:rgba(255,255,255,0.87);display:flex;gap:7px;align-items:flex-start"><span style="font-weight:700;color:#fff;flex-shrink:0">✓</span>Sauvegardes et mises à jour automatiques</li>
+          <li style="font-size:13px;color:rgba(255,255,255,0.87);display:flex;gap:7px;align-items:flex-start"><span style="font-weight:700;color:#fff;flex-shrink:0">✓</span>Essai gratuit 14 jours, sans carte</li>
+        </ul>
+        <a href="https://app.blina-desk.com/fr/auth/login" style="display:block;text-align:center;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;font-weight:700;padding:11px;border-radius:var(--r);font-size:14px;transition:all .2s">Essai Gratuit</a>
+      </div>
+      <div class="deploy-card reveal d1">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <div style="width:38px;height:38px;background:var(--bg-card2);border:1px solid var(--brd);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px">🏢</div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4)">On-Premise</div>
+        </div>
+        <div class="deploy-name">Installation Locale</div>
+        <ul class="deploy-list" style="margin-bottom:20px">
+          <li>Installé sur vos serveurs</li>
+          <li>100% des données restent dans votre réseau</li>
+          <li>Contrôle total sur la configuration et les mises à jour</li>
+          <li>Idéal pour les cabinets professionnels DACH et italiens</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline" style="display:block;text-align:center;width:100%;justify-content:center">Demander un Devis</a>
+      </div>
+    </div>
+
+    <!-- AI Profiles -->
+    <div style="text-align:center;margin-bottom:20px">
+      <div class="tag" style="margin-bottom:10px">Profils IA — On-Premise</div>
+      <h3 style="font-size:20px;font-weight:800;color:var(--ink);margin-bottom:6px">Trois niveaux d'<em style="color:var(--accent);font-style:italic">intelligence</em>.</h3>
+    </div>
+    <div class="deploy-grid">
+      <div class="deploy-card reveal">
+        <div class="deploy-tier">CORE</div>
+        <div class="deploy-name">Core — Sans IA</div>
+        <div class="deploy-desc">Full-text, OCR, documents. Aucun appel IA. Vitesse pure.</div>
+        <ul class="deploy-list"><li>Recherche full-text + sémantique (pgvector)</li><li>OCR multilingue</li><li>Historique des documents</li><li>Zéro dépendance à l'IA</li></ul>
+      </div>
+      <div class="deploy-card reveal d1">
+        <div class="deploy-tier">IA LOCALE</div>
+        <div class="deploy-name">IA Locale — Ollama</div>
+        <div class="deploy-desc">IA complète sur votre matériel. Llama 3, Mistral — aucune donnée ne quitte le réseau.</div>
+        <ul class="deploy-list"><li>Llama 3, Mistral, Gemma &amp; autres</li><li>RAG IA chat entièrement hors ligne</li><li>Embeddings locaux &amp; recherche vectorielle</li><li>Souveraineté totale sur les données</li></ul>
+      </div>
+      <div class="deploy-card rec reveal d2">
+        <div class="deploy-badge">Recommandé</div>
+        <div class="deploy-tier">IA CLOUD</div>
+        <div class="deploy-name">IA Cloud — Externe</div>
+        <div class="deploy-desc">Les meilleurs modèles d'OpenAI, Google, Anthropic. Qualité et vitesse maximales.</div>
+        <ul class="deploy-list"><li>GPT-4o, Gemini, Claude</li><li>Apportez votre clé API</li><li>Qualité maximale des modèles</li><li>Combinable avec stockage local</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── AMMINISTRAZIONE & RBAC ── -->
+<section class="section" style="background:var(--bg-card);border-top:1px solid var(--brd);border-bottom:1px solid var(--brd)" id="amministrazione">
+  <div class="sec-inner">
+    <div class="admin-split" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;max-width:1100px;margin:0 auto">
+      <div>
+        <div class="tag reveal" style="margin-bottom:16px">🔐 Administration</div>
+        <h2 class="sec-title reveal" style="text-align:left">Connectez-vous en tant qu'administrateur.<br>Gérez les droits, <em>rôles et groupes</em>.</h2>
+        <p class="sec-sub reveal" style="text-align:left;max-width:420px">Le SuperAdmin contrôle chaque aspect de la plateforme : qui peut voir quoi, quels modules activer pour chaque utilisateur ou groupe, et comment les employés s'authentifient.</p>
+        <div style="margin-top:28px;display:flex;flex-direction:column;gap:14px">
+          <div class="contact-feat reveal">
+            <div class="contact-feat-icon" style="background:var(--blue-s);border-color:rgba(37,99,235,0.2)">👤</div>
+            <div><div class="contact-feat-title">Utilisateurs illimités, droits granulaires</div><div class="contact-feat-sub">Créez des utilisateurs, attribuez des rôles prédéfinis (Admin, Manager, User, Viewer) ou définissez des rôles personnalisés avec des permissions sur chaque module et champ.</div></div>
+          </div>
+          <div class="contact-feat reveal d1">
+            <div class="contact-feat-icon" style="background:var(--purple-s);border-color:rgba(124,58,237,0.2)">👥</div>
+            <div><div class="contact-feat-title">Groupes et équipes</div><div class="contact-feat-sub">Organisez les utilisateurs en groupes (ex. Équipe Ventes, Équipe Juridique, Administration) et attribuez accès et modules par groupe en un clic.</div></div>
+          </div>
+          <div class="contact-feat reveal d2">
+            <div class="contact-feat-icon" style="background:var(--green-s);border-color:rgba(22,163,74,0.2)">🔑</div>
+            <div><div class="contact-feat-title">RBAC + Row-Level Security</div><div class="contact-feat-sub">Le contrôle d'accès est appliqué au niveau de la base de données (PostgreSQL RLS). Chaque utilisateur ne voit que les données qui lui appartiennent — sécurité by design.</div></div>
+          </div>
+
+        </div>
+      </div>
+      <!-- Pannello admin mockup -->
+      <div class="reveal d2">
+        <div style="background:var(--bg-card);border:1px solid var(--brd);border-radius:var(--r2);overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
+          <div style="background:var(--ink);padding:10px 16px;display:flex;align-items:center;gap:10px">
+            <span style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.8)">⚙️ Administration — Utilisateurs &amp; Rôles</span>
+          </div>
+          <!-- Tab bar -->
+          <div style="display:flex;gap:1px;background:var(--bg-card2);border-bottom:1px solid var(--brd);padding:0 12px">
+            <div style="font-size:11px;font-weight:700;color:var(--accent);padding:8px 12px;border-bottom:2px solid var(--accent);cursor:default">Utilisateurs</div>
+            <div style="font-size:11px;font-weight:500;color:var(--ink3);padding:8px 12px;cursor:default">Rôles</div>
+            <div style="font-size:11px;font-weight:500;color:var(--ink3);padding:8px 12px;cursor:default">Groupes</div>
+            <div style="font-size:11px;font-weight:500;color:var(--ink3);padding:8px 12px;cursor:default">Permissions</div>
+          </div>
+          <!-- User table -->
+          <div style="padding:12px">
+            <div class="admin-tbl-head" style="font-size:10px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.07em;display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;padding:0 8px 6px;border-bottom:1px solid var(--brd2)">
+              <span>Utilisateur</span><span>Rôle</span><span>Modules</span><span>Statut</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:1px;margin-top:4px">
+              <div class="admin-tbl-row" style="display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;padding:7px 8px;background:var(--accent-soft);border-radius:6px;border:1px solid rgba(232,92,42,0.15);font-size:11px;align-items:center">
+                <span style="font-weight:700;color:var(--ink)">🔑 SuperAdmin</span>
+                <span><span style="background:var(--accent);color:#fff;font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px">Admin</span></span>
+                <span style="color:var(--ink3)">Tous</span>
+                <span style="color:var(--green);font-weight:700;font-size:10px">● Actif</span>
+              </div>
+              <div class="admin-tbl-row" style="display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;padding:7px 8px;border-radius:6px;font-size:11px;align-items:center">
+                <span style="color:var(--ink)">👤 Marco Rossi</span>
+                <span><span style="background:var(--blue-s);color:var(--blue);font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px">Manager</span></span>
+                <span style="color:var(--ink3)">Ventes, CRM</span>
+                <span style="color:var(--green);font-weight:700;font-size:10px">● Actif</span>
+              </div>
+              <div class="admin-tbl-row" style="display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;padding:7px 8px;border-radius:6px;font-size:11px;align-items:center">
+                <span style="color:var(--ink)">👤 Sara Bianchi</span>
+                <span><span style="background:var(--purple-s);color:var(--purple);font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px">HR</span></span>
+                <span style="color:var(--ink3)">HR, Documents</span>
+                <span style="color:var(--green);font-weight:700;font-size:10px">● Actif</span>
+              </div>
+              <div class="admin-tbl-row" style="display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;padding:7px 8px;border-radius:6px;font-size:11px;align-items:center">
+                <span style="color:var(--ink)">👤 Luca Ferrari</span>
+                <span><span style="background:var(--green-s);color:var(--green);font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px">User</span></span>
+                <span style="color:var(--ink3)">Helpdesk</span>
+                <span style="color:var(--amber);font-weight:700;font-size:10px">● Invité</span>
+              </div>
+              <div class="admin-tbl-row" style="display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;padding:7px 8px;border-radius:6px;font-size:11px;align-items:center">
+                <span style="color:var(--ink)">👤 Avv. Müller</span>
+                <span><span style="background:var(--indigo-s);color:var(--indigo);font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px">Viewer</span></span>
+                <span style="color:var(--ink3)">Juridique (lect. seule)</span>
+                <span style="color:var(--green);font-weight:700;font-size:10px">● Actif</span>
+              </div>
+            </div>
+            <!-- Permessi modulo mockup -->
+            <div style="margin-top:14px;padding:10px 12px;background:var(--bg-card2);border:1px solid var(--brd);border-radius:var(--r)">
+              <div style="font-size:10px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px">Permissions par rôle — Manager</div>
+              <div style="display:flex;flex-direction:column;gap:5px">
+                <div style="display:flex;align-items:center;justify-content:space-between;font-size:11px">
+                  <span style="color:var(--ink2)">💰 Ventes</span>
+                  <div style="display:flex;gap:4px">
+                    <span style="background:var(--green-s);color:var(--green);font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px">Lire</span>
+                    <span style="background:var(--green-s);color:var(--green);font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px">Écrire</span>
+                    <span style="background:var(--brd2);color:var(--ink4);font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px">Supprimer</span>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;font-size:11px">
+                  <span style="color:var(--ink2)">👥 HR</span>
+                  <div style="display:flex;gap:4px">
+                    <span style="background:var(--green-s);color:var(--green);font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px">Lire</span>
+                    <span style="background:var(--brd2);color:var(--ink4);font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px">Écrire</span>
+                    <span style="background:var(--brd2);color:var(--ink4);font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px">Supprimer</span>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;font-size:11px">
+                  <span style="color:var(--ink2)">⚖️ Juridique</span>
+                  <div style="display:flex;gap:4px">
+                    <span style="background:var(--brd2);color:var(--ink4);font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px">Aucun</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section class="section" id="contact">
+  <div class="sec-inner">
+    <div class="contact-grid">
+      <div>
+        <div class="tag reveal" style="margin-bottom:16px">Contact</div>
+        <h2 class="sec-title reveal" style="text-align:left">Parlons de votre <em>configuration</em>.</h2>
+        <p class="sec-sub reveal" style="text-align:left;max-width:360px">Installations on-premise, modules personnalisés ou plans entreprise — nous répondons sous 24 heures.</p>
+        <div style="margin-top:24px">
+          <div class="contact-feat reveal"><div class="contact-feat-icon">🏢</div><div><div class="contact-feat-title">On-Premise personnalisé</div><div class="contact-feat-sub">Installez Blina sur vos serveurs, avec vos règles de sécurité.</div></div></div>
+          <div class="contact-feat reveal d1"><div class="contact-feat-icon">🔧</div><div><div class="contact-feat-title">Modules sur mesure</div><div class="contact-feat-sub">Workflows personnalisés, intégrations avec les systèmes existants.</div></div></div>
+          <div class="contact-feat reveal d2"><div class="contact-feat-icon">🎯</div><div><div class="contact-feat-title">Démo guidée</div><div class="contact-feat-sub">30 minutes de démo en direct avec votre cas d'usage — sans engagement.</div></div></div>
+        </div>
+      </div>
+      <div class="cf-form reveal d2">
+        <form action="https://formsubmit.co/info@blina-desk.com" method="POST">
+          <input type="hidden" name="_subject" value="Blina Desk — Contact depuis blina-desk.com">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://blina-desk.com/fr">
+          <div class="cf-row">
+            <div class="cf-field"><label class="cf-label" for="cf-name">Nom</label><input class="cf-input" type="text" id="cf-name" name="name" required placeholder="Votre nom"></div>
+            <div class="cf-field"><label class="cf-label" for="cf-email">E-mail</label><input class="cf-input" type="email" id="cf-email" name="email" required placeholder="votre@email.com"></div>
+          </div>
+          <div class="cf-row">
+            <div class="cf-field"><label class="cf-label" for="cf-company">Entreprise</label><input class="cf-input" type="text" id="cf-company" name="company" placeholder="Nom de l'entreprise"></div>
+            <div class="cf-field"><label class="cf-label" for="cf-interest">Intérêt</label>
+              <select class="cf-input" id="cf-interest" name="interest">
+                <option value="on-premise">Installation On-Premise</option>
+                <option value="enterprise">Plan Entreprise</option>
+                <option value="demo">Démo Produit</option>
+                <option value="other">Autre</option>
+              </select>
+            </div>
+          </div>
+          <div class="cf-field"><label class="cf-label" for="cf-message">Message</label><textarea class="cf-input cf-textarea" id="cf-message" name="message" rows="4" placeholder="Décrivez-nous vos besoins..."></textarea></div>
+          <button type="submit" class="btn btn-primary btn-lg" style="margin-top:4px">
+            Envoyer le Message
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LANGS ── -->
+<div class="langs-bar">
+  <div class="langs-lbl">Interface disponible en</div>
+  <div class="lang-pills">
+    <div class="lpill"><span class="flag">🇮🇹</span> Italiano</div>
+    <div class="lpill"><span class="flag">🇩🇪</span> Deutsch</div>
+    <div class="lpill"><span class="flag">🇬🇧</span> English</div>
+    <div class="lpill on"><span class="flag">🇫🇷</span> Français</div>
+    <div class="lpill"><span class="flag">🇦🇱</span> Shqip</div>
+  </div>
+  <div style="margin-left:auto;font-size:12px;color:var(--ink4)">L'IA répond dans la langue de la question</div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-row">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="24" height="24"><rect width="200" height="200" rx="38" fill="#0d1e36"/><rect x="44" y="34" width="64" height="120" rx="6" fill="#2e6ab8"/><circle cx="130" cy="106" r="40" fill="none" stroke="#fff" stroke-width="7"/><line x1="160" y1="136" x2="186" y2="166" stroke="#fff" stroke-width="13" stroke-linecap="round"/><circle cx="130" cy="106" r="6.5" fill="#fbbf24"/></svg>
+          <div style="margin-left:8px">
+            <div class="footer-brand-name">Blina Desk</div>
+            <div class="footer-tagline">Espace de travail intelligent. On-premise, sécurisé, modulaire.</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:info@blina-desk.com" class="footer-link"><div class="footer-link-icon">✉</div>info@blina-desk.com</a>
+        <a href="https://arti-it.de" target="_blank" rel="noopener" class="footer-link"><div class="footer-link-icon">→</div>arti-it.de</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Arti-IT · <a href="https://arti-it.de" target="_blank" rel="noopener">arti-it.de</a></div>
+      <div class="footer-legal">
+        <a href="https://app.blina-desk.com/fr/legal/privacy">Politique de Confidentialité</a>
+        <span class="sep">·</span>
+        <a href="https://app.blina-desk.com/fr/legal/terms">Conditions d'Utilisation</a>
+        <span class="sep">·</span>
+        <a href="https://app.blina-desk.com/fr/legal/impressum">Mentions Légales</a>
+      </div>
+      <div class="footer-status"><span class="status-dot"></span>Système en ligne</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>40)},{passive:true});
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('mNav')?.classList.remove('open')}})});
+</script>
+</body>
+</html>
