@@ -130,31 +130,31 @@ img,svg{display:block;max-width:100%}
 .hero-split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;width:100%;max-width:1100px;margin:0 auto;margin-top:52px;opacity:0;animation:fadeUp .7s .65s ease forwards}
 .hero-left-col{text-align:left}
 .hero-right-col{}
-.orgchart{display:flex;flex-direction:column;align-items:center;gap:14px;width:100%}
-.org-node{position:relative;background:#fff;border:1px solid var(--brd);box-shadow:0 2px 8px rgba(0,0,0,0.07);border-radius:var(--r);padding:14px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;min-width:120px;transition:all .2s}
-.org-node:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.1)}
-.org-root{background:var(--accent);border-color:var(--accent);padding:16px 28px;min-width:200px;box-shadow:0 6px 24px var(--accent-glow)}
-.org-root .on-lbl{color:#fff;font-size:16px;font-weight:800}
-.org-root .on-sub{color:rgba(255,255,255,0.75);font-size:11px}
-.org-node .on-icon{font-size:22px;margin-bottom:6px;line-height:1}
-.org-node .on-lbl{font-size:13px;font-weight:700;color:var(--ink);line-height:1.2}
-.org-node .on-sub{font-size:10px;color:var(--ink3);margin-top:3px}
+.orgchart{display:flex;flex-direction:column;align-items:center;gap:10px;width:100%}
+.org-node{position:relative;background:#fff;border:1px solid var(--brd);box-shadow:0 1px 6px rgba(0,0,0,0.06);border-radius:var(--r);padding:10px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;min-width:90px;transition:all .2s}
+.org-node:hover{transform:translateY(-1px);box-shadow:0 3px 10px rgba(0,0,0,0.08)}
+.org-root{background:var(--accent);border-color:var(--accent);padding:12px 22px;min-width:170px;box-shadow:0 4px 18px var(--accent-glow)}
+.org-root .on-lbl{color:#fff;font-size:14px;font-weight:800}
+.org-root .on-sub{color:rgba(255,255,255,0.75);font-size:10px}
+.org-node .on-icon{font-size:18px;margin-bottom:4px;line-height:1}
+.org-node .on-lbl{font-size:11px;font-weight:700;color:var(--ink);line-height:1.2}
+.org-node .on-sub{font-size:9px;color:var(--ink3);margin-top:2px}
 .org-row{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;width:100%;padding-top:10px;position:relative}
 .org-row.connected::before{content:"";position:absolute;top:5px;left:12%;right:12%;height:1px;background:#000}
 .org-row.connected .org-node::before{content:"";position:absolute;left:50%;top:-10px;width:1px;height:10px;background:#000}
-.org-connector-line{width:1px;height:10px;background:#000;margin:0 auto;display:block}
-.org-embed{background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:var(--r);padding:9px 16px;min-width:240px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
-.org-embed .on-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink2)}
-.org-embed .on-sub{font-size:9px;color:var(--ink3);margin-top:2px}
-.org-hub{background:rgba(232,92,42,0.07);border:1px solid rgba(232,92,42,0.25);border-radius:var(--r);padding:9px 16px;min-width:180px;text-align:center}
-.org-hub .on-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--accent)}
-.org-hub .on-sub{font-size:9px;color:var(--ink3);margin-top:2px}
-.org-mods .org-node{min-width:88px;padding:9px 12px}
+.org-connector-line{width:1px;height:8px;background:#000;margin:0 auto;display:block}
+.org-embed{background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:var(--r);padding:7px 14px;min-width:220px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,0.05)}
+.org-embed .on-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink2)}
+.org-embed .on-sub{font-size:8px;color:var(--ink3);margin-top:1px}
+.org-hub{background:rgba(232,92,42,0.07);border:1px solid rgba(232,92,42,0.25);border-radius:var(--r);padding:7px 14px;min-width:150px;text-align:center}
+.org-hub .on-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--accent)}
+.org-hub .on-sub{font-size:8px;color:var(--ink3);margin-top:1px}
+.org-mods .org-node{min-width:66px;padding:6px 9px}
 .org-mods .on-icon{font-size:17px;margin-bottom:4px}
 .org-mods .on-lbl{font-size:11px}
-.org-mods-node{min-width:88px!important;padding:10px 13px!important}
-.org-mods-node .on-icon{font-size:19px!important;margin-bottom:5px!important}
-.org-mods-node .on-lbl{font-size:11px!important;font-weight:700!important;color:var(--ink)!important}
+.org-mods-node{min-width:70px!important;padding:7px 10px!important}
+.org-mods-node .on-icon{font-size:16px!important;margin-bottom:3px!important}
+.org-mods-node .on-lbl{font-size:10px!important;font-weight:700!important;color:var(--ink)!important}
 @media(max-width:1024px){.hero-split{grid-template-columns:1fr;gap:32px}.hero-left-col{text-align:center}}
 @media(max-width:768px){.hero-split{grid-template-columns:1fr}}
 .hero{
@@ -803,6 +803,7 @@ footer{
     </a>
     <ul class="nav-links">
       <li><a href="#search">Ricerca AI</a></li>
+      <li><a href="#ai-assistant">AI Pro</a></li>
       <li><a href="#modules">Moduli</a></li>
       <li><a href="#automazioni">Automazioni</a></li>
       <li><a href="#pricing">Prezzi</a></li>
@@ -827,6 +828,7 @@ footer{
 <div class="mobile-nav" id="mNav">
   <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('open')">✕</button>
   <a href="#search" onclick="this.parentElement.classList.remove('open')">Ricerca AI</a>
+  <a href="#ai-assistant" onclick="this.parentElement.classList.remove('open')">AI Pro</a>
   <a href="#modules" onclick="this.parentElement.classList.remove('open')">Moduli</a>
   <a href="#automazioni" onclick="this.parentElement.classList.remove('open')">Automazioni</a>
   <a href="#pricing" onclick="this.parentElement.classList.remove('open')">Prezzi</a>
@@ -978,20 +980,49 @@ footer{
           <div class="org-node org-mods-node"><div class="on-icon">🏥</div><div class="on-lbl">Ambulatorio</div></div>
           <div class="org-node org-mods-node"><div class="on-icon">🤝</div><div class="on-lbl">Associazioni</div></div>
           <div class="org-node org-mods-node"><div class="on-icon">📋</div><div class="on-lbl">Progetti</div></div>
+          <div class="org-node org-mods-node"><div class="on-icon">🚛</div><div class="on-lbl">Flotta</div></div>
         </div>
       </div>
       <div class="org-connector-line"></div>
-      <div class="org-hub" style="background:rgba(232,92,42,0.1);border-color:rgba(232,92,42,0.35)">
-        <div class="on-lbl" style="color:var(--accent)">⚡ Automazioni</div>
-        <div class="on-sub">Descrivilo → Blina lo crea</div>
+      <!-- Tools section — centered with branch lines -->
+      <div class="org-hub" style="background:rgba(139,92,246,0.08);border-color:rgba(139,92,246,0.3)">
+        <div class="on-lbl" style="color:#7c3aed">🛠️ Strumenti</div>
+        <div class="on-sub">Potenziamenti per la tua piattaforma</div>
       </div>
-      <div class="org-connector-line"></div>
-      <div class="org-row connected org-mods" style="gap:5px">
-        <div class="org-node"><div class="on-icon">📧</div><div class="on-lbl">Email</div></div>
-        <div class="org-node"><div class="on-icon">💬</div><div class="on-lbl">WhatsApp</div></div>
-        <div class="org-node"><div class="on-icon">🔔</div><div class="on-lbl">Notifica</div></div>
-        <div class="org-node"><div class="on-icon">✏️</div><div class="on-lbl">Aggiorna</div></div>
-        <div class="org-node"><div class="on-icon">➕</div><div class="on-lbl">Crea Record</div></div>
+      <!-- Branch connector: center splits to left and right -->
+      <div style="position:relative;width:100%;max-width:520px;margin:0 auto;height:18px">
+        <div style="position:absolute;left:50%;top:0;width:1px;height:6px;background:var(--brd)"></div>
+        <div style="position:absolute;left:25%;right:25%;top:6px;height:1px;background:var(--brd)"></div>
+        <div style="position:absolute;left:25%;top:6px;width:1px;height:12px;background:var(--brd)"></div>
+        <div style="position:absolute;right:25%;top:6px;width:1px;height:12px;background:var(--brd)"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%;max-width:520px;margin:0 auto">
+        <!-- Automations tool -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+          <div class="org-hub" style="background:rgba(232,92,42,0.1);border-color:rgba(232,92,42,0.35);padding:12px 16px;width:100%">
+            <div class="on-lbl" style="color:var(--accent);font-size:12px">⚡ Automazioni</div>
+            <div class="on-sub" style="font-size:9px">Descrivilo.</div>
+          </div>
+          <div class="org-row connected org-mods" style="gap:3px;flex-wrap:nowrap">
+            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">📧</div><div class="on-lbl" style="font-size:8px">Email</div></div>
+            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">💬</div><div class="on-lbl" style="font-size:8px">WhatsApp</div></div>
+            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">🔔</div><div class="on-lbl" style="font-size:8px">Notifica</div></div>
+            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">✏️</div><div class="on-lbl" style="font-size:8px">Aggiorna</div></div>
+            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">➕</div><div class="on-lbl" style="font-size:8px">Crea</div></div>
+          </div>
+        </div>
+        <!-- AI Assistant Pro tool -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+          <div class="org-hub" style="background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.3);padding:12px 16px;width:100%">
+            <div class="on-lbl" style="color:#7c3aed;font-size:12px">✨ AI Assistant Pro</div>
+            <div class="on-sub" style="font-size:9px">Parla con la tua azienda. L'AI che agisce.</div>
+          </div>
+          <div class="org-row connected org-mods" style="gap:3px;flex-wrap:nowrap">
+            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">💬</div><div class="on-lbl" style="font-size:8px">Azioni</div></div>
+            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">📊</div><div class="on-lbl" style="font-size:8px">Report</div></div>
+            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">⚡</div><div class="on-lbl" style="font-size:8px">Workflow</div></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1143,6 +1174,81 @@ footer{
         <div class="feat-name">CRM incluso</div>
         <div class="feat-desc">Contatti, aziende, lead e cronologia interazioni completa — incluso in ogni piano. L'AI genera riepiloghi cliente attraverso tutti i moduli: trattative, email, ticket, fatture.</div>
         <div class="feat-ex"><span class="feat-ex-lbl">Esempio</span>Apri un contatto → AI mostra: contratti, email, task, fatture non pagate in un'unica vista.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AI ASSISTANT PRO ── -->
+<section class="section auto-section" id="ai-assistant" style="background:linear-gradient(135deg,#1a1036 0%,#0f172a 50%,#1e1145 100%)">
+  <div class="sec-inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1100px;margin:0 auto" class="ai-pro-grid">
+      <div>
+        <div class="tag reveal" style="margin-bottom:16px;background:rgba(139,92,246,0.15);color:#a78bfa;border-color:rgba(139,92,246,0.3)">✨ AI Assistant Pro</div>
+        <h2 class="sec-title reveal" style="color:#fff">Parla con la tua azienda.<br>L'AI che <em style="color:#a78bfa">agisce</em>.</h2>
+        <p class="sec-sub reveal" style="color:rgba(255,255,255,0.6);max-width:440px">Vai oltre la ricerca. AI Assistant Pro comprende il contesto di tutti i moduli ed esegue azioni reali — crea fatture, aggiorna record, genera report, tutto da una semplice chat.</p>
+        <div style="margin-top:32px;display:flex;flex-direction:column;gap:16px">
+          <div class="contact-feat reveal" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px 16px">
+            <div class="contact-feat-icon" style="background:rgba(139,92,246,0.15);border-color:rgba(139,92,246,0.3)">💬</div>
+            <div><div class="contact-feat-title" style="color:#fff">Chat che crea</div><div class="contact-feat-sub" style="color:rgba(255,255,255,0.5)">„Crea una fattura per il cliente Müller, 3 ore di consulenza a 150€/h" → Fattura generata, pronta da inviare.</div></div>
+          </div>
+          <div class="contact-feat reveal d1" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px 16px">
+            <div class="contact-feat-icon" style="background:rgba(59,130,246,0.15);border-color:rgba(59,130,246,0.3)">📊</div>
+            <div><div class="contact-feat-title" style="color:#fff">Generazione report AI</div><div class="contact-feat-sub" style="color:rgba(255,255,255,0.5)">„Report mensile fatturato per cliente con confronto trimestre precedente" → Report formattato con grafici, esportabile in PDF.</div></div>
+          </div>
+          <div class="contact-feat reveal d2" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px 16px">
+            <div class="contact-feat-icon" style="background:rgba(245,158,11,0.15);border-color:rgba(245,158,11,0.3)">⚡</div>
+            <div><div class="contact-feat-title" style="color:#fff">AI Workflow Builder</div><div class="contact-feat-sub" style="color:rgba(255,255,255,0.5)">„Quando un deal si chiude, crea una fattura e notifica il team" → Automazione costruita in secondi, senza codice.</div></div>
+          </div>
+        </div>
+        <div class="reveal d3" style="margin-top:28px">
+          <a href="https://app.blina-desk.com" class="btn btn-primary btn-lg" style="background:linear-gradient(135deg,#7c3aed,#6366f1)">Prova AI Assistant Pro →</a>
+          <span style="display:block;margin-top:10px;font-size:12px;color:rgba(255,255,255,0.4)">€49/mese • AI Base (Q&A) sempre gratuita</span>
+        </div>
+      </div>
+      <!-- AI Chat mockup -->
+      <div class="reveal d2">
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r2);overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.3)">
+          <div style="background:rgba(255,255,255,0.06);padding:10px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,0.06)">
+            <span style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.8)">🤖 AI Assistant Pro</span>
+            <span style="margin-left:auto;font-size:9px;font-weight:700;color:#a78bfa;background:rgba(139,92,246,0.15);padding:2px 8px;border-radius:4px">PRO</span>
+          </div>
+          <div style="padding:16px;display:flex;flex-direction:column;gap:12px;min-height:320px">
+            <div style="align-self:flex-end;background:rgba(139,92,246,0.15);border:1px solid rgba(139,92,246,0.2);border-radius:12px 12px 4px 12px;padding:10px 14px;max-width:85%;font-size:12px;color:rgba(255,255,255,0.9)">Chi sono i miei 3 migliori clienti di questo trimestre? E invia un'email di ringraziamento al primo.</div>
+            <div style="align-self:flex-start;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:12px 12px 12px 4px;padding:10px 14px;max-width:85%;font-size:12px;color:rgba(255,255,255,0.7)">
+              <div style="margin-bottom:8px">📊 <strong style="color:#a78bfa">Top 3 clienti Q1 2026</strong></div>
+              <div style="font-size:11px;color:rgba(255,255,255,0.5);display:flex;flex-direction:column;gap:3px">
+                <span>🥇 TechNova GmbH — €34.200 (8 fatture)</span>
+                <span>🥈 Alpine Solutions AG — €22.800 (5 fatture)</span>
+                <span>🥉 MediterranDesign S.R.L. — €18.600 (6 fatture)</span>
+              </div>
+              <div style="margin-top:8px;font-size:11px;color:rgba(255,255,255,0.5)">✅ <strong style="color:#4ade80">Email inviata</strong> a TechNova GmbH</div>
+              <div style="margin-top:10px;display:flex;gap:6px">
+                <span style="font-size:10px;font-weight:700;background:rgba(139,92,246,0.15);color:#a78bfa;padding:3px 10px;border-radius:6px;cursor:pointer">Vedi email</span>
+                <span style="font-size:10px;font-weight:700;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.5);padding:3px 10px;border-radius:6px;cursor:pointer">Report completo</span>
+                <span style="font-size:10px;font-weight:700;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.5);padding:3px 10px;border-radius:6px;cursor:pointer">Esporta PDF</span>
+              </div>
+            </div>
+            <div style="align-self:flex-end;background:rgba(139,92,246,0.15);border:1px solid rgba(139,92,246,0.2);border-radius:12px 12px 4px 12px;padding:10px 14px;max-width:85%;font-size:12px;color:rgba(255,255,255,0.9)">Ci sono fatture scadute? Crea un sollecito per ognuna.</div>
+            <div style="align-self:flex-start;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:12px 12px 12px 4px;padding:10px 14px;max-width:85%;font-size:12px;color:rgba(255,255,255,0.7)">
+              <div style="margin-bottom:8px">⚠️ <strong style="color:#fbbf24">3 fatture scadute</strong></div>
+              <div style="font-size:11px;color:rgba(255,255,255,0.5);display:flex;flex-direction:column;gap:3px">
+                <span>📄 #2026-031 Alpine Solutions — €4.200 (12 giorni di ritardo)</span>
+                <span>📄 #2026-038 DataFlow — €1.800 (5 giorni di ritardo)</span>
+                <span>📄 #2026-042 MediterranDesign — €2.400 (3 giorni di ritardo)</span>
+              </div>
+              <div style="margin-top:8px;font-size:11px;color:rgba(255,255,255,0.5)">✅ <strong style="color:#4ade80">3 solleciti creati</strong> — programmati per domani alle 9:00</div>
+              <div style="margin-top:10px;display:flex;gap:6px">
+                <span style="font-size:10px;font-weight:700;background:rgba(22,163,74,0.15);color:#4ade80;padding:3px 10px;border-radius:6px;cursor:pointer">Invia ora</span>
+                <span style="font-size:10px;font-weight:700;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.5);padding:3px 10px;border-radius:6px;cursor:pointer">Rivedi</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 14px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:8px">
+            <div style="flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:8px 12px;font-size:11px;color:rgba(255,255,255,0.3)">Chiedi qualcosa o dai un comando...</div>
+            <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#7c3aed,#6366f1);display:flex;align-items:center;justify-content:center;font-size:12px">➤</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1303,6 +1409,19 @@ footer{
         <div class="mod-ex"><span class="mod-ex-lbl">Esempio</span><div class="mod-ex-txt">Nuovo cantiere → crea progetto → assegna operai con PIN → mappa GPS mostra chi è in cantiere → manager approva timbrature a fine settimana.</div></div>
       </div>
 
+      <div class="mod-card reveal d2" style="--mc:var(--sky);--mi-bg:var(--sky-s);--mi-brd:rgba(2,132,199,0.2)">
+        <div class="mod-header"><div class="mod-icon">🚛</div><div class="mod-name">Flotta</div></div>
+        <div class="mod-desc">Gestione completa della flotta — veicoli, autisti, costi, manutenzione e conformità.<br><br>
+          <strong>✓</strong> Registro veicoli con assicurazione, leasing e scadenze revisione<br>
+          <strong>✓</strong> Gestione autisti, assegnazioni e monitoraggio patenti<br>
+          <strong>✓</strong> Registro carburante, letture km e analisi costi per veicolo<br>
+          <strong>✓</strong> Pianificazione manutenzione con promemoria automatici<br>
+          <strong>✓</strong> Tracciamento multe e gestione documenti<br>
+          <strong>✓</strong> AI: "Quali veicoli hanno la revisione questo mese? Costo totale flotta Q1?"</div>
+        <div class="mod-ai"><span>🧠</span><div><strong>Chiedi all'AI:</strong> "Veicoli con costi carburante più alti questo trimestre. Revisioni scadute?"</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Esempio</span><div class="mod-ex-txt">Nuovo veicolo → assicurazione + leasing registrati → promemoria manutenzione → autista assegnato → registro km → storico costi completo.</div></div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1397,7 +1516,7 @@ footer{
     <div class="sec-head reveal">
       <div class="tag" style="margin-bottom:14px">Prezzi</div>
       <h2 class="sec-title">Costruisci il tuo <em>piano perfetto</em>.</h2>
-      <p class="sec-sub">Con €49/sessione hai la Piattaforma Base completa con <strong>utenti illimitati e zero costi a postazione</strong>. Aggiungi solo i moduli che servono.</p>
+      <p class="sec-sub">€49 per sessione — paghi solo per gli <strong>utenti attivi contemporaneamente</strong>, non per utenti registrati o postazioni. Aggiungi moduli a prezzo fisso mensile.</p>
     </div>
 
     <div class="pricing-hero reveal">
@@ -1413,25 +1532,31 @@ footer{
     </div>
 
     <div class="pricing-perks reveal">
-      <div class="pricing-perk"><div class="pricing-perk-ck">✓</div><span><strong>Paghi a sessione</strong> — non a utente. Un prezzo, tutto il team.</span></div>
-      <div class="pricing-perk"><div class="pricing-perk-ck">✓</div><span><strong>Utenti illimitati</strong> — 5 o 500 persone, stesso prezzo.</span></div>
+      <div class="pricing-perk"><div class="pricing-perk-ck">✓</div><span><strong>1 sessione = 1 utente attivo alla volta</strong> — registra utenti illimitati, paghi solo per quelli online contemporaneamente.</span></div>
+      <div class="pricing-perk"><div class="pricing-perk-ck">✓</div><span><strong>Moduli = prezzo fisso mensile</strong> — aggiungi Sales a €25/mese, stesso prezzo con 1 o 10 sessioni.</span></div>
       <div class="pricing-perk"><div class="pricing-perk-ck">✓</div><span><strong>14 giorni gratis</strong> — tutti i moduli, senza carta.</span></div>
     </div>
 
     <div style="font-size:12px;font-weight:700;color:var(--ink3);margin-bottom:12px;text-transform:uppercase;letter-spacing:.08em">Moduli Add-on</div>
     <div class="addons-grid reveal">
-      <div class="addon"><div><div class="addon-name">💰 Vendite</div><div class="addon-sub">Pipeline, trattative, fatture — prezzo flat team</div></div><div style="text-align:right"><div class="addon-price">€25</div><div class="addon-unit">/sess/mese</div></div></div>
-      <div class="addon"><div><div class="addon-name">📦 Acquisti</div><div class="addon-sub">Ordini, fornitori, scorte in RT, OCR fatture</div></div><div style="text-align:right"><div class="addon-price">€29</div><div class="addon-unit">/sess/mese</div></div></div>
-      <div class="addon"><div><div class="addon-name">👥 HR</div><div class="addon-sub">Dipendenti, contratti, certificazioni</div></div><div style="text-align:right"><div class="addon-price">€19</div><div class="addon-unit">/sess/mese</div></div></div>
-      <div class="addon"><div><div class="addon-name">🎧 Helpdesk</div><div class="addon-sub">Ticket, SLA, knowledge base AI — flat</div></div><div style="text-align:right"><div class="addon-price">€19</div><div class="addon-unit">/sess/mese</div></div></div>
-      <div class="addon"><div><div class="addon-name">⚖️ Legale</div><div class="addon-sub">Fascicoli, contratti, scadenze</div></div><div style="text-align:right"><div class="addon-price">€39</div><div class="addon-unit">/sess/mese</div></div></div>
-      <div class="addon"><div><div class="addon-name">🏠 Immobiliare</div><div class="addon-sub">Portfolio, locazioni, manutenzioni</div></div><div style="text-align:right"><div class="addon-price">€39</div><div class="addon-unit">/sess/mese</div></div></div>
-      <div class="addon"><div><div class="addon-name">🏥 Ambulatorio</div><div class="addon-sub">Cartelle cliniche, OCR referti, GDPR</div></div><div style="text-align:right"><div class="addon-price">€46</div><div class="addon-unit">/sess/mese</div></div></div>
-      <div class="addon"><div><div class="addon-name">🤝 Associazioni</div><div class="addon-sub">Soci, quote, eventi, email/WhatsApp</div></div><div style="text-align:right"><div class="addon-price">€25</div><div class="addon-unit">/sess/mese</div></div></div>
-      <div class="addon" style="grid-column:span 1"><div><div class="addon-name">📒 Contabilità</div><div class="addon-sub">CE, bilancio, FatturaPA, import CSV, DATEV</div><div style="font-size:10px;color:var(--ink3);margin-top:3px">Fattura elettronica · OCR ricevute · AI · DATEV</div></div><div style="text-align:right;flex-shrink:0"><div class="addon-price">€39</div><div class="addon-unit">/sess/mese</div></div></div>
-      <div class="addon"><div><div class="addon-name">📧 Email &amp; Telefono</div><div class="addon-sub">Inbox unificata, chiamate, template, CRM sync</div></div><div style="text-align:right"><div class="addon-price">€13</div><div class="addon-unit">/sess/mese</div></div></div>
-      <div class="addon"><div><div class="addon-name">📋 Progetti</div><div class="addon-sub">Kanban, timbratura GPS, portale operaio</div></div><div style="text-align:right"><div class="addon-price">€35</div><div class="addon-unit">/sess/mese</div></div></div>
-      <div class="addon" style="border-color:rgba(232,92,42,0.3);background:var(--accent-soft)"><div><div class="addon-name">⚡ Automazioni <span style="font-size:9px;background:var(--accent);color:#fff;padding:2px 6px;border-radius:4px;margin-left:4px">NUOVO</span></div><div class="addon-sub">Workflow AI, 50+ template pronti</div></div><div style="text-align:right"><div class="addon-price">€39</div><div class="addon-unit">/sess/mese</div></div></div>
+      <div class="addon"><div><div class="addon-name">💰 Vendite</div><div class="addon-sub">Pipeline, trattative, fatture — prezzo flat team</div></div><div style="text-align:right"><div class="addon-price">€25</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon"><div><div class="addon-name">📦 Acquisti</div><div class="addon-sub">Ordini, fornitori, scorte in RT, OCR fatture</div></div><div style="text-align:right"><div class="addon-price">€29</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon"><div><div class="addon-name">👥 HR</div><div class="addon-sub">Dipendenti, contratti, certificazioni</div></div><div style="text-align:right"><div class="addon-price">€19</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon"><div><div class="addon-name">🎧 Helpdesk</div><div class="addon-sub">Ticket, SLA, knowledge base AI — flat</div></div><div style="text-align:right"><div class="addon-price">€19</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon"><div><div class="addon-name">⚖️ Legale</div><div class="addon-sub">Fascicoli, contratti, scadenze</div></div><div style="text-align:right"><div class="addon-price">€39</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon"><div><div class="addon-name">🏠 Immobiliare</div><div class="addon-sub">Portfolio, locazioni, manutenzioni</div></div><div style="text-align:right"><div class="addon-price">€39</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon"><div><div class="addon-name">🏥 Ambulatorio</div><div class="addon-sub">Cartelle cliniche, OCR referti, GDPR</div></div><div style="text-align:right"><div class="addon-price">€46</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon"><div><div class="addon-name">🤝 Associazioni</div><div class="addon-sub">Soci, quote, eventi, email/WhatsApp</div></div><div style="text-align:right"><div class="addon-price">€25</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon" style="grid-column:span 1"><div><div class="addon-name">📒 Contabilità</div><div class="addon-sub">CE, bilancio, FatturaPA, import CSV, DATEV</div><div style="font-size:10px;color:var(--ink3);margin-top:3px">Fattura elettronica · OCR ricevute · AI · DATEV</div></div><div style="text-align:right;flex-shrink:0"><div class="addon-price">€39</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon"><div><div class="addon-name">📧 Email &amp; Telefono</div><div class="addon-sub">Inbox unificata, chiamate, template, CRM sync</div></div><div style="text-align:right"><div class="addon-price">€13</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon"><div><div class="addon-name">📋 Progetti</div><div class="addon-sub">Kanban, timbratura GPS, portale operaio</div></div><div style="text-align:right"><div class="addon-price">€35</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon"><div><div class="addon-name">🚛 Flotta</div><div class="addon-sub">Veicoli, autisti, carburante, manutenzione, multe</div></div><div style="text-align:right"><div class="addon-price">€39</div><div class="addon-unit">/mese</div></div></div>
+    </div>
+
+    <div style="font-size:12px;font-weight:700;color:var(--ink3);margin-bottom:12px;margin-top:24px;text-transform:uppercase;letter-spacing:.08em">Strumenti &amp; AI</div>
+    <div class="addons-grid reveal">
+      <div class="addon" style="border-color:rgba(232,92,42,0.3);background:var(--accent-soft)"><div><div class="addon-name">⚡ Automazioni</div><div class="addon-sub">Descrivilo. Blina lo crea. — Workflow AI, trigger, 50+ template, email/WhatsApp/notifiche</div></div><div style="text-align:right"><div class="addon-price">€39</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon" style="border-color:rgba(139,92,246,0.3);background:rgba(139,92,246,0.06)"><div><div class="addon-name">✨ AI Assistant Pro <span style="font-size:9px;background:linear-gradient(135deg,#7c3aed,#6366f1);color:#fff;padding:2px 6px;border-radius:4px;margin-left:4px">PRO</span></div><div class="addon-sub">Parla con la tua azienda. L'AI che agisce. — Chat con azioni, report AI, workflow builder AI</div></div><div style="text-align:right"><div class="addon-price">€49</div><div class="addon-unit">/mese</div></div></div>
     </div>
 
     <div class="volume-bar reveal">
