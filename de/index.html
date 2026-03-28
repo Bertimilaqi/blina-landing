@@ -124,7 +124,7 @@ img,svg{display:block;max-width:100%}
 }
 .lang-btn:hover{color:var(--ink);background:rgba(0,0,0,0.06)}
 .lang-btn.active{color:var(--ink);background:rgba(0,0,0,0.08)}
-.nav-hamburger{display:none;background:none;border:none;cursor:pointer;color:var(--ink);padding:6px;border-radius:8px}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;color:var(--ink);padding:6px;border-radius:8px;margin-left:10px}
 
 /* ── HERO ── */
 .hero-split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;width:100%;max-width:1100px;margin:0 auto;margin-top:52px;opacity:0;animation:fadeUp .7s .65s ease forwards}
@@ -686,19 +686,25 @@ footer{
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 
 /* ── MOBILE NAV ── */
-.mobile-nav{
-  display:none;position:fixed;inset:0;z-index:999;
-  background:rgba(238,240,244,0.97);backdrop-filter:blur(16px);
-  flex-direction:column;align-items:center;justify-content:center;gap:6px;
-  overflow-y:auto;padding:60px 20px 32px;
+.mobile-nav-overlay{
+  display:none;position:fixed;inset:0;z-index:998;background:rgba(0,0,0,0.3);
 }
-.mobile-nav.open{display:flex}
-.mobile-nav a{font-size:17px;font-weight:600;color:var(--ink2);padding:11px 28px;border-radius:10px;transition:all .15s}
-.mobile-nav a:hover{color:var(--ink);background:rgba(0,0,0,0.06)}
-.mobile-nav-close{position:absolute;top:18px;right:20px;background:none;border:none;color:var(--ink);font-size:26px;cursor:pointer}
-.mobile-nav-langs{display:flex;gap:6px;margin-top:16px;padding-top:16px;border-top:1px solid var(--brd)}
-.mobile-nav-langs .lang-btn{font-size:12px;font-weight:700;color:var(--ink4);padding:6px 12px;border-radius:6px;background:none;border:none;text-decoration:none}
-.mobile-nav-langs .lang-btn.active{color:var(--ink);background:rgba(0,0,0,0.08)}
+.mobile-nav-overlay.open{display:block}
+.mobile-nav{
+  position:fixed;top:0;right:-280px;bottom:0;z-index:999;width:260px;
+  background:#fff;box-shadow:-4px 0 24px rgba(0,0,0,0.12);
+  flex-direction:column;align-items:stretch;gap:4px;
+  overflow-y:auto;padding:24px 20px 32px;
+  transition:right .25s ease;display:flex;
+}
+.mobile-nav.open{right:0}
+.mobile-nav a{font-size:15px;font-weight:600;color:var(--ink2);padding:10px 16px;border-radius:10px;transition:all .15s}
+.mobile-nav a:hover{color:var(--accent);background:var(--accent-soft)}
+.mobile-nav-close{align-self:flex-end;background:none;border:none;color:var(--ink3);font-size:22px;cursor:pointer;padding:4px 8px;border-radius:8px;margin-bottom:8px}
+.mobile-nav-close:hover{color:var(--ink);background:rgba(0,0,0,0.06)}
+.mobile-nav-langs{display:flex;gap:5px;margin-top:auto;padding-top:16px;border-top:1px solid var(--brd);flex-wrap:wrap}
+.mobile-nav-langs .lang-btn{font-size:11px;font-weight:700;color:var(--ink4);padding:5px 10px;border-radius:6px;background:none;border:none;text-decoration:none}
+.mobile-nav-langs .lang-btn.active{color:var(--accent);background:var(--accent-soft)}
 .mobile-nav-langs .lang-btn:hover{color:var(--ink);background:rgba(0,0,0,0.06)}
 
 /* ── REVEAL ── */
@@ -832,21 +838,24 @@ footer{
       </div>
       <a href="https://app.blina-desk.com/de/auth/login" class="btn btn-outline" style="font-size:13px;padding:7px 15px">Anmelden</a>
     </div>
-    <button class="nav-hamburger" onclick="document.getElementById('mNav').classList.add('open')">
+    <button class="nav-hamburger" onclick="document.getElementById('mNav').classList.add('open');document.getElementById('mNavOverlay').classList.add('open')">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><rect y="3" width="20" height="2" rx="1"/><rect y="9" width="20" height="2" rx="1"/><rect y="15" width="20" height="2" rx="1"/></svg>
     </button>
   </div>
 </nav>
 
-<!-- MOBILE NAV -->
+<!-- MOBILE NAV OVERLAY (click outside to close) -->
+<div class="mobile-nav-overlay" id="mNavOverlay" onclick="this.classList.remove('open');document.getElementById('mNav').classList.remove('open')"></div>
+
+<!-- MOBILE NAV (slide-in panel) -->
 <div class="mobile-nav" id="mNav">
-  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('open')">✕</button>
-  <a href="#search" onclick="this.parentElement.classList.remove('open')">KI-Suche</a>
-  <a href="#ai-assistant" onclick="this.parentElement.classList.remove('open')">KI Pro</a>
-  <a href="#modules" onclick="this.parentElement.classList.remove('open')">Module</a>
-  <a href="#automazioni" onclick="this.parentElement.classList.remove('open')">Automatisierungen</a>
-  <a href="#pricing" onclick="this.parentElement.classList.remove('open')">Preise</a>
-  <a href="#contact" onclick="this.parentElement.classList.remove('open')">Kontakt</a>
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('open');document.getElementById('mNavOverlay').classList.remove('open')">✕</button>
+  <a href="#search" onclick="this.parentElement.classList.remove('open');document.getElementById('mNavOverlay').classList.remove('open')">KI-Suche</a>
+  <a href="#ai-assistant" onclick="this.parentElement.classList.remove('open');document.getElementById('mNavOverlay').classList.remove('open')">KI Pro</a>
+  <a href="#modules" onclick="this.parentElement.classList.remove('open');document.getElementById('mNavOverlay').classList.remove('open')">Module</a>
+  <a href="#automazioni" onclick="this.parentElement.classList.remove('open');document.getElementById('mNavOverlay').classList.remove('open')">Automatisierungen</a>
+  <a href="#pricing" onclick="this.parentElement.classList.remove('open');document.getElementById('mNavOverlay').classList.remove('open')">Preise</a>
+  <a href="#contact" onclick="this.parentElement.classList.remove('open');document.getElementById('mNavOverlay').classList.remove('open')">Kontakt</a>
   <div class="mobile-nav-langs">
     <a class="lang-btn" href="/">EN</a><a class="lang-btn active" href="/de/">DE</a>
     <a class="lang-btn" href="/it/">IT</a><a class="lang-btn" href="/fr/">FR</a>
