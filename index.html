@@ -733,7 +733,11 @@ footer{
   .ai-pro-grid{grid-template-columns:1fr!important;gap:32px!important}
 }
 @media(max-width:768px){
-  section.hero{grid-template-columns:1fr!important;padding:88px 20px 40px!important}
+  section.hero{grid-template-columns:1fr!important;padding:80px 20px 36px!important;min-height:auto!important}
+  section.hero > div:last-child{display:none!important}
+  section.hero h1{font-size:30px!important}
+  section.hero p{font-size:15px!important}
+  .hero-logo-main{width:220px!important;height:auto!important}
   .nav-links{display:none}
   .nav-hamburger{display:block}
   .nav-langs{padding-right:0;margin-right:0;border-right:none}
