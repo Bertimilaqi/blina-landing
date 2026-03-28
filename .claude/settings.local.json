@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -i \"whatsapp\\\\|sms\\\\|twilio\\\\|provider\" /c/Users/Albert/Documents/GitHub/blina-desk-ai/.env.core /c/Users/Albert/Documents/GitHub/blina-desk-ai/.env.*)",
+      "Bash(python3 -c \":*)",
+      "Bash(git commit:*)",
+      "Bash(gh run:*)",
+      "Bash(curl -s http://localhost:3005/api/health)",
+      "Bash(cat .github/workflows/*.yml)",
+      "Bash(grep -r localhost c:UsersAlbertDocumentsGitHubblina-desk-aiappswebsrc --include=*.ts --include=*.tsx --include=*.js --include=*.jsx)",
+      "Bash(ssh -o ConnectTimeout=5 root@blina-desk.com \"echo OK\")",
+      "Bash(ssh -o ConnectTimeout=5 root@api.blina-desk.com \"echo OK\")",
+      "Bash(ssh -o ConnectTimeout=10 blina-vps \"echo OK\")",
+      "Bash(ssh blina-vps:*)",
+      "Bash(find c:UsersAlbertDocumentsGitHubblina-desk-ai -type f -name .claude* -o -name *skill* -o -name *Claude*)",
+      "Bash(find c:UsersAlbert.claude -type f -name *.md)"
+    ]
+  }
+}
