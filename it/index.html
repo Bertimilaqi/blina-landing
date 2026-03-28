@@ -779,7 +779,8 @@ footer{
   .hero-title{font-size:27px}
   section.hero h1{font-size:28px!important}
   .hero-logo-main{width:180px!important}
-  .hstat{padding:8px 10px!important;min-width:70px!important}
+  .hero-stats{grid-template-columns:repeat(2,1fr)!important;gap:6px!important}
+  .hstat{padding:8px 10px!important;min-width:0!important}
   .hstat-num{font-size:16px!important}
   .hero-stats{gap:6px}
   .hstat{padding:11px 14px;min-width:82px}
@@ -958,7 +959,7 @@ footer{
     </p>
 
     <!-- Stats mini -->
-    <div style="display:flex;gap:8px;margin-top:32px;flex-wrap:wrap;opacity:0;animation:fadeUp .5s .54s ease forwards;">
+    <div style="display:grid;grid-template-columns:repeat(4,auto);gap:8px;margin-top:32px;opacity:0;animation:fadeUp .5s .54s ease forwards;">
       <div class="hstat"><div class="hstat-num">2<span>sec</span></div><div class="hstat-lbl">invece di 20+ min</div></div>
       <div class="hstat"><div class="hstat-num">11<span>+</span></div><div class="hstat-lbl">Moduli business</div></div>
       <div class="hstat"><div class="hstat-num">100<span>%</span></div><div class="hstat-lbl">On-premise</div></div>
