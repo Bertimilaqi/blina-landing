@@ -1558,6 +1558,13 @@ footer{
       <p class="sec-sub">€49 per sessione — paghi solo per gli <strong>utenti attivi contemporaneamente</strong>, non per utenti registrati o postazioni. Aggiungi moduli a prezzo fisso mensile.</p>
     </div>
 
+    <div style="text-align:center;margin-bottom:20px" class="reveal">
+      <div class="billing-toggle" style="display:inline-flex;align-items:center;gap:0;background:var(--bg2);border:1px solid var(--brd);border-radius:100px;padding:3px">
+        <button class="bt-btn active" onclick="switchBilling('monthly')" style="font-size:13px;font-weight:600;padding:8px 20px;border-radius:100px;border:none;cursor:pointer;transition:all .2s;background:var(--bg-card);color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,0.08)">Mensile</button>
+        <button class="bt-btn" onclick="switchBilling('annual')" style="font-size:13px;font-weight:600;padding:8px 20px;border-radius:100px;border:none;cursor:pointer;transition:all .2s;background:transparent;color:var(--ink3)">Annuale <span style="font-size:10px;font-weight:700;color:#16a34a;background:rgba(22,163,74,0.1);padding:2px 8px;border-radius:100px;margin-left:6px">Risparmia ~20%</span></button>
+      </div>
+    </div>
+
     <div class="pricing-hero reveal">
       <div class="pricing-hero-info">
         <div class="pricing-hero-lbl">Sempre incluso</div>
@@ -1565,8 +1572,8 @@ footer{
         <div class="pricing-hero-desc">CRM + Ricerca Semantica AI + Scanner OCR + RAG Chat + Documenti + Note + Attività + Appuntamenti. Tutto potenziato dall'AI.</div>
       </div>
       <div style="text-align:center;flex-shrink:0">
-        <div class="pricing-hero-amount">€49</div>
-        <div class="pricing-hero-per">/sessione/mese</div>
+        <div class="pricing-hero-amount" data-monthly="€49" data-annual="€39">€49</div>
+        <div class="pricing-hero-per" data-monthly="/sessione/mese" data-annual="/sessione/mese (fatturato annualmente)">/sessione/mese</div>
       </div>
     </div>
 
@@ -1578,24 +1585,24 @@ footer{
 
     <div style="font-size:12px;font-weight:700;color:var(--ink3);margin-bottom:12px;text-transform:uppercase;letter-spacing:.08em">Moduli Add-on</div>
     <div class="addons-grid reveal">
-      <div class="addon"><div><div class="addon-name">💰 Vendite</div><div class="addon-sub">Pipeline, trattative, fatture — prezzo flat team</div></div><div style="text-align:right"><div class="addon-price">€45</div><div class="addon-unit">/mese</div></div></div>
-      <div class="addon"><div><div class="addon-name">📦 Acquisti</div><div class="addon-sub">Ordini, fornitori, scorte in RT, OCR fatture</div></div><div style="text-align:right"><div class="addon-price">€45</div><div class="addon-unit">/mese</div></div></div>
-      <div class="addon"><div><div class="addon-name">👥 HR</div><div class="addon-sub">Dipendenti, contratti, certificazioni</div></div><div style="text-align:right"><div class="addon-price">€39</div><div class="addon-unit">/mese</div></div></div>
-      <div class="addon"><div><div class="addon-name">🎧 Helpdesk</div><div class="addon-sub">Ticket, SLA, knowledge base AI — flat</div></div><div style="text-align:right"><div class="addon-price">€39</div><div class="addon-unit">/mese</div></div></div>
-      <div class="addon"><div><div class="addon-name">⚖️ Legale</div><div class="addon-sub">Fascicoli, contratti, scadenze</div></div><div style="text-align:right"><div class="addon-price">€69</div><div class="addon-unit">/mese</div></div></div>
-      <div class="addon"><div><div class="addon-name">🏠 Immobiliare</div><div class="addon-sub">Portfolio, locazioni, manutenzioni</div></div><div style="text-align:right"><div class="addon-price">€69</div><div class="addon-unit">/mese</div></div></div>
-      <div class="addon"><div><div class="addon-name">🏥 Ambulatorio</div><div class="addon-sub">Cartelle cliniche, OCR referti, GDPR</div></div><div style="text-align:right"><div class="addon-price">€69</div><div class="addon-unit">/mese</div></div></div>
-      <div class="addon"><div><div class="addon-name">🤝 Associazioni</div><div class="addon-sub">Soci, quote, eventi, email/WhatsApp</div></div><div style="text-align:right"><div class="addon-price">€39</div><div class="addon-unit">/mese</div></div></div>
-      <div class="addon" style="grid-column:span 1"><div><div class="addon-name">📒 Contabilità</div><div class="addon-sub">CE, bilancio, FatturaPA, import CSV, DATEV</div><div style="font-size:10px;color:var(--ink3);margin-top:3px">Fattura elettronica · OCR ricevute · AI · DATEV</div></div><div style="text-align:right;flex-shrink:0"><div class="addon-price">€69</div><div class="addon-unit">/mese</div></div></div>
-      <div class="addon"><div><div class="addon-name">📧 Email &amp; Telefono</div><div class="addon-sub">Inbox unificata, chiamate, template, CRM sync</div></div><div style="text-align:right"><div class="addon-price">€29</div><div class="addon-unit">/mese</div></div></div>
-      <div class="addon"><div><div class="addon-name">📋 Progetti</div><div class="addon-sub">Kanban, timbratura GPS, portale operaio</div></div><div style="text-align:right"><div class="addon-price">€45</div><div class="addon-unit">/mese</div></div></div>
-      <div class="addon"><div><div class="addon-name">🚛 Flotta</div><div class="addon-sub">Veicoli, autisti, carburante, manutenzione, multe</div></div><div style="text-align:right"><div class="addon-price">€39</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon"><div><div class="addon-name">💰 Vendite</div><div class="addon-sub">Pipeline, trattative, fatture — prezzo flat team</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€45" data-annual="€36">€45</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon"><div><div class="addon-name">📦 Acquisti</div><div class="addon-sub">Ordini, fornitori, scorte in RT, OCR fatture</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€45" data-annual="€36">€45</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon"><div><div class="addon-name">👥 HR</div><div class="addon-sub">Dipendenti, contratti, certificazioni</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€39" data-annual="€31">€39</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon"><div><div class="addon-name">🎧 Helpdesk</div><div class="addon-sub">Ticket, SLA, knowledge base AI — flat</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€39" data-annual="€31">€39</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon"><div><div class="addon-name">⚖️ Legale</div><div class="addon-sub">Fascicoli, contratti, scadenze</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€69" data-annual="€55">€69</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon"><div><div class="addon-name">🏠 Immobiliare</div><div class="addon-sub">Portfolio, locazioni, manutenzioni</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€69" data-annual="€55">€69</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon"><div><div class="addon-name">🏥 Ambulatorio</div><div class="addon-sub">Cartelle cliniche, OCR referti, GDPR</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€69" data-annual="€55">€69</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon"><div><div class="addon-name">🤝 Associazioni</div><div class="addon-sub">Soci, quote, eventi, email/WhatsApp</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€39" data-annual="€31">€39</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon" style="grid-column:span 1"><div><div class="addon-name">📒 Contabilità</div><div class="addon-sub">CE, bilancio, FatturaPA, import CSV, DATEV</div><div style="font-size:10px;color:var(--ink3);margin-top:3px">Fattura elettronica · OCR ricevute · AI · DATEV</div></div><div style="text-align:right;flex-shrink:0"><div class="addon-price" data-monthly="€69" data-annual="€55">€69</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon"><div><div class="addon-name">📧 Email &amp; Telefono</div><div class="addon-sub">Inbox unificata, chiamate, template, CRM sync</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€29" data-annual="€23">€29</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon"><div><div class="addon-name">📋 Progetti</div><div class="addon-sub">Kanban, timbratura GPS, portale operaio</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€45" data-annual="€36">€45</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon"><div><div class="addon-name">🚛 Flotta</div><div class="addon-sub">Veicoli, autisti, carburante, manutenzione, multe</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€39" data-annual="€31">€39</div><div class="addon-unit">/mese</div></div></div>
     </div>
 
     <div style="font-size:12px;font-weight:700;color:var(--ink3);margin-bottom:12px;margin-top:24px;text-transform:uppercase;letter-spacing:.08em">Strumenti &amp; AI</div>
     <div class="addons-grid reveal">
-      <div class="addon" style="border-color:rgba(232,92,42,0.3);background:var(--accent-soft)"><div><div class="addon-name">⚡ Automazioni</div><div class="addon-sub">Descrivilo. Blina lo crea. — Workflow AI, trigger, 50+ template, email/WhatsApp/notifiche</div></div><div style="text-align:right"><div class="addon-price">€69</div><div class="addon-unit">/mese</div></div></div>
-      <div class="addon" style="border-color:rgba(139,92,246,0.3);background:rgba(139,92,246,0.06)"><div><div class="addon-name">✨ Blina AI</div><div class="addon-sub">Comanda la tua azienda. L'AI che agisce. — Fatture, report, workflow dalla chat</div></div><div style="text-align:right"><div class="addon-price">€79</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon" style="border-color:rgba(232,92,42,0.3);background:var(--accent-soft)"><div><div class="addon-name">⚡ Automazioni</div><div class="addon-sub">Descrivilo. Blina lo crea. — Workflow AI, trigger, 50+ template, email/WhatsApp/notifiche</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€69" data-annual="€55">€69</div><div class="addon-unit">/mese</div></div></div>
+      <div class="addon" style="border-color:rgba(139,92,246,0.3);background:rgba(139,92,246,0.06)"><div><div class="addon-name">✨ Blina AI</div><div class="addon-sub">Comanda la tua azienda. L'AI che agisce. — Fatture, report, workflow dalla chat</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€79" data-annual="€63">€79</div><div class="addon-unit">/mese</div></div></div>
     </div>
 
     <div class="volume-bar reveal">
@@ -1884,6 +1891,16 @@ window.addEventListener('scroll',()=>{document.getElementById('mainNav').classLi
 const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('mNav')?.classList.remove('open')}})});
+function switchBilling(p){
+  document.querySelectorAll('.bt-btn').forEach(function(b,i){
+    if((p==='monthly'&&i===0)||(p==='annual'&&i===1)){
+      b.style.background='var(--bg-card)';b.style.color='var(--ink)';b.style.boxShadow='0 1px 4px rgba(0,0,0,0.08)';b.classList.add('active');
+    }else{
+      b.style.background='transparent';b.style.color='var(--ink3)';b.style.boxShadow='none';b.classList.remove('active');
+    }
+  });
+  document.querySelectorAll('[data-monthly]').forEach(function(el){el.textContent=el.getAttribute('data-'+p)});
+}
 </script>
 </body>
 </html>

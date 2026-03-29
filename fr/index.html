@@ -1558,6 +1558,13 @@ footer{
       <p class="sec-sub">€49 par session — vous payez uniquement pour les <strong>utilisateurs actifs simultanément</strong>, pas pour les utilisateurs inscrits ou les postes. Ajoutez des modules au forfait mensuel.</p>
     </div>
 
+    <div style="text-align:center;margin-bottom:20px" class="reveal">
+      <div class="billing-toggle" style="display:inline-flex;align-items:center;gap:0;background:var(--bg2);border:1px solid var(--brd);border-radius:100px;padding:3px">
+        <button class="bt-btn active" onclick="switchBilling('monthly')" style="font-size:13px;font-weight:600;padding:8px 20px;border-radius:100px;border:none;cursor:pointer;transition:all .2s;background:var(--bg-card);color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,0.08)">Mensuel</button>
+        <button class="bt-btn" onclick="switchBilling('annual')" style="font-size:13px;font-weight:600;padding:8px 20px;border-radius:100px;border:none;cursor:pointer;transition:all .2s;background:transparent;color:var(--ink3)">Annuel <span style="font-size:10px;font-weight:700;color:#16a34a;background:rgba(22,163,74,0.1);padding:2px 8px;border-radius:100px;margin-left:6px">Économisez ~20%</span></button>
+      </div>
+    </div>
+
     <div class="pricing-hero reveal">
       <div class="pricing-hero-info">
         <div class="pricing-hero-lbl">Toujours inclus</div>
@@ -1565,8 +1572,8 @@ footer{
         <div class="pricing-hero-desc">CRM + Recherche Sémantique IA + Scanner OCR + RAG Chat + Documents + Notes + Tâches + Rendez-vous. Tout propulsé par l'IA.</div>
       </div>
       <div style="text-align:center;flex-shrink:0">
-        <div class="pricing-hero-amount">€49</div>
-        <div class="pricing-hero-per">/session/mois</div>
+        <div class="pricing-hero-amount" data-monthly="€49" data-annual="€39">€49</div>
+        <div class="pricing-hero-per" data-monthly="/session/mois" data-annual="/session/mois (facturé annuellement)">/session/mois</div>
       </div>
     </div>
 
@@ -1578,24 +1585,24 @@ footer{
 
     <div style="font-size:12px;font-weight:700;color:var(--ink3);margin-bottom:12px;text-transform:uppercase;letter-spacing:.08em">Modules complémentaires</div>
     <div class="addons-grid reveal">
-      <div class="addon"><div><div class="addon-name">💰 Ventes</div><div class="addon-sub">Pipeline, affaires, factures — prix forfaitaire équipe</div></div><div style="text-align:right"><div class="addon-price">€45</div><div class="addon-unit">/mois</div></div></div>
-      <div class="addon"><div><div class="addon-name">📦 Achats</div><div class="addon-sub">Commandes, fournisseurs, stocks en TR, OCR factures</div></div><div style="text-align:right"><div class="addon-price">€45</div><div class="addon-unit">/mois</div></div></div>
-      <div class="addon"><div><div class="addon-name">👥 HR</div><div class="addon-sub">Employés, contrats, certifications</div></div><div style="text-align:right"><div class="addon-price">€39</div><div class="addon-unit">/mois</div></div></div>
-      <div class="addon"><div><div class="addon-name">🎧 Helpdesk</div><div class="addon-sub">Tickets, SLA, base de connaissances IA — forfait</div></div><div style="text-align:right"><div class="addon-price">€39</div><div class="addon-unit">/mois</div></div></div>
-      <div class="addon"><div><div class="addon-name">⚖️ Juridique</div><div class="addon-sub">Dossiers, contrats, échéances</div></div><div style="text-align:right"><div class="addon-price">€69</div><div class="addon-unit">/mois</div></div></div>
-      <div class="addon"><div><div class="addon-name">🏠 Immobilier</div><div class="addon-sub">Portefeuille, baux, maintenance</div></div><div style="text-align:right"><div class="addon-price">€69</div><div class="addon-unit">/mois</div></div></div>
-      <div class="addon"><div><div class="addon-name">🏥 Cabinet médical</div><div class="addon-sub">Dossiers médicaux, OCR résultats, RGPD</div></div><div style="text-align:right"><div class="addon-price">€69</div><div class="addon-unit">/mois</div></div></div>
-      <div class="addon"><div><div class="addon-name">🤝 Associations</div><div class="addon-sub">Membres, cotisations, événements, e-mail/WhatsApp</div></div><div style="text-align:right"><div class="addon-price">€39</div><div class="addon-unit">/mois</div></div></div>
-      <div class="addon" style="grid-column:span 1"><div><div class="addon-name">📒 Comptabilité</div><div class="addon-sub">CR, bilan, FatturaPA, import CSV, DATEV</div><div style="font-size:10px;color:var(--ink3);margin-top:3px">Facture électronique · OCR reçus · IA · DATEV</div></div><div style="text-align:right;flex-shrink:0"><div class="addon-price">€69</div><div class="addon-unit">/mois</div></div></div>
-      <div class="addon"><div><div class="addon-name">📧 E-mail &amp; Téléphone</div><div class="addon-sub">Boîte unifiée, appels, modèles, sync CRM</div></div><div style="text-align:right"><div class="addon-price">€29</div><div class="addon-unit">/mois</div></div></div>
-      <div class="addon"><div><div class="addon-name">📋 Projets</div><div class="addon-sub">Kanban, pointage GPS, portail ouvrier</div></div><div style="text-align:right"><div class="addon-price">€45</div><div class="addon-unit">/mois</div></div></div>
-      <div class="addon"><div><div class="addon-name">🚛 Flotte</div><div class="addon-sub">Véhicules, chauffeurs, carburant, maintenance, amendes</div></div><div style="text-align:right"><div class="addon-price">€39</div><div class="addon-unit">/mois</div></div></div>
+      <div class="addon"><div><div class="addon-name">💰 Ventes</div><div class="addon-sub">Pipeline, affaires, factures — prix forfaitaire équipe</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€45" data-annual="€36">€45</div><div class="addon-unit">/mois</div></div></div>
+      <div class="addon"><div><div class="addon-name">📦 Achats</div><div class="addon-sub">Commandes, fournisseurs, stocks en TR, OCR factures</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€45" data-annual="€36">€45</div><div class="addon-unit">/mois</div></div></div>
+      <div class="addon"><div><div class="addon-name">👥 HR</div><div class="addon-sub">Employés, contrats, certifications</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€39" data-annual="€31">€39</div><div class="addon-unit">/mois</div></div></div>
+      <div class="addon"><div><div class="addon-name">🎧 Helpdesk</div><div class="addon-sub">Tickets, SLA, base de connaissances IA — forfait</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€39" data-annual="€31">€39</div><div class="addon-unit">/mois</div></div></div>
+      <div class="addon"><div><div class="addon-name">⚖️ Juridique</div><div class="addon-sub">Dossiers, contrats, échéances</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€69" data-annual="€55">€69</div><div class="addon-unit">/mois</div></div></div>
+      <div class="addon"><div><div class="addon-name">🏠 Immobilier</div><div class="addon-sub">Portefeuille, baux, maintenance</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€69" data-annual="€55">€69</div><div class="addon-unit">/mois</div></div></div>
+      <div class="addon"><div><div class="addon-name">🏥 Cabinet médical</div><div class="addon-sub">Dossiers médicaux, OCR résultats, RGPD</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€69" data-annual="€55">€69</div><div class="addon-unit">/mois</div></div></div>
+      <div class="addon"><div><div class="addon-name">🤝 Associations</div><div class="addon-sub">Membres, cotisations, événements, e-mail/WhatsApp</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€39" data-annual="€31">€39</div><div class="addon-unit">/mois</div></div></div>
+      <div class="addon" style="grid-column:span 1"><div><div class="addon-name">📒 Comptabilité</div><div class="addon-sub">CR, bilan, FatturaPA, import CSV, DATEV</div><div style="font-size:10px;color:var(--ink3);margin-top:3px">Facture électronique · OCR reçus · IA · DATEV</div></div><div style="text-align:right;flex-shrink:0"><div class="addon-price" data-monthly="€69" data-annual="€55">€69</div><div class="addon-unit">/mois</div></div></div>
+      <div class="addon"><div><div class="addon-name">📧 E-mail &amp; Téléphone</div><div class="addon-sub">Boîte unifiée, appels, modèles, sync CRM</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€29" data-annual="€23">€29</div><div class="addon-unit">/mois</div></div></div>
+      <div class="addon"><div><div class="addon-name">📋 Projets</div><div class="addon-sub">Kanban, pointage GPS, portail ouvrier</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€45" data-annual="€36">€45</div><div class="addon-unit">/mois</div></div></div>
+      <div class="addon"><div><div class="addon-name">🚛 Flotte</div><div class="addon-sub">Véhicules, chauffeurs, carburant, maintenance, amendes</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€39" data-annual="€31">€39</div><div class="addon-unit">/mois</div></div></div>
     </div>
 
     <div style="font-size:12px;font-weight:700;color:var(--ink3);margin-bottom:12px;margin-top:24px;text-transform:uppercase;letter-spacing:.08em">Outils &amp; IA</div>
     <div class="addons-grid reveal">
-      <div class="addon" style="border-color:rgba(232,92,42,0.3);background:var(--accent-soft)"><div><div class="addon-name">⚡ Automatisations</div><div class="addon-sub">Décrivez-le. Blina le crée. — Workflows IA, déclencheurs, 50+ modèles, email/WhatsApp/notifications</div></div><div style="text-align:right"><div class="addon-price">€69</div><div class="addon-unit">/mois</div></div></div>
-      <div class="addon" style="border-color:rgba(139,92,246,0.3);background:rgba(139,92,246,0.06)"><div><div class="addon-name">✨ Blina AI</div><div class="addon-sub">Commandez votre entreprise. L'IA qui agit. — Factures, rapports, workflows depuis le chat</div></div><div style="text-align:right"><div class="addon-price">€79</div><div class="addon-unit">/mois</div></div></div>
+      <div class="addon" style="border-color:rgba(232,92,42,0.3);background:var(--accent-soft)"><div><div class="addon-name">⚡ Automatisations</div><div class="addon-sub">Décrivez-le. Blina le crée. — Workflows IA, déclencheurs, 50+ modèles, email/WhatsApp/notifications</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€69" data-annual="€55">€69</div><div class="addon-unit">/mois</div></div></div>
+      <div class="addon" style="border-color:rgba(139,92,246,0.3);background:rgba(139,92,246,0.06)"><div><div class="addon-name">✨ Blina AI</div><div class="addon-sub">Commandez votre entreprise. L'IA qui agit. — Factures, rapports, workflows depuis le chat</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€79" data-annual="€63">€79</div><div class="addon-unit">/mois</div></div></div>
     </div>
 
     <div class="volume-bar reveal">
@@ -1884,6 +1891,16 @@ window.addEventListener('scroll',()=>{document.getElementById('mainNav').classLi
 const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('mNav')?.classList.remove('open')}})});
+function switchBilling(p){
+  document.querySelectorAll('.bt-btn').forEach(function(b,i){
+    if((p==='monthly'&&i===0)||(p==='annual'&&i===1)){
+      b.style.background='var(--bg-card)';b.style.color='var(--ink)';b.style.boxShadow='0 1px 4px rgba(0,0,0,0.08)';b.classList.add('active');
+    }else{
+      b.style.background='transparent';b.style.color='var(--ink3)';b.style.boxShadow='none';b.classList.remove('active');
+    }
+  });
+  document.querySelectorAll('[data-monthly]').forEach(function(el){el.textContent=el.getAttribute('data-'+p)});
+}
 </script>
 </body>
 </html>
