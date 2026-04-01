@@ -124,37 +124,37 @@ img,svg{display:block;max-width:100%}
 }
 .lang-btn:hover{color:var(--ink);background:rgba(0,0,0,0.06)}
 .lang-btn.active{color:var(--ink);background:rgba(0,0,0,0.08)}
-.nav-hamburger{display:none;background:none;border:none;cursor:pointer;color:var(--ink);padding:6px;border-radius:8px;margin-left:auto}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;color:var(--ink);padding:6px;border-radius:8px}
 
 /* ── HERO ── */
 .hero-split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;width:100%;max-width:1100px;margin:0 auto;margin-top:52px;opacity:0;animation:fadeUp .7s .65s ease forwards}
 .hero-left-col{text-align:left}
 .hero-right-col{}
-.orgchart{display:flex;flex-direction:column;align-items:center;gap:10px;width:100%}
-.org-node{position:relative;background:#fff;border:1px solid var(--brd);box-shadow:0 1px 6px rgba(0,0,0,0.06);border-radius:var(--r);padding:10px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;min-width:90px;transition:all .2s}
-.org-node:hover{transform:translateY(-1px);box-shadow:0 3px 12px rgba(0,0,0,0.09)}
-.org-root{background:var(--accent);border-color:var(--accent);padding:12px 22px;min-width:170px;box-shadow:0 4px 18px var(--accent-glow)}
-.org-root .on-lbl{color:#fff;font-size:14px;font-weight:800}
-.org-root .on-sub{color:rgba(255,255,255,0.75);font-size:10px}
-.org-node .on-icon{font-size:18px;margin-bottom:4px;line-height:1}
-.org-node .on-lbl{font-size:11px;font-weight:700;color:var(--ink);line-height:1.2}
-.org-node .on-sub{font-size:9px;color:var(--ink3);margin-top:2px}
+.orgchart{display:flex;flex-direction:column;align-items:center;gap:14px;width:100%}
+.org-node{position:relative;background:#fff;border:1px solid var(--brd);box-shadow:0 2px 8px rgba(0,0,0,0.07);border-radius:var(--r);padding:14px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;min-width:120px;transition:all .2s}
+.org-node:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.1)}
+.org-root{background:var(--accent);border-color:var(--accent);padding:16px 28px;min-width:200px;box-shadow:0 6px 24px var(--accent-glow)}
+.org-root .on-lbl{color:#fff;font-size:16px;font-weight:800}
+.org-root .on-sub{color:rgba(255,255,255,0.75);font-size:11px}
+.org-node .on-icon{font-size:22px;margin-bottom:6px;line-height:1}
+.org-node .on-lbl{font-size:13px;font-weight:700;color:var(--ink);line-height:1.2}
+.org-node .on-sub{font-size:10px;color:var(--ink3);margin-top:3px}
 .org-row{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;width:100%;padding-top:10px;position:relative}
 .org-row.connected::before{content:"";position:absolute;top:5px;left:12%;right:12%;height:1px;background:#000}
 .org-row.connected .org-node::before{content:"";position:absolute;left:50%;top:-10px;width:1px;height:10px;background:#000}
-.org-connector-line{width:1px;height:8px;background:#000;margin:0 auto;display:block}
-.org-embed{background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:var(--r);padding:7px 14px;min-width:220px;text-align:center;box-shadow:0 1px 6px rgba(0,0,0,0.05)}
-.org-embed .on-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink2)}
-.org-embed .on-sub{font-size:8px;color:var(--ink3);margin-top:2px}
-.org-hub{background:rgba(232,92,42,0.07);border:1px solid rgba(232,92,42,0.25);border-radius:var(--r);padding:7px 14px;min-width:150px;text-align:center}
-.org-hub .on-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--accent)}
-.org-hub .on-sub{font-size:8px;color:var(--ink3);margin-top:2px}
-.org-mods .org-node{min-width:66px;padding:6px 9px}
+.org-connector-line{width:1px;height:10px;background:#000;margin:0 auto;display:block}
+.org-embed{background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:var(--r);padding:9px 16px;min-width:240px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.org-embed .on-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink2)}
+.org-embed .on-sub{font-size:9px;color:var(--ink3);margin-top:2px}
+.org-hub{background:rgba(232,92,42,0.07);border:1px solid rgba(232,92,42,0.25);border-radius:var(--r);padding:9px 16px;min-width:180px;text-align:center}
+.org-hub .on-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--accent)}
+.org-hub .on-sub{font-size:9px;color:var(--ink3);margin-top:2px}
+.org-mods .org-node{min-width:88px;padding:9px 12px}
 .org-mods .on-icon{font-size:17px;margin-bottom:4px}
 .org-mods .on-lbl{font-size:11px}
-.org-mods-node{min-width:70px!important;padding:7px 10px!important}
-.org-mods-node .on-icon{font-size:16px!important;margin-bottom:3px!important}
-.org-mods-node .on-lbl{font-size:10px!important;font-weight:700!important;color:var(--ink)!important}
+.org-mods-node{min-width:88px!important;padding:10px 13px!important}
+.org-mods-node .on-icon{font-size:19px!important;margin-bottom:5px!important}
+.org-mods-node .on-lbl{font-size:11px!important;font-weight:700!important;color:var(--ink)!important}
 @media(max-width:1024px){.hero-split{grid-template-columns:1fr;gap:32px}.hero-left-col{text-align:center}}
 @media(max-width:768px){.hero-split{grid-template-columns:1fr}}
 .hero{
@@ -686,25 +686,19 @@ footer{
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 
 /* ── MOBILE NAV ── */
-.mobile-nav-overlay{
-  display:none;position:fixed;inset:0;z-index:998;background:rgba(0,0,0,0.3);
-}
-.mobile-nav-overlay.open{display:block}
 .mobile-nav{
-  position:fixed;top:0;right:-280px;bottom:0;z-index:999;width:260px;
-  background:#fff;box-shadow:-4px 0 24px rgba(0,0,0,0.12);
-  flex-direction:column;align-items:stretch;gap:4px;
-  overflow-y:auto;padding:24px 20px 32px;
-  transition:right .25s ease;display:flex;
+  display:none;position:fixed;inset:0;z-index:999;
+  background:rgba(238,240,244,0.97);backdrop-filter:blur(16px);
+  flex-direction:column;align-items:center;justify-content:center;gap:6px;
+  overflow-y:auto;padding:60px 20px 32px;
 }
-.mobile-nav.open{right:0}
-.mobile-nav a{font-size:15px;font-weight:600;color:var(--ink2);padding:10px 16px;border-radius:10px;transition:all .15s}
-.mobile-nav a:hover{color:var(--accent);background:var(--accent-soft)}
-.mobile-nav-close{align-self:flex-end;background:none;border:none;color:var(--ink3);font-size:22px;cursor:pointer;padding:4px 8px;border-radius:8px;margin-bottom:8px}
-.mobile-nav-close:hover{color:var(--ink);background:rgba(0,0,0,0.06)}
-.mobile-nav-langs{display:flex;gap:5px;margin-top:auto;padding-top:16px;border-top:1px solid var(--brd);flex-wrap:wrap}
-.mobile-nav-langs .lang-btn{font-size:11px;font-weight:700;color:var(--ink4);padding:5px 10px;border-radius:6px;background:none;border:none;text-decoration:none}
-.mobile-nav-langs .lang-btn.active{color:var(--accent);background:var(--accent-soft)}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-size:17px;font-weight:600;color:var(--ink2);padding:11px 28px;border-radius:10px;transition:all .15s}
+.mobile-nav a:hover{color:var(--ink);background:rgba(0,0,0,0.06)}
+.mobile-nav-close{position:absolute;top:18px;right:20px;background:none;border:none;color:var(--ink);font-size:26px;cursor:pointer}
+.mobile-nav-langs{display:flex;gap:6px;margin-top:16px;padding-top:16px;border-top:1px solid var(--brd)}
+.mobile-nav-langs .lang-btn{font-size:12px;font-weight:700;color:var(--ink4);padding:6px 12px;border-radius:6px;background:none;border:none;text-decoration:none}
+.mobile-nav-langs .lang-btn.active{color:var(--ink);background:rgba(0,0,0,0.08)}
 .mobile-nav-langs .lang-btn:hover{color:var(--ink);background:rgba(0,0,0,0.06)}
 
 /* ── REVEAL ── */
@@ -736,17 +730,12 @@ footer{
   .suite-grid{grid-template-columns:1fr 1fr!important}
   .deploy-duo{grid-template-columns:1fr 1fr!important}
   .admin-split{grid-template-columns:1fr!important;gap:28px!important}
-  .ai-pro-grid{grid-template-columns:1fr!important;gap:32px!important}
 }
 @media(max-width:768px){
-  section.hero{grid-template-columns:1fr!important;padding:80px 20px 36px!important;min-height:auto!important}
-  section.hero > div:last-child{display:none!important}
-  section.hero h1{font-size:30px!important}
-  section.hero p{font-size:15px!important}
-  .hero-logo-main{width:220px!important;height:auto!important}
+  section.hero{grid-template-columns:1fr!important;padding:88px 20px 40px!important}
   .nav-links{display:none}
   .nav-hamburger{display:block}
-  .nav-langs{display:none!important}
+  .nav-langs{padding-right:0;margin-right:0;border-right:none}
   .hero{padding:96px 20px 52px}
   .hero-title{font-size:32px}
   .feat-grid,.mod-grid,.vantaggi-grid,.addons-grid,.deploy-grid{grid-template-columns:1fr}
@@ -763,26 +752,15 @@ footer{
   .suite-grid,.deploy-duo{grid-template-columns:1fr!important}
   .admin-split{grid-template-columns:1fr!important;gap:24px!important}
   .hero-logo-main{width:240px!important;height:auto!important}
-  .ai-pro-grid{grid-template-columns:1fr!important;gap:28px!important}
-  .volume-bar{flex-direction:column!important;align-items:stretch!important;text-align:center;padding:14px 12px!important}
-  .vtiers{justify-content:center;flex-wrap:wrap;gap:6px!important}
-  .vtier{min-width:44px!important;padding:5px 8px!important}
-  .vtier-n{font-size:14px!important}
-  .vtier-d{font-size:10px!important}
+  .volume-bar{flex-direction:column!important;align-items:stretch!important;text-align:center}
+  .vtiers{justify-content:center}
   .admin-tbl-row{grid-template-columns:1fr 1fr!important;gap:4px!important}
   .admin-tbl-head{display:none!important}
-  .langs-bar{flex-direction:column;align-items:flex-start;gap:8px;padding:14px 16px!important}
+  .langs-bar{flex-direction:column;align-items:flex-start;gap:10px}
   .langs-bar div[style*="margin-left"]{margin-left:0!important}
-  .lang-pills{gap:5px!important}
-  .lpill{font-size:11px!important;padding:5px 9px!important}
 }
 @media(max-width:480px){
   .hero-title{font-size:27px}
-  section.hero h1{font-size:28px!important}
-  .hero-logo-main{width:180px!important}
-  .hero-stats{grid-template-columns:repeat(2,1fr)!important;gap:6px!important}
-  .hstat{padding:8px 10px!important;min-width:0!important}
-  .hstat-num{font-size:16px!important}
   .hero-stats{gap:6px}
   .hstat{padding:11px 14px;min-width:82px}
   .hero-logo-main{width:180px!important}
@@ -825,9 +803,9 @@ footer{
     </a>
     <ul class="nav-links">
       <li><a href="#search">AI Search</a></li>
-      <li><a href="#ai-assistant">Blina AI</a></li>
       <li><a href="#modules">Modules</a></li>
       <li><a href="#automazioni">Automations</a></li>
+      <li><a href="#blina-whatsapp">Blina WhatsApp</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -840,24 +818,21 @@ footer{
       </div>
       <a href="https://app.blina-desk.com/en/auth/login" class="btn btn-outline" style="font-size:13px;padding:7px 15px">Sign in</a>
     </div>
-    <button class="nav-hamburger" onclick="document.getElementById('mNav').classList.add('open');document.getElementById('mNavOverlay').classList.add('open')">
+    <button class="nav-hamburger" onclick="document.getElementById('mNav').classList.add('open')">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><rect y="3" width="20" height="2" rx="1"/><rect y="9" width="20" height="2" rx="1"/><rect y="15" width="20" height="2" rx="1"/></svg>
     </button>
   </div>
 </nav>
 
-<!-- MOBILE NAV OVERLAY (click outside to close) -->
-<div class="mobile-nav-overlay" id="mNavOverlay" onclick="this.classList.remove('open');document.getElementById('mNav').classList.remove('open')"></div>
-
-<!-- MOBILE NAV (slide-in panel) -->
+<!-- MOBILE NAV -->
 <div class="mobile-nav" id="mNav">
-  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('open');document.getElementById('mNavOverlay').classList.remove('open')">✕</button>
-  <a href="#search" onclick="this.parentElement.classList.remove('open');document.getElementById('mNavOverlay').classList.remove('open')">AI Search</a>
-  <a href="#ai-assistant" onclick="this.parentElement.classList.remove('open');document.getElementById('mNavOverlay').classList.remove('open')">Blina AI</a>
-  <a href="#modules" onclick="this.parentElement.classList.remove('open');document.getElementById('mNavOverlay').classList.remove('open')">Modules</a>
-  <a href="#automazioni" onclick="this.parentElement.classList.remove('open');document.getElementById('mNavOverlay').classList.remove('open')">Automations</a>
-  <a href="#pricing" onclick="this.parentElement.classList.remove('open');document.getElementById('mNavOverlay').classList.remove('open')">Pricing</a>
-  <a href="#contact" onclick="this.parentElement.classList.remove('open');document.getElementById('mNavOverlay').classList.remove('open')">Contact</a>
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('open')">✕</button>
+  <a href="#search" onclick="this.parentElement.classList.remove('open')">AI Search</a>
+  <a href="#modules" onclick="this.parentElement.classList.remove('open')">Modules</a>
+  <a href="#automazioni" onclick="this.parentElement.classList.remove('open')">Automations</a>
+  <a href="#blina-whatsapp" onclick="this.parentElement.classList.remove('open')">Blina WhatsApp</a>
+  <a href="#pricing" onclick="this.parentElement.classList.remove('open')">Pricing</a>
+  <a href="#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
   <div class="mobile-nav-langs">
     <a class="lang-btn active" href="/">EN</a><a class="lang-btn" href="/de/">DE</a>
     <a class="lang-btn" href="/it/">IT</a><a class="lang-btn" href="/fr/">FR</a>
@@ -921,38 +896,21 @@ footer{
 
     <!-- Overline tag -->
     <div class="tag" style="margin-bottom:16px;opacity:0;animation:fadeUp .5s .1s ease forwards;align-self:flex-start">
-      The Operating System for Your Business
+      AI-Powered Business Platform
     </div>
 
     <!-- Titolo -->
-    <h1 style="font-size:clamp(34px,4.5vw,56px);font-weight:800;line-height:1.1;letter-spacing:-.04em;color:var(--ink);margin-bottom:16px;opacity:0;animation:fadeUp .6s .2s ease forwards;">
-      Your entire business.<br>One <em style="font-style:italic;color:var(--accent)">system</em>.
+    <h1 style="font-size:clamp(34px,4.5vw,60px);font-weight:800;line-height:1.06;letter-spacing:-.04em;color:var(--ink);margin-bottom:16px;opacity:0;animation:fadeUp .6s .2s ease forwards;">
+      Stop searching.<br>Start <em style="font-style:italic;color:var(--accent)">finding</em>.
     </h1>
 
     <!-- Sottotitolo -->
-    <p style="font-size:17px;line-height:1.7;color:var(--ink2);max-width:480px;margin-bottom:24px;opacity:0;animation:fadeUp .6s .3s ease forwards;">
-      No more separate tools, scattered files and manual processes. With Blina Desk AI, manage everything from one system.<br><br><strong style="color:var(--ink);font-weight:600">⚡ Powered by AI — when you want it.</strong>
+    <p style="font-size:17px;line-height:1.7;color:var(--ink2);max-width:480px;margin-bottom:28px;opacity:0;animation:fadeUp .6s .3s ease forwards;">
+      <strong style="color:var(--ink);font-weight:600">Knowledge, documents and business processes</strong> in one single system — with automatic OCR, semantic search and built-in generative AI.
     </p>
 
-    <!-- Real example -->
-    <div style="background:var(--bg-card);border:1px solid var(--brd);border-radius:var(--r2);padding:16px 18px;max-width:440px;margin-bottom:20px;opacity:0;animation:fadeUp .5s .35s ease forwards;">
-      <div style="font-size:11px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">Real example</div>
-      <div style="font-size:13px;color:var(--ink2);line-height:1.6">
-        <em style="color:var(--accent)">"Create an invoice for Müller, 3 hours of service"</em><br>
-        → The AI knows your price list.<br>
-        → Invoice ready in seconds.<br>
-        <strong style="color:var(--ink)">You decide whether to save and send it.</strong>
-      </div>
-    </div>
-
-    <!-- Trust note -->
-    <div style="display:flex;align-items:flex-start;gap:8px;max-width:440px;margin-bottom:24px;opacity:0;animation:fadeUp .5s .4s ease forwards;">
-      <span style="font-size:16px;flex-shrink:0">🔒</span>
-      <p style="font-size:13px;color:var(--ink3);line-height:1.5;margin:0"><strong style="color:var(--ink)">AI works. You control.</strong> Blina AI never acts without your confirmation. It prepares, suggests, fills in — but every final action stays in your hands.</p>
-    </div>
-
     <!-- CTA buttons -->
-    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;opacity:0;animation:fadeUp .6s .45s ease forwards;">
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;opacity:0;animation:fadeUp .6s .38s ease forwards;">
       <a href="https://app.blina-desk.com/en/auth/login" class="btn btn-primary btn-lg">
         Start Free
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
@@ -960,12 +918,12 @@ footer{
       <a href="#search" class="btn btn-outline btn-lg">How it works</a>
     </div>
 
-    <p style="margin-top:12px;font-size:12px;color:var(--ink4);opacity:0;animation:fadeUp .5s .52s ease forwards;">
+    <p style="margin-top:12px;font-size:12px;color:var(--ink4);opacity:0;animation:fadeUp .5s .46s ease forwards;">
       <strong style="color:var(--green);font-weight:600">14 days free</strong> · All modules · No credit card
     </p>
 
     <!-- Stats mini -->
-    <div class="hero-stats" style="display:grid;grid-template-columns:repeat(4,auto);gap:8px;margin-top:32px;opacity:0;animation:fadeUp .5s .54s ease forwards;">
+    <div style="display:flex;gap:8px;margin-top:32px;flex-wrap:wrap;opacity:0;animation:fadeUp .5s .54s ease forwards;">
       <div class="hstat"><div class="hstat-num">2<span>sec</span></div><div class="hstat-lbl">instead of 20+ min</div></div>
       <div class="hstat"><div class="hstat-num">11<span>+</span></div><div class="hstat-lbl">Business modules</div></div>
       <div class="hstat"><div class="hstat-num">100<span>%</span></div><div class="hstat-lbl">On-premise</div></div>
@@ -1022,49 +980,33 @@ footer{
           <div class="org-node org-mods-node"><div class="on-icon">🏥</div><div class="on-lbl">Clinic</div></div>
           <div class="org-node org-mods-node"><div class="on-icon">🤝</div><div class="on-lbl">Associations</div></div>
           <div class="org-node org-mods-node"><div class="on-icon">📋</div><div class="on-lbl">Projects</div></div>
-          <div class="org-node org-mods-node"><div class="on-icon">🚛</div><div class="on-lbl">Fleet</div></div>
         </div>
       </div>
       <div class="org-connector-line"></div>
-      <!-- Tools section — centered with branch lines -->
-      <div class="org-hub" style="background:rgba(139,92,246,0.08);border-color:rgba(139,92,246,0.3)">
-        <div class="on-lbl" style="color:#7c3aed">🛠️ Tools</div>
-        <div class="on-sub">Power-ups for your platform</div>
+      <div class="org-hub" style="background:rgba(232,92,42,0.1);border-color:rgba(232,92,42,0.35)">
+        <div class="on-lbl" style="color:var(--accent)">⚡ Automations</div>
+        <div class="on-sub">Describe it. Blina builds it.</div>
       </div>
-      <!-- Branch connector: center splits to left and right -->
-      <div style="position:relative;width:100%;max-width:520px;margin:0 auto;height:18px">
-        <div style="position:absolute;left:50%;top:0;width:1px;height:6px;background:#000"></div>
-        <div style="position:absolute;left:25%;right:25%;top:6px;height:1px;background:#000"></div>
-        <div style="position:absolute;left:25%;top:6px;width:1px;height:12px;background:#000"></div>
-        <div style="position:absolute;right:25%;top:6px;width:1px;height:12px;background:#000"></div>
+      <div class="org-connector-line"></div>
+      <div class="org-row connected org-mods" style="gap:5px">
+        <div class="org-node"><div class="on-icon">📧</div><div class="on-lbl">Email</div></div>
+        <div class="org-node"><div class="on-icon">💬</div><div class="on-lbl">WhatsApp</div></div>
+        <div class="org-node"><div class="on-icon">🔔</div><div class="on-lbl">Notify</div></div>
+        <div class="org-node"><div class="on-icon">✏️</div><div class="on-lbl">Update</div></div>
+        <div class="org-node"><div class="on-icon">➕</div><div class="on-lbl">Create Record</div></div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%;max-width:520px;margin:0 auto">
-        <!-- Automations tool -->
-        <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
-          <div class="org-hub" style="background:rgba(232,92,42,0.1);border-color:rgba(232,92,42,0.35);padding:12px 16px;width:100%">
-            <div class="on-lbl" style="color:var(--accent);font-size:12px">⚡ Automations</div>
-            <div class="on-sub" style="font-size:9px">Describe it.</div>
-          </div>
-          <div class="org-row connected org-mods" style="gap:3px;flex-wrap:nowrap">
-            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">📧</div><div class="on-lbl" style="font-size:8px">Email</div></div>
-            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">💬</div><div class="on-lbl" style="font-size:8px">WhatsApp</div></div>
-            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">🔔</div><div class="on-lbl" style="font-size:8px">Notify</div></div>
-            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">✏️</div><div class="on-lbl" style="font-size:8px">Update</div></div>
-            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">➕</div><div class="on-lbl" style="font-size:8px">Create</div></div>
-          </div>
-        </div>
-        <!-- Blina AI tool -->
-        <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
-          <div class="org-hub" style="background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.3);padding:12px 16px;width:100%">
-            <div class="on-lbl" style="color:#7c3aed;font-size:12px">✨ Blina AI</div>
-            <div class="on-sub" style="font-size:9px">Talk to your business. AI that acts.</div>
-          </div>
-          <div class="org-row connected org-mods" style="gap:3px;flex-wrap:nowrap">
-            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">💬</div><div class="on-lbl" style="font-size:8px">Actions</div></div>
-            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">📊</div><div class="on-lbl" style="font-size:8px">Reports</div></div>
-            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">⚡</div><div class="on-lbl" style="font-size:8px">Workflows</div></div>
-          </div>
-        </div>
+      <div class="org-connector-line"></div>
+      <div class="org-hub" style="background:rgba(37,211,102,0.1);border-color:rgba(37,211,102,0.35)">
+        <div class="on-lbl" style="color:#25d366">💬 Blina WhatsApp</div>
+        <div class="on-sub">Your team talks to your AI — via WhatsApp.</div>
+      </div>
+      <div class="org-connector-line"></div>
+      <div class="org-row connected org-mods" style="gap:5px">
+        <div class="org-node"><div class="on-icon">📝</div><div class="on-lbl">Tasks</div></div>
+        <div class="org-node"><div class="on-icon">🎫</div><div class="on-lbl">Tickets</div></div>
+        <div class="org-node"><div class="on-icon">📅</div><div class="on-lbl">Appointments</div></div>
+        <div class="org-node"><div class="on-icon">📦</div><div class="on-lbl">Orders</div></div>
+        <div class="org-node"><div class="on-icon">❓</div><div class="on-lbl">Q&amp;A</div></div>
       </div>
     </div>
   </div>
@@ -1215,87 +1157,6 @@ footer{
         <div class="feat-name">CRM included</div>
         <div class="feat-desc">Contacts, companies, leads and full interaction history — included in every plan. AI generates client summaries across all modules: deals, emails, tickets, invoices.</div>
         <div class="feat-ex"><span class="feat-ex-lbl">Example</span>Open a contact → AI shows: contracts, emails, tasks, unpaid invoices in a single view.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── AI ASSISTANT PRO ── -->
-<section class="section auto-section" id="ai-assistant" style="background:linear-gradient(135deg,#1a1036 0%,#0f172a 50%,#1e1145 100%)">
-  <div class="sec-inner">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1100px;margin:0 auto" class="ai-pro-grid">
-      <div>
-        <div class="tag reveal" style="margin-bottom:16px;background:rgba(139,92,246,0.15);color:#a78bfa;border-color:rgba(139,92,246,0.3)">✨ Blina AI</div>
-        <h2 class="sec-title reveal" style="color:#fff">Don't use software.<br><em style="color:#a78bfa">Command</em> your business.</h2>
-        <p class="sec-sub reveal" style="color:rgba(255,255,255,0.6);max-width:440px">Forget menus, modules and complex processes. With Blina AI, just write. The AI understands your entire business context and acts for you, in real time.</p>
-        <div style="margin-top:32px;display:flex;flex-direction:column;gap:16px">
-          <div class="contact-feat reveal" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px 16px">
-            <div class="contact-feat-icon" style="background:rgba(139,92,246,0.15);border-color:rgba(139,92,246,0.3)">💬</div>
-            <div><div class="contact-feat-title" style="color:#fff">Blina responds and works</div><div class="contact-feat-sub" style="color:rgba(255,255,255,0.5)">"Create an invoice for Müller, 3 hours at €150" → Blina drafts it. You review and hit send.</div></div>
-          </div>
-          <div class="contact-feat reveal d1" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px 16px">
-            <div class="contact-feat-icon" style="background:rgba(59,130,246,0.15);border-color:rgba(59,130,246,0.3)">📊</div>
-            <div><div class="contact-feat-title" style="color:#fff">Instant reports</div><div class="contact-feat-sub" style="color:rgba(255,255,255,0.5)">"Monthly revenue by client, quarterly comparison" → Report ready with charts. Save or export as PDF.</div></div>
-          </div>
-          <div class="contact-feat reveal d2" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px 16px">
-            <div class="contact-feat-icon" style="background:rgba(16,185,129,0.15);border-color:rgba(16,185,129,0.3)">🧠</div>
-            <div><div class="contact-feat-title" style="color:#fff">Total context</div><div class="contact-feat-sub" style="color:rgba(255,255,255,0.5)">The AI knows: clients, invoices, projects, employees, communications. Not a chatbot — your business operating system.</div></div>
-          </div>
-          <div class="contact-feat reveal d3" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px 16px">
-            <div class="contact-feat-icon" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15)">✅</div>
-            <div><div class="contact-feat-title" style="color:#fff">Blina prepares. You decide.</div><div class="contact-feat-sub" style="color:rgba(255,255,255,0.5)">Every action is a draft until you confirm. Invoices, emails, reports — nothing leaves without your approval.</div></div>
-          </div>
-        </div>
-        <div class="reveal d3" style="margin-top:28px">
-          <a href="https://app.blina-desk.com" class="btn btn-primary btn-lg" style="background:linear-gradient(135deg,#7c3aed,#6366f1)">Try Blina AI →</a>
-          <span style="display:block;margin-top:10px;font-size:12px;color:rgba(255,255,255,0.4)">€79/month • Work faster. Fewer clicks. Zero complexity.</span>
-        </div>
-      </div>
-      <!-- AI Chat mockup -->
-      <div class="reveal d2">
-        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r2);overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.3)">
-          <div style="background:rgba(255,255,255,0.06);padding:10px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,0.06)">
-            <span style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.8)">🤖 Blina AI</span>
-            <span style="margin-left:auto;font-size:9px;font-weight:700;color:#a78bfa;background:rgba(139,92,246,0.15);padding:2px 8px;border-radius:4px">PRO</span>
-          </div>
-          <div style="padding:16px;display:flex;flex-direction:column;gap:12px;min-height:320px">
-            <div style="align-self:flex-end;background:rgba(139,92,246,0.15);border:1px solid rgba(139,92,246,0.2);border-radius:12px 12px 4px 12px;padding:10px 14px;max-width:85%;font-size:12px;color:rgba(255,255,255,0.9)">Who are my top 3 clients this quarter? And send a thank-you email to the first one.</div>
-            <div style="align-self:flex-start;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:12px 12px 12px 4px;padding:10px 14px;max-width:85%;font-size:12px;color:rgba(255,255,255,0.7)">
-              <div style="margin-bottom:8px">📊 <strong style="color:#a78bfa">Top 3 Clients — Q1 2026</strong></div>
-              <div style="font-size:11px;color:rgba(255,255,255,0.5);display:flex;flex-direction:column;gap:3px">
-                <span>🥇 TechNova GmbH — <strong style="color:#4ade80">€34,200</strong> (8 invoices)</span>
-                <span>🥈 Alpine Solutions AG — €22,800 (5 invoices)</span>
-                <span>🥉 MediterranDesign S.R.L. — €18,600 (6 invoices)</span>
-              </div>
-              <div style="margin-top:10px">
-                <div style="margin-bottom:6px;font-size:11px;color:rgba(255,255,255,0.5)">📝 <strong style="color:#a78bfa">Thank-you email drafted</strong> for TechNova GmbH</div>
-                <div style="display:flex;gap:6px">
-                  <span style="font-size:10px;font-weight:700;background:rgba(22,163,74,0.15);color:#4ade80;padding:3px 10px;border-radius:6px;cursor:pointer">Review & Send</span>
-                  <span style="font-size:10px;font-weight:700;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.5);padding:3px 10px;border-radius:6px;cursor:pointer">Edit</span>
-                  <span style="font-size:10px;font-weight:700;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.5);padding:3px 10px;border-radius:6px;cursor:pointer">Save as PDF</span>
-                </div>
-              </div>
-            </div>
-            <div style="align-self:flex-end;background:rgba(139,92,246,0.15);border:1px solid rgba(139,92,246,0.2);border-radius:12px 12px 4px 12px;padding:10px 14px;max-width:85%;font-size:12px;color:rgba(255,255,255,0.9)">Any overdue invoices? Create a reminder for each one.</div>
-            <div style="align-self:flex-start;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:12px 12px 12px 4px;padding:10px 14px;max-width:85%;font-size:12px;color:rgba(255,255,255,0.7)">
-              ⚠️ <strong style="color:#fbbf24">3 overdue invoices</strong> found:<br>
-              <span style="font-size:11px;color:rgba(255,255,255,0.5)">#2026-031 — Alpine Solutions — €4,200 (12 days late)<br>
-              #2026-038 — DataFlow Ltd — €1,800 (5 days late)<br>
-              #2026-042 — MediterranDesign — €2,400 (3 days late)</span>
-              <div style="margin-top:8px">
-                <div style="font-size:11px;color:rgba(255,255,255,0.5)">📝 <strong style="color:#a78bfa">3 reminders drafted</strong> — ready for your review</div>
-                <div style="margin-top:6px;display:flex;gap:6px">
-                  <span style="font-size:10px;font-weight:700;background:rgba(22,163,74,0.15);color:#4ade80;padding:3px 10px;border-radius:6px;cursor:pointer">Review & Send all</span>
-                  <span style="font-size:10px;font-weight:700;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.5);padding:3px 10px;border-radius:6px;cursor:pointer">Edit each</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div style="padding:10px 14px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:8px">
-            <div style="flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:8px 12px;font-size:11px;color:rgba(255,255,255,0.3)">Ask anything or give a command...</div>
-            <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#7c3aed,#6366f1);display:flex;align-items:center;justify-content:center;font-size:12px">➤</div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -1456,19 +1317,6 @@ footer{
         <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">New job site → create project → assign workers with PIN → GPS map shows who's on site → manager approves timesheets at end of week.</div></div>
       </div>
 
-      <div class="mod-card reveal d2" style="--mc:var(--sky);--mi-bg:var(--sky-s);--mi-brd:rgba(2,132,199,0.2)">
-        <div class="mod-header"><div class="mod-icon">🚛</div><div class="mod-name">Fleet</div></div>
-        <div class="mod-desc">Complete fleet management — vehicles, drivers, costs, maintenance and compliance.<br><br>
-          <strong>✓</strong> Vehicle registry with insurance, leasing and inspection deadlines<br>
-          <strong>✓</strong> Driver management, assignments and license tracking<br>
-          <strong>✓</strong> Fuel logs, km readings and cost analysis per vehicle<br>
-          <strong>✓</strong> Maintenance scheduling with automatic reminders<br>
-          <strong>✓</strong> Fine tracking and document management<br>
-          <strong>✓</strong> AI: "Which vehicles have inspection due this month? Total fleet cost Q1?"</div>
-        <div class="mod-ai"><span>🧠</span><div><strong>Ask AI:</strong> "Vehicles with highest fuel cost this quarter. Any overdue inspections?"</div></div>
-        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">New vehicle → insurance + leasing tracked → maintenance reminder → driver assigned → km log → full cost history per vehicle.</div></div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -1557,13 +1405,76 @@ footer{
   </div>
 </section>
 
+<!-- ── BLINA WHATSAPP ── -->
+<section class="section" id="blina-whatsapp" style="background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-top:1px solid #a7f3d0;border-bottom:1px solid #a7f3d0">
+  <div class="sec-inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1100px;margin:0 auto" class="ai-pro-grid">
+      <div>
+        <div class="tag reveal" style="margin-bottom:16px;background:rgba(37,211,102,0.12);color:#128c7e;border-color:rgba(37,211,102,0.25)">💬 Blina WhatsApp</div>
+        <h2 class="sec-title reveal" style="color:var(--ink)">Your team talks to<br>your <em style="color:#25d366">AI</em> — via WhatsApp.</h2>
+        <p class="sec-sub reveal" style="color:var(--ink3);max-width:440px">Your team talks directly to Blina AI through WhatsApp. Create tasks, book appointments, open tickets, check orders — all from a simple chat.</p>
+        <div style="margin-top:32px;display:flex;flex-direction:column;gap:16px">
+          <div class="contact-feat reveal" style="background:#fff;border:1px solid #a7f3d0;border-radius:12px;padding:14px 16px;box-shadow:0 1px 3px rgba(37,211,102,0.08)">
+            <div class="contact-feat-icon" style="background:rgba(37,211,102,0.1);border-color:rgba(37,211,102,0.2)">📅</div>
+            <div><div class="contact-feat-title" style="color:var(--ink)">Appointments by chat</div><div class="contact-feat-sub" style="color:var(--ink3)">"I need an appointment Thursday at 3pm" → Blina creates the appointment automatically.</div></div>
+          </div>
+          <div class="contact-feat reveal d1" style="background:#fff;border:1px solid #a7f3d0;border-radius:12px;padding:14px 16px;box-shadow:0 1px 3px rgba(37,211,102,0.08)">
+            <div class="contact-feat-icon" style="background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.2)">🎫</div>
+            <div><div class="contact-feat-title" style="color:var(--ink)">Support via WhatsApp</div><div class="contact-feat-sub" style="color:var(--ink3)">"My printer isn't working" → Helpdesk ticket created with full details.</div></div>
+          </div>
+          <div class="contact-feat reveal d2" style="background:#fff;border:1px solid #a7f3d0;border-radius:12px;padding:14px 16px;box-shadow:0 1px 3px rgba(37,211,102,0.08)">
+            <div class="contact-feat-icon" style="background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.2)">📦</div>
+            <div><div class="contact-feat-title" style="color:var(--ink)">Check order status</div><div class="contact-feat-sub" style="color:var(--ink3)">"What's the status of order #4521?" → Instant response with status and details.</div></div>
+          </div>
+          <div class="contact-feat reveal d3" style="background:#fff;border:1px solid #a7f3d0;border-radius:12px;padding:14px 16px;box-shadow:0 1px 3px rgba(37,211,102,0.08)">
+            <div class="contact-feat-icon" style="background:rgba(37,211,102,0.08);border-color:rgba(37,211,102,0.15)">🔒</div>
+            <div><div class="contact-feat-title" style="color:var(--ink)">Whitelist security</div><div class="contact-feat-sub" style="color:var(--ink3)">Only authorized contacts can communicate. Daily limits, rate limiting, HMAC-signed webhooks.</div></div>
+          </div>
+        </div>
+        <div class="reveal d3" style="margin-top:28px">
+          <a href="https://app.blina-desk.com" class="btn btn-primary btn-lg" style="background:linear-gradient(135deg,#25d366,#128c7e)">Try Blina WhatsApp →</a>
+          <span style="display:block;margin-top:10px;font-size:12px;color:var(--ink3)">€39/month • 500 messages/month included. Extra packs available.</span>
+        </div>
+      </div>
+      <!-- WhatsApp Chat mockup -->
+      <div class="reveal d2">
+        <div style="background:#fff;border:1px solid #a7f3d0;border-radius:var(--r2);overflow:hidden;box-shadow:0 8px 40px rgba(37,211,102,0.12)">
+          <div style="background:linear-gradient(135deg,#25d366,#128c7e);padding:10px 16px;display:flex;align-items:center;gap:10px">
+            <span style="font-size:12px;font-weight:700;color:#fff">💬 Blina WhatsApp</span>
+          </div>
+          <div style="padding:16px;display:flex;flex-direction:column;gap:12px;min-height:320px;background:#f0fdf4">
+            <div style="align-self:flex-end;background:#25d366;border-radius:12px 12px 4px 12px;padding:10px 14px;max-width:85%;font-size:12px;color:#fff">I need an appointment on Friday at 10am with Dr. Smith.</div>
+            <div style="align-self:flex-start;background:#fff;border:1px solid #d1fae5;border-radius:12px 12px 12px 4px;padding:10px 14px;max-width:85%;font-size:12px;color:var(--ink2)">
+              <div style="margin-bottom:8px">📅 <strong style="color:#128c7e">Appointment created</strong></div>
+              <div style="font-size:11px;color:var(--ink3);display:flex;flex-direction:column;gap:3px">
+                <span>📆 Friday, April 4, 2026 — 10:00 AM</span>
+                <span>👨‍⚕️ Dr. Smith</span>
+                <span>✅ Confirmation sent</span>
+              </div>
+            </div>
+            <div style="align-self:flex-end;background:#25d366;border-radius:12px 12px 4px 12px;padding:10px 14px;max-width:85%;font-size:12px;color:#fff">What's the status of order #1234?</div>
+            <div style="align-self:flex-start;background:#fff;border:1px solid #d1fae5;border-radius:12px 12px 12px 4px;padding:10px 14px;max-width:85%;font-size:12px;color:var(--ink2)">
+              <div style="margin-bottom:8px">📦 <strong style="color:#128c7e">Order #1234</strong></div>
+              <div style="font-size:11px;color:var(--ink3);display:flex;flex-direction:column;gap:3px">
+                <span>Status: <strong style="color:#16a34a">In Progress</strong></span>
+                <span>Amount: €2,340.00</span>
+                <span>Delivery: April 7, 2026</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── PRICING ── -->
 <section class="section" style="background:var(--bg-card);border-top:1px solid var(--brd);border-bottom:1px solid var(--brd)" id="pricing">
   <div class="sec-inner">
     <div class="sec-head reveal">
       <div class="tag" style="margin-bottom:14px">Pricing</div>
       <h2 class="sec-title">Build your <em>perfect plan</em>.</h2>
-      <p class="sec-sub">€49 per session — you pay only for <strong>concurrent active users</strong>, not registered users or workstations. Add modules for a flat monthly fee.</p>
+      <p class="sec-sub">For €49/session you get the complete Base Platform with <strong>unlimited users and zero per-seat costs</strong>. Add only the modules you need.</p>
     </div>
 
     <div style="text-align:center;margin-bottom:20px" class="reveal">
@@ -1577,7 +1488,7 @@ footer{
       <div class="pricing-hero-info">
         <div class="pricing-hero-lbl">Always included</div>
         <div class="pricing-hero-name">Base Platform</div>
-        <div class="pricing-hero-desc">CRM + AI Semantic Search + OCR Scanner + RAG Chat + Documents + Notes + Tasks + Appointments. All AI-powered.</div>
+        <div class="pricing-hero-desc">CRM + AI Semantic Search + OCR Scanner + RAG Chat + Documents + Notes + Tasks + Appointments — all AI-powered, all included.</div>
       </div>
       <div style="text-align:center;flex-shrink:0">
         <div class="pricing-hero-amount" data-monthly="€49" data-annual="€39">€49</div>
@@ -1586,8 +1497,8 @@ footer{
     </div>
 
     <div class="pricing-perks reveal">
-      <div class="pricing-perk"><div class="pricing-perk-ck">✓</div><span><strong>1 session = 1 active user at a time</strong> — register unlimited users, pay only for those online simultaneously.</span></div>
-      <div class="pricing-perk"><div class="pricing-perk-ck">✓</div><span><strong>Modules = flat monthly fee</strong> — add Sales for €45/mo, same price whether you have 1 or 10 sessions.</span></div>
+      <div class="pricing-perk"><div class="pricing-perk-ck">✓</div><span><strong>Pay per session</strong> — not per user. One price, whole team.</span></div>
+      <div class="pricing-perk"><div class="pricing-perk-ck">✓</div><span><strong>Unlimited users</strong> — 5 or 500 people, same price.</span></div>
       <div class="pricing-perk"><div class="pricing-perk-ck">✓</div><span><strong>14 days free</strong> — all modules, no credit card.</span></div>
     </div>
 
@@ -1604,13 +1515,8 @@ footer{
       <div class="addon" style="grid-column:span 1"><div><div class="addon-name">📒 Accounting</div><div class="addon-sub">P&amp;L, balance sheet, FatturaPA, CSV import, DATEV</div><div style="font-size:10px;color:var(--ink3);margin-top:3px">E-invoicing · OCR receipts · AI · DATEV</div></div><div style="text-align:right;flex-shrink:0"><div class="addon-price" data-monthly="€69" data-annual="€55">€69</div><div class="addon-unit">/mo</div></div></div>
       <div class="addon"><div><div class="addon-name">📧 Email &amp; Phone</div><div class="addon-sub">Unified inbox, calls, templates, CRM sync</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€29" data-annual="€23">€29</div><div class="addon-unit">/mo</div></div></div>
       <div class="addon"><div><div class="addon-name">📋 Projects</div><div class="addon-sub">Kanban, GPS time clock, worker portal</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€45" data-annual="€36">€45</div><div class="addon-unit">/mo</div></div></div>
-      <div class="addon"><div><div class="addon-name">🚛 Fleet</div><div class="addon-sub">Vehicles, drivers, fuel, maintenance, fines</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€39" data-annual="€31">€39</div><div class="addon-unit">/mo</div></div></div>
-    </div>
-
-    <div style="font-size:12px;font-weight:700;color:var(--ink3);margin-bottom:12px;margin-top:24px;text-transform:uppercase;letter-spacing:.08em">Tools &amp; AI</div>
-    <div class="addons-grid reveal">
-      <div class="addon" style="border-color:rgba(232,92,42,0.3);background:var(--accent-soft)"><div><div class="addon-name">⚡ Automations</div><div class="addon-sub">Describe it. Blina builds it. — AI workflows, triggers, 50+ templates</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€69" data-annual="€55">€69</div><div class="addon-unit">/mo</div></div></div>
-      <div class="addon" style="border-color:rgba(139,92,246,0.3);background:rgba(139,92,246,0.06)"><div><div class="addon-name">✨ Blina AI</div><div class="addon-sub">Command your business. AI that acts. — Invoices, reports, workflows from chat</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€79" data-annual="€63">€79</div><div class="addon-unit">/mo</div></div></div>
+      <div class="addon" style="border-color:rgba(232,92,42,0.3);background:var(--accent-soft)"><div><div class="addon-name">⚡ Automations</div><div class="addon-sub">AI workflows, 50+ ready templates</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€69" data-annual="€55">€69</div><div class="addon-unit">/mo</div></div></div>
+      <div class="addon" style="border-color:rgba(37,211,102,0.3);background:rgba(37,211,102,0.05)"><div><div class="addon-name">💬 Blina WhatsApp <span style="font-size:9px;background:#25d366;color:#fff;padding:2px 6px;border-radius:4px;margin-left:4px">NEW</span></div><div class="addon-sub">Tasks, tickets, appointments — via WhatsApp chat</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€39" data-annual="€31">€39</div><div class="addon-unit">/mo</div></div></div>
     </div>
 
     <div class="volume-bar reveal">
@@ -1626,6 +1532,36 @@ footer{
     </div>
 
 
+    <!-- SUITE BUNDLES -->
+    <div style="margin-bottom:28px">
+      <div style="font-size:12px;font-weight:700;color:var(--ink3);margin-bottom:14px;text-transform:uppercase;letter-spacing:.08em;text-align:center">Suite Bundles — Save ~12%</div>
+      <div class="suite-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+        <div class="addon reveal" style="flex-direction:column;align-items:flex-start;gap:4px">
+          <div><div class="addon-name">🏢 Business</div><div class="addon-sub">Base + Sales + Purchasing + Email</div></div>
+          <div style="display:flex;align-items:baseline;gap:5px;margin-top:6px"><span style="font-size:22px;font-weight:900;color:var(--ink)">€99</span><span style="font-size:12px;color:var(--ink4);text-decoration:line-through">€116</span><span style="font-size:11px;color:var(--green);font-weight:600">/sess</span></div>
+        </div>
+        <div class="addon reveal d1" style="flex-direction:column;align-items:flex-start;gap:4px">
+          <div><div class="addon-name">🏢 Business Plus</div><div class="addon-sub">Base + Sales + Purchasing + HR + Helpdesk + Email</div></div>
+          <div style="display:flex;align-items:baseline;gap:5px;margin-top:6px"><span style="font-size:22px;font-weight:900;color:var(--ink)">€129</span><span style="font-size:12px;color:var(--ink4);text-decoration:line-through">€154</span><span style="font-size:11px;color:var(--green);font-weight:600">/sess</span></div>
+        </div>
+        <div class="addon reveal d2" style="flex-direction:column;align-items:flex-start;gap:4px">
+          <div><div class="addon-name">⚖️ Legal Suite</div><div class="addon-sub">Base + Legal + Email</div></div>
+          <div style="display:flex;align-items:baseline;gap:5px;margin-top:6px"><span style="font-size:22px;font-weight:900;color:var(--ink)">€89</span><span style="font-size:12px;color:var(--ink4);text-decoration:line-through">€101</span><span style="font-size:11px;color:var(--green);font-weight:600">/sess</span></div>
+        </div>
+        <div class="addon reveal" style="flex-direction:column;align-items:flex-start;gap:4px">
+          <div><div class="addon-name">🏥 Healthcare</div><div class="addon-sub">Base + Clinic + Email</div></div>
+          <div style="display:flex;align-items:baseline;gap:5px;margin-top:6px"><span style="font-size:22px;font-weight:900;color:var(--ink)">€95</span><span style="font-size:12px;color:var(--ink4);text-decoration:line-through">€108</span><span style="font-size:11px;color:var(--green);font-weight:600">/sess</span></div>
+        </div>
+        <div class="addon reveal d1" style="flex-direction:column;align-items:flex-start;gap:4px">
+          <div><div class="addon-name">🏠 Real Estate</div><div class="addon-sub">Base + Real Estate + Email</div></div>
+          <div style="display:flex;align-items:baseline;gap:5px;margin-top:6px"><span style="font-size:22px;font-weight:900;color:var(--ink)">€89</span><span style="font-size:12px;color:var(--ink4);text-decoration:line-through">€101</span><span style="font-size:11px;color:var(--green);font-weight:600">/sess</span></div>
+        </div>
+        <div class="addon reveal d2" style="flex-direction:column;align-items:flex-start;gap:4px;border-color:rgba(232,92,42,0.35);background:var(--accent-soft)">
+          <div><div class="addon-name">🚀 All-in-One SMB <span style="font-size:9px;background:var(--accent);color:#fff;padding:2px 6px;border-radius:4px;margin-left:4px">TOP</span></div><div class="addon-sub">Base + Sales + Purchasing + Accounting + HR + Email + Automations</div></div>
+          <div style="display:flex;align-items:baseline;gap:5px;margin-top:6px"><span style="font-size:22px;font-weight:900;color:var(--ink)">€179</span><span style="font-size:12px;color:var(--ink4);text-decoration:line-through">€213</span><span style="font-size:11px;color:var(--green);font-weight:600">/sess</span></div>
+        </div>
+      </div>
+    </div>
     <div style="text-align:center;margin-bottom:36px">
       <a href="https://app.blina-desk.com/en/auth/login" class="btn btn-primary btn-lg">
         Free trial 14 days
@@ -1858,6 +1794,7 @@ footer{
     <div class="lpill"><span class="flag">🇩🇪</span> Deutsch</div>
     <div class="lpill on"><span class="flag">🇬🇧</span> English</div>
     <div class="lpill"><span class="flag">🇫🇷</span> Français</div>
+    <div class="lpill"><span class="flag">🇦🇱</span> Shqip</div>
   </div>
   <div style="margin-left:auto;font-size:12px;color:var(--ink4)">AI responds in the language of the question</div>
 </div>
