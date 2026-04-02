@@ -124,37 +124,37 @@ img,svg{display:block;max-width:100%}
 }
 .lang-btn:hover{color:var(--ink);background:rgba(0,0,0,0.06)}
 .lang-btn.active{color:var(--ink);background:rgba(0,0,0,0.08)}
-.nav-hamburger{display:none;background:none;border:none;cursor:pointer;color:var(--ink);padding:6px;border-radius:8px}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;color:var(--ink);padding:6px;border-radius:8px;margin-left:auto}
 
 /* ── HERO ── */
 .hero-split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;width:100%;max-width:1100px;margin:0 auto;margin-top:52px;opacity:0;animation:fadeUp .7s .65s ease forwards}
 .hero-left-col{text-align:left}
 .hero-right-col{}
-.orgchart{display:flex;flex-direction:column;align-items:center;gap:14px;width:100%}
-.org-node{position:relative;background:#fff;border:1px solid var(--brd);box-shadow:0 2px 8px rgba(0,0,0,0.07);border-radius:var(--r);padding:14px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;min-width:120px;transition:all .2s}
-.org-node:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.1)}
-.org-root{background:var(--accent);border-color:var(--accent);padding:16px 28px;min-width:200px;box-shadow:0 6px 24px var(--accent-glow)}
-.org-root .on-lbl{color:#fff;font-size:16px;font-weight:800}
-.org-root .on-sub{color:rgba(255,255,255,0.75);font-size:11px}
-.org-node .on-icon{font-size:22px;margin-bottom:6px;line-height:1}
-.org-node .on-lbl{font-size:13px;font-weight:700;color:var(--ink);line-height:1.2}
-.org-node .on-sub{font-size:10px;color:var(--ink3);margin-top:3px}
+.orgchart{display:flex;flex-direction:column;align-items:center;gap:10px;width:100%}
+.org-node{position:relative;background:#fff;border:1px solid var(--brd);box-shadow:0 1px 6px rgba(0,0,0,0.06);border-radius:var(--r);padding:10px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;min-width:90px;transition:all .2s}
+.org-node:hover{transform:translateY(-1px);box-shadow:0 3px 10px rgba(0,0,0,0.08)}
+.org-root{background:var(--accent);border-color:var(--accent);padding:12px 22px;min-width:170px;box-shadow:0 4px 18px var(--accent-glow)}
+.org-root .on-lbl{color:#fff;font-size:14px;font-weight:800}
+.org-root .on-sub{color:rgba(255,255,255,0.75);font-size:10px}
+.org-node .on-icon{font-size:18px;margin-bottom:4px;line-height:1}
+.org-node .on-lbl{font-size:11px;font-weight:700;color:var(--ink);line-height:1.2}
+.org-node .on-sub{font-size:9px;color:var(--ink3);margin-top:2px}
 .org-row{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;width:100%;padding-top:10px;position:relative}
 .org-row.connected::before{content:"";position:absolute;top:5px;left:12%;right:12%;height:1px;background:#000}
 .org-row.connected .org-node::before{content:"";position:absolute;left:50%;top:-10px;width:1px;height:10px;background:#000}
-.org-connector-line{width:1px;height:10px;background:#000;margin:0 auto;display:block}
-.org-embed{background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:var(--r);padding:9px 16px;min-width:240px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
-.org-embed .on-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink2)}
-.org-embed .on-sub{font-size:9px;color:var(--ink3);margin-top:2px}
-.org-hub{background:rgba(232,92,42,0.07);border:1px solid rgba(232,92,42,0.25);border-radius:var(--r);padding:9px 16px;min-width:180px;text-align:center}
-.org-hub .on-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--accent)}
-.org-hub .on-sub{font-size:9px;color:var(--ink3);margin-top:2px}
-.org-mods .org-node{min-width:88px;padding:9px 12px}
+.org-connector-line{width:1px;height:8px;background:#000;margin:0 auto;display:block}
+.org-embed{background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:var(--r);padding:7px 14px;min-width:220px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,0.05)}
+.org-embed .on-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink2)}
+.org-embed .on-sub{font-size:8px;color:var(--ink3);margin-top:1px}
+.org-hub{background:rgba(232,92,42,0.07);border:1px solid rgba(232,92,42,0.25);border-radius:var(--r);padding:7px 14px;min-width:150px;text-align:center}
+.org-hub .on-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--accent)}
+.org-hub .on-sub{font-size:8px;color:var(--ink3);margin-top:1px}
+.org-mods .org-node{min-width:66px;padding:6px 9px}
 .org-mods .on-icon{font-size:17px;margin-bottom:4px}
 .org-mods .on-lbl{font-size:11px}
-.org-mods-node{min-width:88px!important;padding:10px 13px!important}
-.org-mods-node .on-icon{font-size:19px!important;margin-bottom:5px!important}
-.org-mods-node .on-lbl{font-size:11px!important;font-weight:700!important;color:var(--ink)!important}
+.org-mods-node{min-width:70px!important;padding:7px 10px!important}
+.org-mods-node .on-icon{font-size:16px!important;margin-bottom:3px!important}
+.org-mods-node .on-lbl{font-size:10px!important;font-weight:700!important;color:var(--ink)!important}
 @media(max-width:1024px){.hero-split{grid-template-columns:1fr;gap:32px}.hero-left-col{text-align:center}}
 @media(max-width:768px){.hero-split{grid-template-columns:1fr}}
 .hero{
@@ -215,7 +215,7 @@ img,svg{display:block;max-width:100%}
 .hstat-num span{color:var(--accent)}
 .hstat-lbl{font-size:11px;color:var(--ink4);margin-top:2px}
 
-/* ── HERO MOCKUP — fedele allo screenshot ── */
+/* ── HERO MOCKUP ── */
 .hero-mockup{
   margin-top:52px;width:100%;max-width:1000px;
   border-radius:var(--r2);overflow:hidden;
@@ -224,7 +224,7 @@ img,svg{display:block;max-width:100%}
   opacity:0;animation:fadeUp .7s .65s ease forwards;
 }
 
-/* Top bar bianca — come lo screenshot */
+/* Top bar */
 .mock-topbar{
   background:#ffffff;border-bottom:1px solid var(--brd);
   height:44px;display:flex;align-items:center;padding:0 16px;gap:12px;
@@ -267,7 +267,7 @@ img,svg{display:block;max-width:100%}
   background-size:var(--gs) var(--gs);
 }
 
-/* Sidebar — esattamente come lo screenshot */
+/* Sidebar */
 .mock-sidebar{
   width:168px;flex-shrink:0;
   background:rgba(255,255,255,0.96);border-right:1px solid var(--brd);
@@ -355,7 +355,7 @@ img,svg{display:block;max-width:100%}
 .sec-title em{font-style:italic;color:var(--accent)}
 .sec-sub{font-size:15px;color:var(--ink2);line-height:1.7}
 
-/* ── VANTAGGI ── */
+/* ── BENEFITS ── */
 .vantaggi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .vantaggio{
   background:var(--bg-card);border:1px solid var(--brd);border-radius:var(--r2);
@@ -474,7 +474,7 @@ img,svg{display:block;max-width:100%}
 }
 .mod-ex-txt{font-size:12px;color:var(--ink4);line-height:1.55;font-style:italic}
 
-/* ── AUTOMAZIONI ── */
+/* ── AUTOMATIONS ── */
 .auto-section{
   background:var(--ink);
   background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),
@@ -686,19 +686,25 @@ footer{
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 
 /* ── MOBILE NAV ── */
-.mobile-nav{
-  display:none;position:fixed;inset:0;z-index:999;
-  background:rgba(238,240,244,0.97);backdrop-filter:blur(16px);
-  flex-direction:column;align-items:center;justify-content:center;gap:6px;
-  overflow-y:auto;padding:60px 20px 32px;
+.mobile-nav-overlay{
+  display:none;position:fixed;inset:0;z-index:998;background:rgba(0,0,0,0.3);
 }
-.mobile-nav.open{display:flex}
-.mobile-nav a{font-size:17px;font-weight:600;color:var(--ink2);padding:11px 28px;border-radius:10px;transition:all .15s}
-.mobile-nav a:hover{color:var(--ink);background:rgba(0,0,0,0.06)}
-.mobile-nav-close{position:absolute;top:18px;right:20px;background:none;border:none;color:var(--ink);font-size:26px;cursor:pointer}
-.mobile-nav-langs{display:flex;gap:6px;margin-top:16px;padding-top:16px;border-top:1px solid var(--brd)}
-.mobile-nav-langs .lang-btn{font-size:12px;font-weight:700;color:var(--ink4);padding:6px 12px;border-radius:6px;background:none;border:none;text-decoration:none}
-.mobile-nav-langs .lang-btn.active{color:var(--ink);background:rgba(0,0,0,0.08)}
+.mobile-nav-overlay.open{display:block}
+.mobile-nav{
+  position:fixed;top:0;right:-280px;bottom:0;z-index:999;width:260px;
+  background:#fff;box-shadow:-4px 0 24px rgba(0,0,0,0.12);
+  flex-direction:column;align-items:stretch;gap:4px;
+  overflow-y:auto;padding:24px 20px 32px;
+  transition:right .25s ease;display:flex;
+}
+.mobile-nav.open{right:0}
+.mobile-nav a{font-size:15px;font-weight:600;color:var(--ink2);padding:10px 16px;border-radius:10px;transition:all .15s}
+.mobile-nav a:hover{color:var(--accent);background:var(--accent-soft)}
+.mobile-nav-close{align-self:flex-end;background:none;border:none;color:var(--ink3);font-size:22px;cursor:pointer;padding:4px 8px;border-radius:8px;margin-bottom:8px}
+.mobile-nav-close:hover{color:var(--ink);background:rgba(0,0,0,0.06)}
+.mobile-nav-langs{display:flex;gap:5px;margin-top:auto;padding-top:16px;border-top:1px solid var(--brd);flex-wrap:wrap}
+.mobile-nav-langs .lang-btn{font-size:11px;font-weight:700;color:var(--ink4);padding:5px 10px;border-radius:6px;background:none;border:none;text-decoration:none}
+.mobile-nav-langs .lang-btn.active{color:var(--accent);background:var(--accent-soft)}
 .mobile-nav-langs .lang-btn:hover{color:var(--ink);background:rgba(0,0,0,0.06)}
 
 /* ── REVEAL ── */
@@ -732,10 +738,14 @@ footer{
   .admin-split{grid-template-columns:1fr!important;gap:28px!important}
 }
 @media(max-width:768px){
-  section.hero{grid-template-columns:1fr!important;padding:88px 20px 40px!important}
+  section.hero{grid-template-columns:1fr!important;padding:80px 20px 36px!important;min-height:auto!important}
+  section.hero > div:last-child{display:none!important}
+  section.hero h1{font-size:30px!important}
+  section.hero p{font-size:15px!important}
+  .hero-logo-main{width:220px!important;height:auto!important}
   .nav-links{display:none}
   .nav-hamburger{display:block}
-  .nav-langs{padding-right:0;margin-right:0;border-right:none}
+  .nav-langs{display:none!important}
   .hero{padding:96px 20px 52px}
   .hero-title{font-size:32px}
   .feat-grid,.mod-grid,.vantaggi-grid,.addons-grid,.deploy-grid{grid-template-columns:1fr}
@@ -752,15 +762,26 @@ footer{
   .suite-grid,.deploy-duo{grid-template-columns:1fr!important}
   .admin-split{grid-template-columns:1fr!important;gap:24px!important}
   .hero-logo-main{width:240px!important;height:auto!important}
-  .volume-bar{flex-direction:column!important;align-items:stretch!important;text-align:center}
-  .vtiers{justify-content:center}
+  .ai-pro-grid{grid-template-columns:1fr!important;gap:28px!important}
+  .volume-bar{flex-direction:column!important;align-items:stretch!important;text-align:center;padding:14px 12px!important}
+  .vtiers{justify-content:center;flex-wrap:wrap;gap:6px!important}
+  .vtier{min-width:44px!important;padding:5px 8px!important}
+  .vtier-n{font-size:14px!important}
+  .vtier-d{font-size:10px!important}
   .admin-tbl-row{grid-template-columns:1fr 1fr!important;gap:4px!important}
   .admin-tbl-head{display:none!important}
-  .langs-bar{flex-direction:column;align-items:flex-start;gap:10px}
+  .langs-bar{flex-direction:column;align-items:flex-start;gap:8px;padding:14px 16px!important}
   .langs-bar div[style*="margin-left"]{margin-left:0!important}
+  .lang-pills{gap:5px!important}
+  .lpill{font-size:11px!important;padding:5px 9px!important}
 }
 @media(max-width:480px){
   .hero-title{font-size:27px}
+  section.hero h1{font-size:28px!important}
+  .hero-logo-main{width:180px!important}
+  .hero-stats{grid-template-columns:repeat(2,1fr)!important;gap:6px!important}
+  .hstat{padding:8px 10px!important;min-width:0!important}
+  .hstat-num{font-size:16px!important}
   .hero-stats{gap:6px}
   .hstat{padding:11px 14px;min-width:82px}
   .hero-logo-main{width:180px!important}
@@ -803,6 +824,7 @@ footer{
     </a>
     <ul class="nav-links">
       <li><a href="#search">AI Search</a></li>
+      <li><a href="#ai-assistant">Blina AI</a></li>
       <li><a href="#modules">Modules</a></li>
       <li><a href="#automazioni">Automations</a></li>
       <li><a href="#blina-whatsapp">Blina WhatsApp</a></li>
@@ -816,23 +838,27 @@ footer{
         <a class="lang-btn" href="/it/">IT</a>
         <a class="lang-btn" href="/fr/">FR</a>
       </div>
-      <a href="https://app.blina-desk.com/en/auth/login" class="btn btn-outline" style="font-size:13px;padding:7px 15px">Sign in</a>
+      <a href="https://app.blina-desk.com/en/auth/login" class="btn btn-outline" style="font-size:13px;padding:7px 15px">Log in</a>
     </div>
-    <button class="nav-hamburger" onclick="document.getElementById('mNav').classList.add('open')">
+    <button class="nav-hamburger" onclick="document.getElementById('mNav').classList.add('open');document.getElementById('mNavOverlay').classList.add('open')">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><rect y="3" width="20" height="2" rx="1"/><rect y="9" width="20" height="2" rx="1"/><rect y="15" width="20" height="2" rx="1"/></svg>
     </button>
   </div>
 </nav>
 
-<!-- MOBILE NAV -->
+<!-- MOBILE NAV OVERLAY (click outside to close) -->
+<div class="mobile-nav-overlay" id="mNavOverlay" onclick="this.classList.remove('open');document.getElementById('mNav').classList.remove('open')"></div>
+
+<!-- MOBILE NAV (slide-in panel) -->
 <div class="mobile-nav" id="mNav">
-  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('open')">✕</button>
-  <a href="#search" onclick="this.parentElement.classList.remove('open')">AI Search</a>
-  <a href="#modules" onclick="this.parentElement.classList.remove('open')">Modules</a>
-  <a href="#automazioni" onclick="this.parentElement.classList.remove('open')">Automations</a>
-  <a href="#blina-whatsapp" onclick="this.parentElement.classList.remove('open')">Blina WhatsApp</a>
-  <a href="#pricing" onclick="this.parentElement.classList.remove('open')">Pricing</a>
-  <a href="#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('open');document.getElementById('mNavOverlay').classList.remove('open')">&#x2715;</button>
+  <a href="#search" onclick="this.parentElement.classList.remove('open');document.getElementById('mNavOverlay').classList.remove('open')">AI Search</a>
+  <a href="#ai-assistant" onclick="this.parentElement.classList.remove('open');document.getElementById('mNavOverlay').classList.remove('open')">Blina AI</a>
+  <a href="#modules" onclick="this.parentElement.classList.remove('open');document.getElementById('mNavOverlay').classList.remove('open')">Modules</a>
+  <a href="#automazioni" onclick="this.parentElement.classList.remove('open');document.getElementById('mNavOverlay').classList.remove('open')">Automations</a>
+  <a href="#blina-whatsapp" onclick="this.parentElement.classList.remove('open');document.getElementById('mNavOverlay').classList.remove('open')">Blina WhatsApp</a>
+  <a href="#pricing" onclick="this.parentElement.classList.remove('open');document.getElementById('mNavOverlay').classList.remove('open')">Pricing</a>
+  <a href="#contact" onclick="this.parentElement.classList.remove('open');document.getElementById('mNavOverlay').classList.remove('open')">Contact</a>
   <div class="mobile-nav-langs">
     <a class="lang-btn active" href="/">EN</a><a class="lang-btn" href="/de/">DE</a>
     <a class="lang-btn" href="/it/">IT</a><a class="lang-btn" href="/fr/">FR</a>
@@ -848,7 +874,7 @@ footer{
   <!-- ── LEFT: Logo + Text + Stats ── -->
   <div style="display:flex;flex-direction:column;justify-content:center;z-index:2;">
 
-    <!-- Logo grande identico all'originale -->
+    <!-- Large logo -->
     <svg class="hero-logo-main" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200" width="360" height="113"
       style="display:block;margin-bottom:16px;opacity:0;animation:fadeUp .5s .05s ease forwards">
       <defs>
@@ -861,32 +887,32 @@ footer{
         <linearGradient id="hwg" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1a2a3a"/><stop offset="100%" stop-color="#2a4a6a"/></linearGradient>
         <linearGradient id="hrl" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#3a6a9a"/><stop offset="65%" stop-color="#1a4a7a"/><stop offset="100%" stop-color="#1a4a7a" stop-opacity="0"/></linearGradient>
       </defs>
-      <!-- Libro/pagine impilate -->
+      <!-- Stacked books/pages -->
       <rect x="10" y="28" width="52" height="68" rx="4" fill="url(#hpb1)" opacity="0.55" transform="rotate(-28 36 130)"/>
       <rect x="18" y="22" width="52" height="68" rx="4" fill="url(#hpb2)" opacity="0.7" transform="rotate(-17 44 126)"/>
       <rect x="28" y="18" width="52" height="68" rx="4" fill="url(#hpm)" opacity="0.82" transform="rotate(-6 54 122)"/>
       <rect x="40" y="18" width="52" height="68" rx="4" fill="url(#hpm)" transform="rotate(5 66 120)"/>
-      <!-- Copertina gialla -->
+      <!-- Yellow cover -->
       <rect x="66" y="10" width="56" height="74" rx="5" fill="url(#hpg)" transform="rotate(18 94 46)"/>
       <g transform="rotate(18 94 46)">
         <line x1="74" y1="28" x2="112" y2="28" stroke="#92400e" stroke-width="1.6" stroke-linecap="round" opacity="0.45"/>
         <line x1="74" y1="37" x2="112" y2="37" stroke="#92400e" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/>
         <line x1="74" y1="46" x2="108" y2="46" stroke="#92400e" stroke-width="1.4" stroke-linecap="round" opacity="0.22"/>
       </g>
-      <!-- Libro principale blu -->
+      <!-- Main blue book -->
       <rect x="38" y="28" width="58" height="116" rx="5" fill="url(#hpm)"/>
       <line x1="48" y1="56" x2="87" y2="56" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
       <line x1="48" y1="66" x2="84" y2="66" stroke="#fff" stroke-width="1.4" stroke-linecap="round" opacity="0.45"/>
       <line x1="48" y1="75" x2="86" y2="75" stroke="#fff" stroke-width="1.4" stroke-linecap="round" opacity="0.38"/>
       <line x1="48" y1="84" x2="82" y2="84" stroke="#fff" stroke-width="1.4" stroke-linecap="round" opacity="0.28"/>
-      <!-- Lente di ingrandimento -->
+      <!-- Magnifying glass -->
       <circle cx="112" cy="84" r="34" fill="none" stroke="url(#hmr)" stroke-width="6"/>
       <line x1="136" y1="108" x2="160" y2="136" stroke="url(#hmh)" stroke-width="11" stroke-linecap="round"/>
       <circle cx="112" cy="84" r="5.5" fill="#fbbf24"/>
       <circle cx="112" cy="84" r="2.2" fill="#fff" opacity="0.95"/>
-      <!-- Separatore -->
+      <!-- Separator -->
       <line x1="186" y1="30" x2="186" y2="165" stroke="#4a7aaa" stroke-width="1.2" opacity="0.4"/>
-      <!-- Testo Blina -->
+      <!-- Text Blina -->
       <text x="206" y="108" font-family="Georgia,'Times New Roman',serif" font-size="64" font-weight="700" letter-spacing="-2.5" fill="url(#hwg)">Blina</text>
       <rect x="206" y="117" width="370" height="1.8" rx="1" fill="url(#hrl)" opacity="0.4"/>
       <text x="208" y="144" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="300" letter-spacing="17" fill="#3a6a9a" opacity="0.9">DESK</text>
@@ -896,34 +922,46 @@ footer{
 
     <!-- Overline tag -->
     <div class="tag" style="margin-bottom:16px;opacity:0;animation:fadeUp .5s .1s ease forwards;align-self:flex-start">
-      AI-Powered Business Platform
+      The operating system for your business
     </div>
 
-    <!-- Titolo -->
-    <h1 style="font-size:clamp(34px,4.5vw,60px);font-weight:800;line-height:1.06;letter-spacing:-.04em;color:var(--ink);margin-bottom:16px;opacity:0;animation:fadeUp .6s .2s ease forwards;">
-      Stop searching.<br>Start <em style="font-style:italic;color:var(--accent)">finding</em>.
+    <h1 style="font-size:clamp(34px,4.5vw,56px);font-weight:800;line-height:1.1;letter-spacing:-.04em;color:var(--ink);margin-bottom:16px;opacity:0;animation:fadeUp .6s .2s ease forwards;">
+      Your entire business.<br>One single <em style="font-style:italic;color:var(--accent)">system</em>.
     </h1>
 
-    <!-- Sottotitolo -->
-    <p style="font-size:17px;line-height:1.7;color:var(--ink2);max-width:480px;margin-bottom:28px;opacity:0;animation:fadeUp .6s .3s ease forwards;">
-      <strong style="color:var(--ink);font-weight:600">Knowledge, documents and business processes</strong> in one single system — with automatic OCR, semantic search and built-in generative AI.
+    <p style="font-size:17px;line-height:1.7;color:var(--ink2);max-width:480px;margin-bottom:24px;opacity:0;animation:fadeUp .6s .3s ease forwards;">
+      No more separate tools, scattered files and manual processes. With Blina Desk AI, manage everything in one unified system.<br><br><strong style="color:var(--ink);font-weight:600">&#9889; Powered by AI &#8212; when you want it.</strong>
     </p>
 
-    <!-- CTA buttons -->
-    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;opacity:0;animation:fadeUp .6s .38s ease forwards;">
+    <div style="background:var(--bg-card);border:1px solid var(--brd);border-radius:var(--r2);padding:16px 18px;max-width:440px;margin-bottom:20px;opacity:0;animation:fadeUp .5s .35s ease forwards;">
+      <div style="font-size:11px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">Real-world example</div>
+      <div style="font-size:13px;color:var(--ink2);line-height:1.6">
+        <em style="color:var(--accent)">"Create an invoice for Mueller, 3 hours of service"</em><br>
+        &#8594; The AI knows your price list.<br>
+        &#8594; Invoice ready in seconds.<br>
+        <strong style="color:var(--ink)">You decide whether to save and send it.</strong>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:flex-start;gap:8px;max-width:440px;margin-bottom:24px;opacity:0;animation:fadeUp .5s .4s ease forwards;">
+      <span style="font-size:16px;flex-shrink:0">&#128274;</span>
+      <p style="font-size:13px;color:var(--ink3);line-height:1.5;margin:0"><strong style="color:var(--ink)">AI works. You decide.</strong> Blina AI never acts without your confirmation. It prepares, suggests and fills in &#8212; but every final action stays in your hands.</p>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;opacity:0;animation:fadeUp .6s .45s ease forwards;">
       <a href="https://app.blina-desk.com/en/auth/login" class="btn btn-primary btn-lg">
-        Start Free
+        Start for free
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </a>
       <a href="#search" class="btn btn-outline btn-lg">How it works</a>
     </div>
 
-    <p style="margin-top:12px;font-size:12px;color:var(--ink4);opacity:0;animation:fadeUp .5s .46s ease forwards;">
+    <p style="margin-top:12px;font-size:12px;color:var(--ink4);opacity:0;animation:fadeUp .5s .52s ease forwards;">
       <strong style="color:var(--green);font-weight:600">14 days free</strong> · All modules · No credit card
     </p>
 
     <!-- Stats mini -->
-    <div style="display:flex;gap:8px;margin-top:32px;flex-wrap:wrap;opacity:0;animation:fadeUp .5s .54s ease forwards;">
+    <div style="display:grid;grid-template-columns:repeat(4,auto);gap:8px;margin-top:32px;opacity:0;animation:fadeUp .5s .54s ease forwards;">
       <div class="hstat"><div class="hstat-num">2<span>sec</span></div><div class="hstat-lbl">instead of 20+ min</div></div>
       <div class="hstat"><div class="hstat-num">11<span>+</span></div><div class="hstat-lbl">Business modules</div></div>
       <div class="hstat"><div class="hstat-num">100<span>%</span></div><div class="hstat-lbl">On-premise</div></div>
@@ -949,9 +987,9 @@ footer{
       </div>
       <div class="org-connector-line"></div>
       <div class="org-row connected" style="gap:6px">
-        <div class="org-node"><div class="on-icon">🔍</div><div class="on-lbl">AI Search</div><div class="on-sub">Semantic + FTS</div></div>
-        <div class="org-node"><div class="on-icon">📄</div><div class="on-lbl">Documents</div><div class="on-sub">Multilingual OCR</div></div>
-        <div class="org-node"><div class="on-icon">💬</div><div class="on-lbl">AI Chat</div><div class="on-sub">RAG + Sources</div></div>
+        <div class="org-node"><div class="on-icon">&#128269;</div><div class="on-lbl">AI Search</div><div class="on-sub">Semantic + FTS</div></div>
+        <div class="org-node"><div class="on-icon">&#128196;</div><div class="on-lbl">Documents</div><div class="on-sub">Multilingual OCR</div></div>
+        <div class="org-node"><div class="on-icon">&#128172;</div><div class="on-lbl">AI Chat</div><div class="on-sub">RAG + Sources</div></div>
       </div>
       <div class="org-connector-line"></div>
       <div class="org-embed">
@@ -967,91 +1005,121 @@ footer{
       <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:100%;padding-top:14px;position:relative;">
         <div style="position:absolute;top:0;left:50%;width:1px;height:10px;background:#000"></div>
         <div class="org-mods-row" style="display:flex;gap:5px;justify-content:center;flex-wrap:nowrap;">
-          <div class="org-node org-mods-node"><div class="on-icon">💰</div><div class="on-lbl">Sales</div></div>
-          <div class="org-node org-mods-node"><div class="on-icon">📦</div><div class="on-lbl">Purchasing</div></div>
-          <div class="org-node org-mods-node"><div class="on-icon">📒</div><div class="on-lbl">Accounting</div></div>
-          <div class="org-node org-mods-node"><div class="on-icon">👥</div><div class="on-lbl">HR</div></div>
-          <div class="org-node org-mods-node"><div class="on-icon">🎧</div><div class="on-lbl">Helpdesk</div></div>
-          <div class="org-node org-mods-node"><div class="on-icon">📧</div><div class="on-lbl">Email &amp; Phone</div></div>
+          <div class="org-node org-mods-node"><div class="on-icon">&#128176;</div><div class="on-lbl">Sales</div></div>
+          <div class="org-node org-mods-node"><div class="on-icon">&#128230;</div><div class="on-lbl">Purchasing</div></div>
+          <div class="org-node org-mods-node"><div class="on-icon">&#128210;</div><div class="on-lbl">Accounting</div></div>
+          <div class="org-node org-mods-node"><div class="on-icon">&#128101;</div><div class="on-lbl">HR</div></div>
+          <div class="org-node org-mods-node"><div class="on-icon">&#127911;</div><div class="on-lbl">Helpdesk</div></div>
+          <div class="org-node org-mods-node"><div class="on-icon">&#128231;</div><div class="on-lbl">Email &amp; Tel</div></div>
         </div>
         <div class="org-mods-row" style="display:flex;gap:5px;justify-content:center;flex-wrap:nowrap;">
-          <div class="org-node org-mods-node"><div class="on-icon">⚖️</div><div class="on-lbl">Legal</div></div>
-          <div class="org-node org-mods-node"><div class="on-icon">🏠</div><div class="on-lbl">Real Estate</div></div>
-          <div class="org-node org-mods-node"><div class="on-icon">🏥</div><div class="on-lbl">Clinic</div></div>
-          <div class="org-node org-mods-node"><div class="on-icon">🤝</div><div class="on-lbl">Associations</div></div>
-          <div class="org-node org-mods-node"><div class="on-icon">📋</div><div class="on-lbl">Projects</div></div>
+          <div class="org-node org-mods-node"><div class="on-icon">&#9878;&#65039;</div><div class="on-lbl">Legal</div></div>
+          <div class="org-node org-mods-node"><div class="on-icon">&#127968;</div><div class="on-lbl">Real Estate</div></div>
+          <div class="org-node org-mods-node"><div class="on-icon">&#127973;</div><div class="on-lbl">Clinic</div></div>
+          <div class="org-node org-mods-node"><div class="on-icon">&#129309;</div><div class="on-lbl">Associations</div></div>
+          <div class="org-node org-mods-node"><div class="on-icon">&#128203;</div><div class="on-lbl">Projects</div></div>
+          <div class="org-node org-mods-node"><div class="on-icon">&#128667;</div><div class="on-lbl">Fleet</div></div>
         </div>
       </div>
       <div class="org-connector-line"></div>
-      <div class="org-hub" style="background:rgba(232,92,42,0.1);border-color:rgba(232,92,42,0.35)">
-        <div class="on-lbl" style="color:var(--accent)">⚡ Automations</div>
-        <div class="on-sub">Describe it. Blina builds it.</div>
+      <!-- Tools section — centered with branch lines -->
+      <div class="org-hub" style="background:rgba(139,92,246,0.08);border-color:rgba(139,92,246,0.3)">
+        <div class="on-lbl" style="color:#7c3aed">&#128736;&#65039; Tools</div>
+        <div class="on-sub">Power-ups for your platform</div>
       </div>
-      <div class="org-connector-line"></div>
-      <div class="org-row connected org-mods" style="gap:5px">
-        <div class="org-node"><div class="on-icon">📧</div><div class="on-lbl">Email</div></div>
-        <div class="org-node"><div class="on-icon">💬</div><div class="on-lbl">WhatsApp</div></div>
-        <div class="org-node"><div class="on-icon">🔔</div><div class="on-lbl">Notify</div></div>
-        <div class="org-node"><div class="on-icon">✏️</div><div class="on-lbl">Update</div></div>
-        <div class="org-node"><div class="on-icon">➕</div><div class="on-lbl">Create Record</div></div>
+      <!-- Branch connector: center splits to left and right -->
+      <div style="position:relative;width:100%;max-width:520px;margin:0 auto;height:18px">
+        <div style="position:absolute;left:50%;top:0;width:1px;height:6px;background:#000"></div>
+        <div style="position:absolute;left:25%;right:25%;top:6px;height:1px;background:#000"></div>
+        <div style="position:absolute;left:25%;top:6px;width:1px;height:12px;background:#000"></div>
+        <div style="position:absolute;right:25%;top:6px;width:1px;height:12px;background:#000"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%;max-width:520px;margin:0 auto">
+        <!-- Automations tool -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+          <div class="org-hub" style="background:rgba(232,92,42,0.1);border-color:rgba(232,92,42,0.35);padding:12px 16px;width:100%">
+            <div class="on-lbl" style="color:var(--accent);font-size:12px">&#9889; Automations</div>
+            <div class="on-sub" style="font-size:9px">Describe it.</div>
+          </div>
+          <div class="org-row connected org-mods" style="gap:3px;flex-wrap:nowrap">
+            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">&#128231;</div><div class="on-lbl" style="font-size:8px">Email</div></div>
+            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">&#128172;</div><div class="on-lbl" style="font-size:8px">WhatsApp</div></div>
+            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">&#128276;</div><div class="on-lbl" style="font-size:8px">Notify</div></div>
+            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">&#9999;&#65039;</div><div class="on-lbl" style="font-size:8px">Update</div></div>
+            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">&#10133;</div><div class="on-lbl" style="font-size:8px">Create</div></div>
+          </div>
+        </div>
+        <!-- Blina AI tool -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+          <div class="org-hub" style="background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.3);padding:12px 16px;width:100%">
+            <div class="on-lbl" style="color:#7c3aed;font-size:12px">&#10024; Blina AI</div>
+            <div class="on-sub" style="font-size:9px">Talk to your business. AI that acts.</div>
+          </div>
+          <div class="org-row connected org-mods" style="gap:3px;flex-wrap:nowrap">
+            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">&#128172;</div><div class="on-lbl" style="font-size:8px">Actions</div></div>
+            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">&#128202;</div><div class="on-lbl" style="font-size:8px">Reports</div></div>
+            <div class="org-node" style="padding:5px 7px"><div class="on-icon" style="font-size:11px">&#9889;</div><div class="on-lbl" style="font-size:8px">Workflow</div></div>
+          </div>
+        </div>
       </div>
       <div class="org-connector-line"></div>
       <div class="org-hub" style="background:rgba(37,99,235,0.1);border-color:rgba(37,99,235,0.35)">
-        <div class="on-lbl" style="color:#2563eb">💬 Blina WhatsApp</div>
-        <div class="on-sub">Your team talks to your AI — via WhatsApp.</div>
+        <div class="on-lbl" style="color:#2563eb">&#128172; Blina WhatsApp</div>
+        <div class="on-sub">Your team talks to your AI &#8212; via WhatsApp.</div>
       </div>
       <div class="org-connector-line"></div>
       <div class="org-row connected org-mods" style="gap:5px">
-        <div class="org-node"><div class="on-icon">📝</div><div class="on-lbl">Tasks</div></div>
-        <div class="org-node"><div class="on-icon">🎫</div><div class="on-lbl">Tickets</div></div>
-        <div class="org-node"><div class="on-icon">📅</div><div class="on-lbl">Appointments</div></div>
-        <div class="org-node"><div class="on-icon">📦</div><div class="on-lbl">Orders</div></div>
-        <div class="org-node"><div class="on-icon">❓</div><div class="on-lbl">Q&amp;A</div></div>
+        <div class="org-node"><div class="on-icon">&#128221;</div><div class="on-lbl">Tasks</div></div>
+        <div class="org-node"><div class="on-icon">&#127915;</div><div class="on-lbl">Tickets</div></div>
+        <div class="org-node"><div class="on-icon">&#128197;</div><div class="on-lbl">Appointments</div></div>
+        <div class="org-node"><div class="on-icon">&#128230;</div><div class="on-lbl">Orders</div></div>
+        <div class="org-node"><div class="on-icon">&#10067;</div><div class="on-lbl">Q&amp;A</div></div>
       </div>
     </div>
   </div>
 
 
+
 </section>
 
-<!-- ── VANTAGGI (Why choose Blina Desk) ── -->
+<!-- ── BENEFITS ── -->
 <section class="section" style="background:var(--bg-card);border-top:1px solid var(--brd);border-bottom:1px solid var(--brd)" id="vantaggi">
   <div class="sec-inner">
     <div class="sec-head reveal">
       <div class="tag" style="margin-bottom:14px">Why choose Blina Desk</div>
       <h2 class="sec-title">Everything you need. <em>Nothing you don't.</em></h2>
-      <p class="sec-sub">The AI-powered business platform designed for SMBs and professional firms in DACH and Italy — serious, modular, secure.</p>
+      <p class="sec-sub">The AI-powered business platform built for DACH and Italian SMBs and professional firms &#8212; serious, modular, secure.</p>
     </div>
     <div class="vantaggi-grid">
       <div class="vantaggio reveal">
-        <div class="vant-icon" style="background:var(--blue-s)">🔒</div>
-        <div class="vant-title">100% On-Premise possible</div>
-        <div class="vant-desc">Install Blina on your servers. Data never leaves your network. Ideal for law firms, clinics, accountants and companies with strict GDPR requirements. No mandatory cloud.</div>
+        <div class="vant-icon" style="background:var(--blue-s)">&#128274;</div>
+        <div class="vant-title">100% On-Premise available</div>
+        <div class="vant-desc">Install Blina on your own servers. Your data never leaves your network. Ideal for law firms, clinics, accountants and businesses with strict GDPR requirements. No mandatory cloud.</div>
       </div>
       <div class="vantaggio reveal d1">
-        <div class="vant-icon" style="background:var(--green-s)">💶</div>
-        <div class="vant-title">Flat price — zero per user</div>
-        <div class="vant-desc">Pay per session, not per seat. 5 or 500 users? Same price. No hidden costs, no user limits, no lock-in. Compare with any other SaaS on the market.</div>
+        <div class="vant-icon" style="background:var(--green-s)">&#128182;</div>
+        <div class="vant-title">Flat pricing &#8212; zero per user</div>
+        <div class="vant-desc">You pay per session, not per seat. 5 or 500 users? Same price. No hidden costs, no user limits, no lock-in. Compare with any other SaaS on the market.</div>
       </div>
       <div class="vantaggio reveal d2">
-        <div class="vant-icon" style="background:var(--amber-s)">🧠</div>
-        <div class="vant-title">AI in every module — included</div>
-        <div class="vant-desc">Every module includes Ask AI: ask questions in natural language and get answers from your data with cited sources. OpenAI, Claude, Gemini or local Ollama — you choose the provider.</div>
+        <div class="vant-icon" style="background:var(--amber-s)">&#129504;</div>
+        <div class="vant-title">AI in every module &#8212; included</div>
+        <div class="vant-desc">Every module includes Ask AI: ask questions in plain language and get answers from your own data with cited sources. OpenAI, Claude, Gemini or local Ollama &#8212; you choose the provider.</div>
       </div>
       <div class="vantaggio reveal d3">
-        <div class="vant-icon" style="background:var(--purple-s)">🔍</div>
+        <div class="vant-icon" style="background:var(--purple-s)">&#128269;</div>
         <div class="vant-title">Semantic search + OCR</div>
-        <div class="vant-desc">Find any document in 2 seconds — even if scanned. Multilingual OCR makes every PDF, photo and scan searchable. Search understands meaning, not just keywords.</div>
+        <div class="vant-desc">Find any document in 2 seconds &#8212; even scanned ones. Multilingual OCR makes every PDF, photo and scan searchable. The search understands meaning, not just keywords.</div>
       </div>
       <div class="vantaggio reveal d4">
-        <div class="vant-icon" style="background:var(--teal-s)">🔧</div>
-        <div class="vant-title">Modular — activate only what you use</div>
+        <div class="vant-icon" style="background:var(--teal-s)">&#128295;</div>
+        <div class="vant-title">Modular &#8212; activate only what you use</div>
         <div class="vant-desc">The base platform includes CRM, OCR, AI Search and RAG Chat. Add Sales, HR, Legal, Helpdesk or any other module when you need it. No bloated bundles.</div>
       </div>
       <div class="vantaggio reveal d5">
-        <div class="vant-icon" style="background:var(--red-s)">⚡</div>
+        <div class="vant-icon" style="background:var(--red-s)">&#9889;</div>
         <div class="vant-title">No-code automations</div>
-        <div class="vant-desc">Describe the workflow you want — Blina builds it. Trigger on any event: new document, deadline, payment, ticket. Email, WhatsApp, notifications and automatic updates.</div>
+        <div class="vant-desc">Describe the workflow you want &#8212; Blina creates it. Triggers on any event: new document, deadline, payment, ticket. Automated emails, WhatsApp, notifications and updates.</div>
       </div>
     </div>
   </div>
@@ -1063,40 +1131,40 @@ footer{
     <div class="sec-head left reveal">
       <div class="tag" style="margin-bottom:14px">Semantic Search + AI Chat</div>
       <h2 class="sec-title">Find any document in <em>2 seconds</em>.</h2>
-      <p class="sec-sub">Search understands meaning, not just keywords. Works offline — fully on-premise.</p>
+      <p class="sec-sub">Search understands meaning, not just keywords. Works offline &#8212; fully on-premise.</p>
     </div>
     <div class="search-split">
       <div class="search-queries">
         <div class="sq-item reveal">
-          <div class="sq-icon">🔍</div>
+          <div class="sq-icon">&#128269;</div>
           <div style="flex:1">
-            <div class="sq-query">"Supply contract Müller — unsigned — 2023"</div>
+            <div class="sq-query">"Mueller supply contract &#8212; unsigned &#8212; 2023"</div>
             <div class="sq-result"><span class="sq-time">2 sec</span><span class="sq-badge bq-found">Found</span></div>
             <div class="sq-note">Semantic search across 3,000+ documents. Direct link + highlighted excerpt.</div>
           </div>
         </div>
         <div class="sq-item reveal d1">
-          <div class="sq-icon">💬</div>
+          <div class="sq-icon">&#128172;</div>
           <div style="flex:1">
             <div class="sq-query">"What is our expense reimbursement policy?"</div>
             <div class="sq-result"><span class="sq-badge bq-ai">AI Chat</span></div>
-            <div class="sq-note">AI answers from your documents — with link to the file and page number.</div>
+            <div class="sq-note">AI answers from your documents &#8212; with a link to the file and page number.</div>
           </div>
         </div>
         <div class="sq-item reveal d2">
-          <div class="sq-icon">⚖️</div>
+          <div class="sq-icon">&#9878;&#65039;</div>
           <div style="flex:1">
             <div class="sq-query">"Cases won for breach of contract since 2022"</div>
-            <div class="sq-result"><span style="font-size:12px;color:var(--ink3)">5 cases found</span><span class="sq-badge bq-legal">Legal</span></div>
-            <div class="sq-note">Search across all case files — outcomes, dates and documents in seconds.</div>
+            <div class="sq-result"><span style="font-size:12px;color:var(--ink3)">5 case files found</span><span class="sq-badge bq-legal">Legal</span></div>
+            <div class="sq-note">Search across all case files &#8212; outcomes, dates and documents in seconds.</div>
           </div>
         </div>
         <div class="sq-item reveal d3">
-          <div class="sq-icon">📋</div>
+          <div class="sq-icon">&#128203;</div>
           <div style="flex:1">
-            <div class="sq-query">"Payslip Rossi March 2024"</div>
+            <div class="sq-query">"Rossi payslip March 2024"</div>
             <div class="sq-result"><span class="sq-time">1 sec</span><span class="sq-badge bq-found">OCR + AI</span></div>
-            <div class="sq-note">Every PDF, photo and scan becomes instantly searchable.</div>
+            <div class="sq-note">Every PDF, photo and scan becomes searchable instantly.</div>
           </div>
         </div>
       </div>
@@ -1106,19 +1174,19 @@ footer{
           <div style="font-size:13px;color:var(--ink3);margin-top:4px">Average time across 3,000+ documents</div>
           <div style="margin-top:10px;font-size:13px;color:var(--ink2)">Compared to <strong style="color:var(--ink)">20+ minutes</strong> of manual searching through folders and emails.</div>
           <div style="margin-top:14px;padding:11px;background:var(--accent-soft);border:1px solid rgba(232,92,42,0.15);border-radius:var(--r);font-size:13px;color:var(--ink2)">
-            🧠 <strong style="color:var(--accent)">Built-in RAG</strong> — query your data in natural language with cited sources.
+            &#129504; <strong style="color:var(--accent)">Built-in RAG</strong> &#8212; query your data in plain language with cited sources.
           </div>
         </div>
         <div class="search-card reveal d2">
           <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:10px">Supports any AI provider</div>
           <div class="search-providers">
-            <span class="sp-chip">🤖 OpenAI GPT-4o</span>
-            <span class="sp-chip">🤖 Claude</span>
-            <span class="sp-chip">🤖 Gemini</span>
-            <span class="sp-chip">🦙 Ollama local</span>
-            <span class="sp-chip">🔒 Zero cloud</span>
+            <span class="sp-chip">&#129302; OpenAI GPT-4o</span>
+            <span class="sp-chip">&#129302; Claude</span>
+            <span class="sp-chip">&#129302; Gemini</span>
+            <span class="sp-chip">&#129433; Local Ollama</span>
+            <span class="sp-chip">&#128274; Zero cloud</span>
           </div>
-          <div style="margin-top:11px;font-size:12px;color:var(--ink3)">Bring your own API key or use Ollama for 100% on-premise — no data leaves your network.</div>
+          <div style="margin-top:11px;font-size:12px;color:var(--ink3)">Bring your own API key or use Ollama for 100% on-premise &#8212; no data leaves your network.</div>
         </div>
       </div>
     </div>
@@ -1131,32 +1199,110 @@ footer{
     <div class="sec-head reveal">
       <div class="tag" style="margin-bottom:14px">Core Features</div>
       <h2 class="sec-title">Your archive becomes <em>intelligent</em>.</h2>
-      <p class="sec-sub">Every plan includes CRM, AI Search, OCR and RAG Chat — maximum AI at this price. Zero cloud lock-in.</p>
+      <p class="sec-sub">Every plan includes CRM, AI Search, OCR and RAG Chat &#8212; the most AI at this price point. Zero cloud lock-in.</p>
     </div>
     <div class="feat-grid">
       <div class="feat-card reveal">
-        <div class="feat-icon">🔍</div>
+        <div class="feat-icon">&#128269;</div>
         <div class="feat-name">Hybrid Search</div>
-        <div class="feat-desc">Full-text + semantic vector search with pgvector. Find documents even without exact keywords — Blina understands meaning, not just words. Works fully offline.</div>
-        <div class="feat-ex"><span class="feat-ex-lbl">Example</span>You search "GDPR privacy", the document says "European data protection" — Blina understands.</div>
+        <div class="feat-desc">Full-text + semantic vector search with pgvector. Find documents even without exact keywords &#8212; Blina understands meaning, not just words. Works fully offline.</div>
+        <div class="feat-ex"><span class="feat-ex-lbl">Example</span>You search "GDPR privacy", the document says "European data protection" &#8212; Blina understands.</div>
       </div>
       <div class="feat-card reveal d1">
-        <div class="feat-icon">🤖</div>
+        <div class="feat-icon">&#129302;</div>
         <div class="feat-name">AI Chat (RAG)</div>
-        <div class="feat-desc">Natural language questions → answers from YOUR data with source links. Not a generic chatbot: a RAG trained on your documents, contacts, deals and tickets.</div>
-        <div class="feat-ex"><span class="feat-ex-lbl">Example</span>"How do returns work?" → answer from the manual with link to the exact document.</div>
+        <div class="feat-desc">Ask questions in plain language &#8594; get answers from YOUR data with source links. Not a generic chatbot: a RAG trained on your documents, contacts, deals and tickets.</div>
+        <div class="feat-ex"><span class="feat-ex-lbl">Example</span>"How do returns work?" &#8594; answer from your manual with a link to the exact document.</div>
       </div>
       <div class="feat-card reveal d2">
-        <div class="feat-icon">📄</div>
+        <div class="feat-icon">&#128196;</div>
         <div class="feat-name">Documents &amp; OCR</div>
-        <div class="feat-desc">Upload PDFs, Word or scans — instant multilingual OCR. Every document becomes AI-searchable. Full version history, trash and structured archiving.</div>
-        <div class="feat-ex"><span class="feat-ex-lbl">Example</span>200 scanned invoices: upload → OCR → search by amount, supplier and date.</div>
+        <div class="feat-desc">Upload PDFs, Word files or scans &#8212; instant multilingual OCR. Every document becomes AI-searchable. Full version history, trash bin and structured archiving.</div>
+        <div class="feat-ex"><span class="feat-ex-lbl">Example</span>200 scanned invoices: upload &#8594; OCR &#8594; search by amount, supplier and date.</div>
       </div>
       <div class="feat-card reveal d3">
-        <div class="feat-icon">👥</div>
+        <div class="feat-icon">&#128101;</div>
         <div class="feat-name">CRM included</div>
-        <div class="feat-desc">Contacts, companies, leads and full interaction history — included in every plan. AI generates client summaries across all modules: deals, emails, tickets, invoices.</div>
-        <div class="feat-ex"><span class="feat-ex-lbl">Example</span>Open a contact → AI shows: contracts, emails, tasks, unpaid invoices in a single view.</div>
+        <div class="feat-desc">Contacts, companies, leads and complete interaction history &#8212; included in every plan. AI generates client summaries across all modules: deals, emails, tickets, invoices.</div>
+        <div class="feat-ex"><span class="feat-ex-lbl">Example</span>Open a contact &#8594; AI shows: contracts, emails, tasks, unpaid invoices in one view.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BLINA AI ── -->
+<section class="section auto-section" id="ai-assistant" style="background:linear-gradient(135deg,#1a1036 0%,#0f172a 50%,#1e1145 100%)">
+  <div class="sec-inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1100px;margin:0 auto" class="ai-pro-grid">
+      <div>
+        <div class="tag reveal" style="margin-bottom:16px;background:rgba(139,92,246,0.15);color:#a78bfa;border-color:rgba(139,92,246,0.3)">&#10024; Blina AI</div>
+        <h2 class="sec-title reveal" style="color:#fff">Don't use software.<br><em style="color:#a78bfa">Command</em> your business.</h2>
+        <p class="sec-sub reveal" style="color:rgba(255,255,255,0.6);max-width:440px">Forget menus, modules and complex processes. With Blina AI, just type. The AI understands the full context of your business and acts on your behalf, in real time.</p>
+        <div style="margin-top:32px;display:flex;flex-direction:column;gap:16px">
+          <div class="contact-feat reveal" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px 16px">
+            <div class="contact-feat-icon" style="background:rgba(139,92,246,0.15);border-color:rgba(139,92,246,0.3)">&#128172;</div>
+            <div><div class="contact-feat-title" style="color:#fff">Blina answers and works</div><div class="contact-feat-sub" style="color:rgba(255,255,255,0.5)">"Create an invoice for Mueller, 3 hours at &#8364;150" &#8594; Blina fills it in. You review and hit send.</div></div>
+          </div>
+          <div class="contact-feat reveal d1" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px 16px">
+            <div class="contact-feat-icon" style="background:rgba(59,130,246,0.15);border-color:rgba(59,130,246,0.3)">&#128202;</div>
+            <div><div class="contact-feat-title" style="color:#fff">Instant reports</div><div class="contact-feat-sub" style="color:rgba(255,255,255,0.5)">"Monthly revenue by client, quarterly comparison" &#8594; Report ready with charts. Save or export to PDF.</div></div>
+          </div>
+          <div class="contact-feat reveal d2" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px 16px">
+            <div class="contact-feat-icon" style="background:rgba(16,185,129,0.15);border-color:rgba(16,185,129,0.3)">&#129504;</div>
+            <div><div class="contact-feat-title" style="color:#fff">Total context</div><div class="contact-feat-sub" style="color:rgba(255,255,255,0.5)">AI knows: clients, invoices, projects, employees, communications. It's not a chatbot &#8212; it's your business operating system.</div></div>
+          </div>
+          <div class="contact-feat reveal d3" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px 16px">
+            <div class="contact-feat-icon" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15)">&#9989;</div>
+            <div><div class="contact-feat-title" style="color:#fff">Blina prepares. You decide.</div><div class="contact-feat-sub" style="color:rgba(255,255,255,0.5)">Every action is a draft until you confirm. Invoices, emails, reports &#8212; nothing goes out without your approval.</div></div>
+          </div>
+        </div>
+        <div class="reveal d3" style="margin-top:28px">
+          <a href="https://app.blina-desk.com" class="btn btn-primary btn-lg" style="background:linear-gradient(135deg,#7c3aed,#6366f1)">Try Blina AI &#8594;</a>
+          <span style="display:block;margin-top:10px;font-size:12px;color:rgba(255,255,255,0.4)">&#8364;79/month &#8226; Work faster. Less clicks. Zero complexity.</span>
+        </div>
+      </div>
+      <!-- AI Chat mockup -->
+      <div class="reveal d2">
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r2);overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.3)">
+          <div style="background:rgba(255,255,255,0.06);padding:10px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,0.06)">
+            <span style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.8)">&#129302; Blina AI</span>
+          </div>
+          <div style="padding:16px;display:flex;flex-direction:column;gap:12px;min-height:320px">
+            <div style="align-self:flex-end;background:rgba(139,92,246,0.15);border:1px solid rgba(139,92,246,0.2);border-radius:12px 12px 4px 12px;padding:10px 14px;max-width:85%;font-size:12px;color:rgba(255,255,255,0.9)">Who are my top 3 clients this quarter? And send a thank-you email to the first one.</div>
+            <div style="align-self:flex-start;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:12px 12px 12px 4px;padding:10px 14px;max-width:85%;font-size:12px;color:rgba(255,255,255,0.7)">
+              <div style="margin-bottom:8px">&#128202; <strong style="color:#a78bfa">Top 3 clients Q1 2026</strong></div>
+              <div style="font-size:11px;color:rgba(255,255,255,0.5);display:flex;flex-direction:column;gap:3px">
+                <span>&#129351; TechNova GmbH &#8212; &#8364;34,200 (8 invoices)</span>
+                <span>&#129352; Alpine Solutions AG &#8212; &#8364;22,800 (5 invoices)</span>
+                <span>&#129353; MediterranDesign S.R.L. &#8212; &#8364;18,600 (6 invoices)</span>
+              </div>
+              <div style="margin-top:8px;font-size:11px;color:rgba(255,255,255,0.5)">&#128221; <strong style="color:#a78bfa">Thank-you email drafted</strong> for TechNova GmbH</div>
+              <div style="margin-top:10px;display:flex;gap:6px">
+                <span style="font-size:10px;font-weight:700;background:rgba(139,92,246,0.15);color:#a78bfa;padding:3px 10px;border-radius:6px;cursor:pointer">Review &amp; Send</span>
+                <span style="font-size:10px;font-weight:700;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.5);padding:3px 10px;border-radius:6px;cursor:pointer">Edit</span>
+                <span style="font-size:10px;font-weight:700;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.5);padding:3px 10px;border-radius:6px;cursor:pointer">Save PDF</span>
+              </div>
+            </div>
+            <div style="align-self:flex-end;background:rgba(139,92,246,0.15);border:1px solid rgba(139,92,246,0.2);border-radius:12px 12px 4px 12px;padding:10px 14px;max-width:85%;font-size:12px;color:rgba(255,255,255,0.9)">Are there any overdue invoices? Create a reminder for each one.</div>
+            <div style="align-self:flex-start;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:12px 12px 12px 4px;padding:10px 14px;max-width:85%;font-size:12px;color:rgba(255,255,255,0.7)">
+              <div style="margin-bottom:8px">&#9888;&#65039; <strong style="color:#fbbf24">3 overdue invoices</strong></div>
+              <div style="font-size:11px;color:rgba(255,255,255,0.5);display:flex;flex-direction:column;gap:3px">
+                <span>&#128196; #2026-031 Alpine Solutions &#8212; &#8364;4,200 (12 days late)</span>
+                <span>&#128196; #2026-038 DataFlow &#8212; &#8364;1,800 (5 days late)</span>
+                <span>&#128196; #2026-042 MediterranDesign &#8212; &#8364;2,400 (3 days late)</span>
+              </div>
+              <div style="margin-top:8px;font-size:11px;color:rgba(255,255,255,0.5)">&#128221; <strong style="color:#a78bfa">3 reminders drafted</strong> &#8212; ready for your review</div>
+              <div style="margin-top:10px;display:flex;gap:6px">
+                <span style="font-size:10px;font-weight:700;background:rgba(139,92,246,0.15);color:#a78bfa;padding:3px 10px;border-radius:6px;cursor:pointer">Review &amp; Send All</span>
+                <span style="font-size:10px;font-weight:700;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.5);padding:3px 10px;border-radius:6px;cursor:pointer">Edit individually</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 14px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:8px">
+            <div style="flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:8px 12px;font-size:11px;color:rgba(255,255,255,0.3)">Ask something or give a command...</div>
+            <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#7c3aed,#6366f1);display:flex;align-items:center;justify-content:center;font-size:12px">&#10148;</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1168,171 +1314,184 @@ footer{
     <div class="sec-head reveal">
       <div class="tag" style="margin-bottom:14px">Business Modules</div>
       <h2 class="sec-title">Activate only what you <em>need</em>.</h2>
-      <p class="sec-sub">Every module has a built-in AI Chat (Ask AI) that understands your data. Activate modules independently — the Base Platform with CRM, Search, OCR and RAG is always included.</p>
+      <p class="sec-sub">Every module has a built-in AI Chat (Ask AI) that understands your data. Activate modules independently &#8212; the Base Platform with CRM, Search, OCR and RAG is always included.</p>
     </div>
     <div class="mod-grid">
 
       <div class="mod-card reveal" style="--mc:var(--green);--mi-bg:var(--green-s);--mi-brd:rgba(22,163,74,0.2)">
-        <div class="mod-header"><div class="mod-icon">💰</div><div class="mod-name">Sales</div></div>
-        <div class="mod-desc">Complete sales management — flat price for the whole team, unlimited users.<br><br>
-          <strong>✓</strong> Product catalog, customer directory, quotes, orders and invoices<br>
-          <strong>✓</strong> Payments, shipping and returns (RMA) with full tracking<br>
-          <strong>✓</strong> Sales dashboard with real-time revenue, top clients and overdue<br>
-          <strong>✓</strong> AI: "How much did client X order this year?" — instant answer<br>
-          <strong>✓</strong> AI summaries per client — orders, payments, interactions at a glance<br>
-          <strong>✓</strong> Reports by period, client, product or sales rep</div>
-        <div class="mod-ai"><span>🧠</span><div><strong>Ask AI:</strong> "Summary for client Müller — open orders, unpaid invoices, returns and latest interactions."</div></div>
-        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">New order → auto invoice → payment tracked → shipping confirmed → client requests return → RMA created with one click → AI: "Client Müller — 12 orders, 1 open return, €42K total revenue."</div></div>
+        <div class="mod-header"><div class="mod-icon">&#128176;</div><div class="mod-name">Sales</div></div>
+        <div class="mod-desc">Complete sales management &#8212; flat price for the whole team, unlimited users.<br><br>
+          <strong>&#10003;</strong> Product catalog, client records, quotes, orders and invoices<br>
+          <strong>&#10003;</strong> Payments, shipping and returns (RMA) with full tracking<br>
+          <strong>&#10003;</strong> Sales dashboard with real-time revenue, top clients and overdue items<br>
+          <strong>&#10003;</strong> AI: "How much did client X order this year?" &#8212; instant answer<br>
+          <strong>&#10003;</strong> AI client summaries &#8212; orders, payments, interactions at a glance<br>
+          <strong>&#10003;</strong> Reports by period, client, product or salesperson</div>
+        <div class="mod-ai"><span>&#129504;</span><div><strong>Ask AI:</strong> "Client Mueller summary &#8212; open orders, unpaid invoices, returns and latest interactions."</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">New order &#8594; automatic invoice &#8594; payment tracked &#8594; shipment confirmed &#8594; client requests return &#8594; RMA created in one click &#8594; AI: "Client Mueller &#8212; 12 orders, 1 open return, &#8364;42K total revenue."</div></div>
       </div>
 
       <div class="mod-card reveal d1" style="--mc:var(--amber);--mi-bg:var(--amber-s);--mi-brd:rgba(217,119,6,0.2)">
-        <div class="mod-header"><div class="mod-icon">📦</div><div class="mod-name">Purchasing &amp; Warehouse</div></div>
-        <div class="mod-desc">Complete procurement and warehouse — real-time stock levels, reorder alerts, OCR on every invoice.<br><br>
-          <strong>✓</strong> Purchase orders, supplier management and goods receipt<br>
-          <strong>✓</strong> Warehouse with real-time stock levels and minimum stock alerts<br>
-          <strong>✓</strong> OCR scans receipts and invoices — instantly AI-searchable<br>
-          <strong>✓</strong> Supplier price comparison and delivery tracking<br>
-          <strong>✓</strong> Complete warehouse movement history<br>
-          <strong>✓</strong> AI: "Which supplier has the best price for item X?"</div>
-        <div class="mod-ai"><span>🧠</span><div><strong>Ask AI:</strong> "Which suppliers delivered late more than twice this quarter?"</div></div>
-        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">Stock below minimum → auto draft purchase order to supplier with best price → manager approves with one click.</div></div>
+        <div class="mod-header"><div class="mod-icon">&#128230;</div><div class="mod-name">Purchasing &amp; Inventory</div></div>
+        <div class="mod-desc">Complete procurement and warehouse &#8212; real-time stock levels, reorder alerts, OCR on every invoice.<br><br>
+          <strong>&#10003;</strong> Purchase orders, supplier management and goods receipt<br>
+          <strong>&#10003;</strong> Warehouse with real-time stock levels and minimum stock alerts<br>
+          <strong>&#10003;</strong> OCR scans receipts and invoices &#8212; instantly searchable by AI<br>
+          <strong>&#10003;</strong> Price comparison across suppliers and delivery tracking<br>
+          <strong>&#10003;</strong> Complete warehouse movement history<br>
+          <strong>&#10003;</strong> AI: "Which supplier has the best price for item X?"</div>
+        <div class="mod-ai"><span>&#129504;</span><div><strong>Ask AI:</strong> "Which suppliers delivered late more than twice this quarter?"</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">Stock below minimum &#8594; automatic PO draft to best-priced supplier &#8594; manager approves in one click.</div></div>
       </div>
 
       <div class="mod-card reveal d2" style="--mc:var(--purple);--mi-bg:var(--purple-s);--mi-brd:rgba(124,58,237,0.2)">
-        <div class="mod-header"><div class="mod-icon">👥</div><div class="mod-name">HR</div></div>
-        <div class="mod-desc">Complete HR management — flat price, no per-employee cost. Every document indexed by AI.<br><br>
-          <strong>✓</strong> Employee profiles, contracts and onboarding checklists<br>
-          <strong>✓</strong> Payslips searchable via OCR — upload and find instantly<br>
-          <strong>✓</strong> Certifications with automatic expiry alerts (90/30/7 days)<br>
-          <strong>✓</strong> Leave calendar and absence management<br>
-          <strong>✓</strong> AI: "When does Rossi's fire safety certification expire?" — instant answer<br>
-          <strong>✓</strong> Shift planning, performance reviews and recruiting</div>
-        <div class="mod-ai"><span>🧠</span><div><strong>Ask AI:</strong> "Which employees have certifications expiring in the next 60 days?"</div></div>
-        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">"When does Rossi's fire safety course expire?" — instant answer + automatic alert 30 days before expiry.</div></div>
+        <div class="mod-header"><div class="mod-icon">&#128101;</div><div class="mod-name">HR</div></div>
+        <div class="mod-desc">Complete HR management &#8212; flat price, no per-employee cost. Every document indexed by AI.<br><br>
+          <strong>&#10003;</strong> Employee profiles, contracts and onboarding checklists<br>
+          <strong>&#10003;</strong> Payslips searchable via OCR &#8212; upload and find instantly<br>
+          <strong>&#10003;</strong> Certifications with automatic expiry alerts (90/30/7 days)<br>
+          <strong>&#10003;</strong> Leave calendar and absence management<br>
+          <strong>&#10003;</strong> AI: "When does Rossi's fire safety certification expire?" &#8212; instant answer<br>
+          <strong>&#10003;</strong> Shift planning, performance reviews and recruiting</div>
+        <div class="mod-ai"><span>&#129504;</span><div><strong>Ask AI:</strong> "Which employees have certifications expiring in the next 60 days?"</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">"When does Rossi's fire safety course expire?" &#8212; instant answer + automatic alert 30 days before expiry.</div></div>
       </div>
 
       <div class="mod-card reveal" style="--mc:var(--blue);--mi-bg:var(--blue-s);--mi-brd:rgba(37,99,235,0.2)">
-        <div class="mod-header"><div class="mod-icon">🎧</div><div class="mod-name">Helpdesk</div></div>
-        <div class="mod-desc">Intelligent ticket system with AI knowledge base — flat rate, not per agent.<br><br>
-          <strong>✓</strong> Tickets with SLA tracking and priority queues<br>
-          <strong>✓</strong> AI searches your archive and suggests answers from existing documents<br>
-          <strong>✓</strong> Automatic appointment suggestions based on availability<br>
-          <strong>✓</strong> Follow-up task creation and real-time notifications<br>
-          <strong>✓</strong> Customer satisfaction tracking<br>
-          <strong>✓</strong> Your team solves issues in seconds, not hours</div>
-        <div class="mod-ai"><span>🧠</span><div><strong>Ask AI:</strong> "Summarize all open tickets for client Rossi and suggest next steps."</div></div>
-        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">Client request → AI prepares answer from KB → suggests free slot → agent confirms in 1 click.</div></div>
+        <div class="mod-header"><div class="mod-icon">&#127911;</div><div class="mod-name">Helpdesk</div></div>
+        <div class="mod-desc">Smart ticketing system with AI knowledge base &#8212; flat rate, not per agent.<br><br>
+          <strong>&#10003;</strong> Tickets with SLA tracking and priority queues<br>
+          <strong>&#10003;</strong> AI searches your archive and suggests answers from existing documents<br>
+          <strong>&#10003;</strong> Automatic appointment suggestions based on availability<br>
+          <strong>&#10003;</strong> Follow-up task creation and real-time notifications<br>
+          <strong>&#10003;</strong> Customer satisfaction tracking<br>
+          <strong>&#10003;</strong> Your team resolves issues in seconds, not hours</div>
+        <div class="mod-ai"><span>&#129504;</span><div><strong>Ask AI:</strong> "Summarize all open tickets for client Rossi and suggest next steps."</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">Client request &#8594; AI prepares answer from KB &#8594; suggests available slot &#8594; agent confirms in 1 click.</div></div>
       </div>
 
       <div class="mod-card reveal d1" style="--mc:var(--sky);--mi-bg:var(--sky-s);--mi-brd:rgba(2,132,199,0.2)">
-        <div class="mod-header"><div class="mod-icon">📧</div><div class="mod-name">Email &amp; Phone</div></div>
-        <div class="mod-desc">Unified inbox for email and calls — every conversation indexed by AI and linked to CRM.<br><br>
-          <strong>✓</strong> Full conversation history per client<br>
-          <strong>✓</strong> Email templates and call logs with notes<br>
-          <strong>✓</strong> Missed call → automatic task + AI summary of recent interactions<br>
-          <strong>✓</strong> Sync with Google Calendar and Office 365<br>
-          <strong>✓</strong> AI: "What were the last 5 conversations with company ABC?"<br>
-          <strong>✓</strong> AI summary of every conversation — context at a glance</div>
-        <div class="mod-ai"><span>🧠</span><div><strong>Ask AI:</strong> "What were the last 5 conversations with company ABC about?"</div></div>
-        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">Missed call → auto log + follow-up task + AI: "The last 3 interactions were about the contract renewal."</div></div>
+        <div class="mod-header"><div class="mod-icon">&#128231;</div><div class="mod-name">Email &amp; Phone</div></div>
+        <div class="mod-desc">Unified inbox for email and calls &#8212; every conversation indexed by AI and linked to CRM.<br><br>
+          <strong>&#10003;</strong> Complete conversation history per client<br>
+          <strong>&#10003;</strong> Email templates and call logs with notes<br>
+          <strong>&#10003;</strong> Missed call &#8594; automatic task + AI summary of recent interactions<br>
+          <strong>&#10003;</strong> Sync with Google Calendar and Office 365<br>
+          <strong>&#10003;</strong> AI: "What were the last 5 conversations with company ABC?"<br>
+          <strong>&#10003;</strong> AI summary of every conversation &#8212; context at a glance</div>
+        <div class="mod-ai"><span>&#129504;</span><div><strong>Ask AI:</strong> "What were the last 5 conversations with company ABC about?"</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">Missed call &#8594; auto log + follow-up task + AI: "The last 3 interactions were about the contract renewal."</div></div>
       </div>
 
       <div class="mod-card reveal d2" style="--mc:var(--indigo);--mi-bg:var(--indigo-s);--mi-brd:rgba(79,70,229,0.2)">
-        <div class="mod-header"><div class="mod-icon">⚖️</div><div class="mod-name">Legal</div></div>
-        <div class="mod-desc">Professional case management with AI — cases, contracts, deadlines, everything searchable.<br><br>
-          <strong>✓</strong> Case files, contracts, clients, obligations and court documents<br>
-          <strong>✓</strong> Multi-level deadline alerts: 90/30/7/3/1 days before each obligation<br>
-          <strong>✓</strong> Complete audit trail and document versioning<br>
-          <strong>✓</strong> OCR makes scanned court documents searchable<br>
-          <strong>✓</strong> AI: "Find all breach of contract cases since 2022"<br>
-          <strong>✓</strong> AI legal assistant with semantic search across all case files</div>
-        <div class="mod-ai"><span>🧠</span><div><strong>Ask AI:</strong> "Overview of case #2024-15 — status, deadlines, documents and next actions."</div></div>
-        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">"Find breach of contract cases since 2022" → 5 cases with outcomes, dates and linked documents in seconds.</div></div>
+        <div class="mod-header"><div class="mod-icon">&#9878;&#65039;</div><div class="mod-name">Legal</div></div>
+        <div class="mod-desc">Professional case management with AI &#8212; case files, contracts, deadlines, all searchable.<br><br>
+          <strong>&#10003;</strong> Case files, contracts, clients, obligations and court documents<br>
+          <strong>&#10003;</strong> Multi-level deadline alerts: 90/30/7/3/1 days before every due date<br>
+          <strong>&#10003;</strong> Complete audit trail and document versioning<br>
+          <strong>&#10003;</strong> OCR makes even scanned court filings searchable<br>
+          <strong>&#10003;</strong> AI: "Find all breach of contract cases since 2022"<br>
+          <strong>&#10003;</strong> AI legal assistant with semantic search across all case files</div>
+        <div class="mod-ai"><span>&#129504;</span><div><strong>Ask AI:</strong> "Overview of case file #2024-15 &#8212; status, deadlines, documents and next actions."</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">"Find breach of contract cases since 2022" &#8594; 5 cases with outcomes, dates and linked documents in seconds.</div></div>
       </div>
 
       <div class="mod-card reveal" style="--mc:var(--amber);--mi-bg:var(--amber-s);--mi-brd:rgba(217,119,6,0.2)">
-        <div class="mod-header"><div class="mod-icon">🏠</div><div class="mod-name">Real Estate</div></div>
-        <div class="mod-desc">AI-powered property portfolio management — properties, units, contracts, tenants, all in one.<br><br>
-          <strong>✓</strong> Properties, units, lease agreements and tenant management<br>
-          <strong>✓</strong> Maintenance requests with assignment and tracking<br>
-          <strong>✓</strong> Multi-level alerts: contract renewals, energy certificates, inspections (90/30/7 days)<br>
-          <strong>✓</strong> Income and expense overview per property<br>
-          <strong>✓</strong> AI: "Which contracts expire in the next 6 months?"<br>
-          <strong>✓</strong> AI included — no extra cost for portfolio analysis</div>
-        <div class="mod-ai"><span>🧠</span><div><strong>Ask AI:</strong> "Properties with contracts expiring in the next 6 months and their revenue."</div></div>
-        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">Energy certificate expiring in 90 days → auto alert → tenant notified → renewal task assigned.</div></div>
+        <div class="mod-header"><div class="mod-icon">&#127968;</div><div class="mod-name">Real Estate</div></div>
+        <div class="mod-desc">AI-powered property portfolio management &#8212; properties, units, leases, tenants, all in one.<br><br>
+          <strong>&#10003;</strong> Properties, units, lease agreements and tenant management<br>
+          <strong>&#10003;</strong> Maintenance requests with assignment and tracking<br>
+          <strong>&#10003;</strong> Multi-level alerts: lease renewals, energy certificates, inspections (90/30/7 days)<br>
+          <strong>&#10003;</strong> Income and expense overview per property<br>
+          <strong>&#10003;</strong> AI: "Which leases expire in the next 6 months?"<br>
+          <strong>&#10003;</strong> AI included &#8212; no extra cost for portfolio analysis</div>
+        <div class="mod-ai"><span>&#129504;</span><div><strong>Ask AI:</strong> "Properties with leases expiring in 6 months and their revenue."</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">Energy certificate expiring in 90 days &#8594; automatic alert &#8594; tenant notified &#8594; renewal task assigned.</div></div>
       </div>
 
       <div class="mod-card reveal d1" style="--mc:var(--red);--mi-bg:var(--red-s);--mi-brd:rgba(220,38,38,0.2)">
-        <div class="mod-header"><div class="mod-icon">🏥</div><div class="mod-name">Clinic</div></div>
-        <div class="mod-desc">Digital patient records with AI search — GDPR-ready, role-based access.<br><br>
-          <strong>✓</strong> Patient records, treatment plans and full medical history<br>
-          <strong>✓</strong> OCR on reports and prescriptions — searchable by patient, diagnosis, date<br>
-          <strong>✓</strong> Appointment booking with calendar sync and automatic reminders<br>
-          <strong>✓</strong> Differentiated access for doctors, nurses and administration<br>
-          <strong>✓</strong> Complete audit log for GDPR compliance<br>
-          <strong>✓</strong> AI: "All treatments for patient Rossi in the last 12 months"</div>
-        <div class="mod-ai"><span>🧠</span><div><strong>Ask AI:</strong> "Patient Rossi history — diagnoses, treatments and upcoming appointments."</div></div>
-        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">Scan report → OCR extracts values → searchable by patient, doctor, diagnosis and date.</div></div>
+        <div class="mod-header"><div class="mod-icon">&#127973;</div><div class="mod-name">Clinic</div></div>
+        <div class="mod-desc">Digital medical records with AI search &#8212; GDPR-ready, role-based access.<br><br>
+          <strong>&#10003;</strong> Patient records, treatment plans and complete medical history<br>
+          <strong>&#10003;</strong> OCR on reports and prescriptions &#8212; searchable by patient, diagnosis, date<br>
+          <strong>&#10003;</strong> Appointment booking with calendar sync and automatic reminders<br>
+          <strong>&#10003;</strong> Differentiated access for doctors, nurses and administration<br>
+          <strong>&#10003;</strong> Complete audit log for GDPR compliance<br>
+          <strong>&#10003;</strong> AI: "All treatments for patient Rossi in the last 12 months"</div>
+        <div class="mod-ai"><span>&#129504;</span><div><strong>Ask AI:</strong> "Patient Rossi history &#8212; diagnoses, treatments and upcoming appointments."</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">Scan report &#8594; OCR extracts values &#8594; searchable by patient, doctor, diagnosis and date.</div></div>
       </div>
 
       <div class="mod-card reveal d2" style="--mc:var(--teal);--mi-bg:var(--teal-s);--mi-brd:rgba(13,148,136,0.2)">
-        <div class="mod-header"><div class="mod-icon">🤝</div><div class="mod-name">Associations</div></div>
-        <div class="mod-desc">Member management with fee tracking — email and WhatsApp communications built-in.<br><br>
-          <strong>✓</strong> Member directory with payment status and automatic renewal reminders<br>
-          <strong>✓</strong> Event organization with RSVP and attendance<br>
-          <strong>✓</strong> Communication lists for email and WhatsApp<br>
-          <strong>✓</strong> Shared document archive — bylaws, minutes, reports<br>
-          <strong>✓</strong> AI: "Which members haven't paid this year?" — instant list<br>
-          <strong>✓</strong> Automatic receipt generation and annual fee overview</div>
-        <div class="mod-ai"><span>🧠</span><div><strong>Ask AI:</strong> "How many members haven't renewed this year? Generate a reminder list."</div></div>
-        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">Membership fee → email+WhatsApp reminder → payment tracked → receipt generated.</div></div>
+        <div class="mod-header"><div class="mod-icon">&#129309;</div><div class="mod-name">Associations</div></div>
+        <div class="mod-desc">Member management with dues tracking &#8212; integrated email and WhatsApp communications.<br><br>
+          <strong>&#10003;</strong> Member directory with payment status and automatic renewal reminders<br>
+          <strong>&#10003;</strong> Event organization with RSVP and attendance tracking<br>
+          <strong>&#10003;</strong> Communication lists for email and WhatsApp<br>
+          <strong>&#10003;</strong> Shared document archive &#8212; bylaws, minutes, reports<br>
+          <strong>&#10003;</strong> AI: "Which members haven't paid this year?" &#8212; instant list<br>
+          <strong>&#10003;</strong> Automatic receipt generation and annual dues overview</div>
+        <div class="mod-ai"><span>&#129504;</span><div><strong>Ask AI:</strong> "How many members haven't renewed this year? Generate a reminder list."</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">Membership dues &#8594; email+WhatsApp reminder &#8594; payment tracked &#8594; receipt generated.</div></div>
       </div>
 
       <div class="mod-card reveal" style="--mc:var(--green);--mi-bg:var(--green-s);--mi-brd:rgba(22,163,74,0.2)">
-        <div class="mod-header"><div class="mod-icon">📒</div><div class="mod-name">Accounting</div></div>
-        <div class="mod-desc">Complete AI-powered accounting — everything you need, unlimited users.<br><br>
-          <strong>✓</strong> Chart of accounts, journal entries, P&amp;L, balance sheet, due dates and budget<br>
-          <strong>✓</strong> E-invoicing — FatturaPA (SDI) and XRechnung (DE) free<br>
-          <strong>✓</strong> Receipt scanning — photo → OCR → AI suggests the entry<br>
-          <strong>✓</strong> CSV / MT940 bank import — import transactions manually<br>
-          <strong>✓</strong> Bank reconciliation with AI auto-matching<br>
-          <strong>✓</strong> Cash flow forecast, AI anomaly detection<br>
-          <strong>✓</strong> "Record €500 rent for March" — natural language<br>
-          <strong>✓</strong> DATEV export for your accountant in one click</div>
-        <div class="mod-ai"><span>🧠</span><div><strong>Ask AI:</strong> "Top 5 expenses this quarter? Any anomalies in this month's entries?"</div></div>
-        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">Overnight bank sync → AI matches 47/50 transactions → flags 2 duplicates and missing VAT → DATEV export in 1 click.</div></div>
+        <div class="mod-header"><div class="mod-icon">&#128210;</div><div class="mod-name">Accounting</div></div>
+        <div class="mod-desc">Complete AI-powered accounting &#8212; everything you need, unlimited users.<br><br>
+          <strong>&#10003;</strong> Chart of accounts, journal entries, P&amp;L, balance sheet, receivables and budgets<br>
+          <strong>&#10003;</strong> E-invoicing &#8212; FatturaPA (SDI) and XRechnung (DE) free<br>
+          <strong>&#10003;</strong> Receipt scanning &#8212; photo &#8594; OCR &#8594; AI suggests the booking<br>
+          <strong>&#10003;</strong> CSV / MT940 import &#8212; import bank transactions<br>
+          <strong>&#10003;</strong> Bank reconciliation with AI auto-matching<br>
+          <strong>&#10003;</strong> Cash flow forecast, AI anomaly detection<br>
+          <strong>&#10003;</strong> "Book &#8364;500 rent for March" &#8212; plain language<br>
+          <strong>&#10003;</strong> DATEV export for your accountant in one click</div>
+        <div class="mod-ai"><span>&#129504;</span><div><strong>Ask AI:</strong> "Top 5 expenses this quarter? Any anomalies in this month's entries?"</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">Overnight bank sync &#8594; AI matches 47/50 transactions &#8594; flags 2 duplicates and missing VAT &#8594; DATEV export in 1 click.</div></div>
       </div>
 
       <div class="mod-card reveal d1" style="--mc:var(--blue);--mi-bg:var(--blue-s);--mi-brd:rgba(37,99,235,0.2)">
-        <div class="mod-header"><div class="mod-icon">📋</div><div class="mod-name">Projects</div></div>
-        <div class="mod-desc">Project management + GPS time tracking — includes mobile worker portal.<br><br>
-          <strong>✓</strong> Phases, Kanban tasks, teams, materials and budget<br>
-          <strong>✓</strong> Built-in time clock: GPS clock-in/out with geofencing alerts<br>
-          <strong>✓</strong> Worker portal with mobile PIN login — clock in, upload photos, log materials<br>
-          <strong>✓</strong> Absence management and bulk timesheet approval<br>
-          <strong>✓</strong> Real-time GPS map — who's on site<br>
-          <strong>✓</strong> AI: "Which projects are over budget? Total team hours this month?"</div>
-        <div class="mod-ai"><span>🧠</span><div><strong>Ask AI:</strong> "Projects over 80% of budget. Team overtime this month."</div></div>
-        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">New job site → create project → assign workers with PIN → GPS map shows who's on site → manager approves timesheets at end of week.</div></div>
+        <div class="mod-header"><div class="mod-icon">&#128203;</div><div class="mod-name">Projects</div></div>
+        <div class="mod-desc">Project management + GPS time tracking &#8212; includes mobile worker portal.<br><br>
+          <strong>&#10003;</strong> Phases, Kanban tasks, team, materials and budget<br>
+          <strong>&#10003;</strong> Integrated time clock: GPS clock-in/out with geofencing alerts<br>
+          <strong>&#10003;</strong> Worker portal with mobile PIN login &#8212; clock in, upload photos, log materials<br>
+          <strong>&#10003;</strong> Absence management and bulk time entry approval<br>
+          <strong>&#10003;</strong> Real-time GPS map &#8212; who's on site<br>
+          <strong>&#10003;</strong> AI: "Which projects are over budget? Total team hours this month?"</div>
+        <div class="mod-ai"><span>&#129504;</span><div><strong>Ask AI:</strong> "Projects over 80% of budget. Team overtime this month."</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">New job site &#8594; create project &#8594; assign workers with PIN &#8594; GPS map shows who's on site &#8594; manager approves time entries at end of week.</div></div>
+      </div>
+
+      <div class="mod-card reveal d2" style="--mc:var(--sky);--mi-bg:var(--sky-s);--mi-brd:rgba(2,132,199,0.2)">
+        <div class="mod-header"><div class="mod-icon">&#128667;</div><div class="mod-name">Fleet</div></div>
+        <div class="mod-desc">Complete fleet management &#8212; vehicles, drivers, costs, maintenance and compliance.<br><br>
+          <strong>&#10003;</strong> Vehicle registry with insurance, leasing and inspection deadlines<br>
+          <strong>&#10003;</strong> Driver management, assignments and license monitoring<br>
+          <strong>&#10003;</strong> Fuel log, mileage readings and per-vehicle cost analysis<br>
+          <strong>&#10003;</strong> Maintenance scheduling with automatic reminders<br>
+          <strong>&#10003;</strong> Fine tracking and document management<br>
+          <strong>&#10003;</strong> AI: "Which vehicles need inspection this month? Total fleet cost Q1?"</div>
+        <div class="mod-ai"><span>&#129504;</span><div><strong>Ask AI:</strong> "Vehicles with highest fuel costs this quarter. Overdue inspections?"</div></div>
+        <div class="mod-ex"><span class="mod-ex-lbl">Example</span><div class="mod-ex-txt">New vehicle &#8594; insurance + leasing registered &#8594; maintenance reminders &#8594; driver assigned &#8594; mileage log &#8594; complete cost history.</div></div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ── AUTOMAZIONI ── -->
+<!-- ── AUTOMATIONS ── -->
 <section class="section auto-section" id="automazioni">
   <div class="sec-inner">
     <div class="auto-grid">
       <div class="auto-left">
-        <div class="tag reveal" style="margin-bottom:16px">⚡ Automations</div>
-        <h2 class="sec-title reveal" style="color:#fff">Describe it.<br>Blina <em style="color:#fbbf24">builds it</em>.</h2>
-        <p class="sec-sub reveal" style="color:rgba(255,255,255,0.6)">Build automatic workflows on any event — without writing a single line of code. Trigger on documents, deadlines, payments, tickets and much more.</p>
+        <div class="tag reveal" style="margin-bottom:16px">&#9889; Automations</div>
+        <h2 class="sec-title reveal" style="color:#fff">Describe it.<br>Blina <em style="color:#fbbf24">builds</em> it.</h2>
+        <p class="sec-sub reveal" style="color:rgba(255,255,255,0.6)">Build automated workflows on any event &#8212; without writing a single line of code. Triggers on documents, deadlines, payments, tickets and more.</p>
         <div class="auto-steps reveal">
           <div class="auto-step">
             <div class="auto-step-num">1</div>
-            <div><div class="auto-step-title">Choose the trigger</div><div class="auto-step-desc">New document, upcoming deadline, open ticket, payment received, form submitted...</div></div>
+            <div><div class="auto-step-title">Choose the trigger</div><div class="auto-step-desc">New document, upcoming deadline, ticket opened, payment received, form submitted...</div></div>
           </div>
           <div class="auto-step">
             <div class="auto-step-num">2</div>
@@ -1340,65 +1499,65 @@ footer{
           </div>
           <div class="auto-step">
             <div class="auto-step-num">3</div>
-            <div><div class="auto-step-title">Execute the actions</div><div class="auto-step-desc">Email, WhatsApp, push notification, create task, update field, create record — all automatic.</div></div>
+            <div><div class="auto-step-title">Execute the actions</div><div class="auto-step-desc">Email, WhatsApp, push notification, create task, update field, create record &#8212; all automatic.</div></div>
           </div>
         </div>
       </div>
       <div class="auto-right reveal d1">
         <div class="auto-trigger">
           <div class="auto-trigger-head">
-            <div class="auto-trigger-icon">📄</div>
+            <div class="auto-trigger-icon">&#128196;</div>
             <div class="auto-trigger-title">New document uploaded</div>
           </div>
           <div class="auto-trigger-flow">
             <span class="auto-flow-node">Auto OCR</span>
-            <span class="auto-flow-arrow">→</span>
+            <span class="auto-flow-arrow">&#8594;</span>
             <span class="auto-flow-node">Index in AI</span>
-            <span class="auto-flow-arrow">→</span>
+            <span class="auto-flow-arrow">&#8594;</span>
             <span class="auto-flow-node">Notify team</span>
           </div>
         </div>
         <div class="auto-trigger">
           <div class="auto-trigger-head">
-            <div class="auto-trigger-icon">⏰</div>
-            <div class="auto-trigger-title">Certification expiry (30 days)</div>
+            <div class="auto-trigger-icon">&#9200;</div>
+            <div class="auto-trigger-title">Certification expiring (30 days)</div>
           </div>
           <div class="auto-trigger-flow">
-            <span class="auto-flow-node">Email employee</span>
-            <span class="auto-flow-arrow">→</span>
-            <span class="auto-flow-node">HR Task</span>
-            <span class="auto-flow-arrow">→</span>
+            <span class="auto-flow-node">Email to employee</span>
+            <span class="auto-flow-arrow">&#8594;</span>
+            <span class="auto-flow-node">HR task</span>
+            <span class="auto-flow-arrow">&#8594;</span>
             <span class="auto-flow-node">Reminder -7d</span>
           </div>
         </div>
         <div class="auto-trigger">
           <div class="auto-trigger-head">
-            <div class="auto-trigger-icon">🎧</div>
+            <div class="auto-trigger-icon">&#127911;</div>
             <div class="auto-trigger-title">Ticket SLA breached</div>
           </div>
           <div class="auto-trigger-flow">
             <span class="auto-flow-node">Notify manager</span>
-            <span class="auto-flow-arrow">→</span>
+            <span class="auto-flow-arrow">&#8594;</span>
             <span class="auto-flow-node">High priority</span>
-            <span class="auto-flow-arrow">→</span>
+            <span class="auto-flow-arrow">&#8594;</span>
             <span class="auto-flow-node">WhatsApp</span>
           </div>
         </div>
         <div class="auto-trigger">
           <div class="auto-trigger-head">
-            <div class="auto-trigger-icon">💰</div>
+            <div class="auto-trigger-icon">&#128176;</div>
             <div class="auto-trigger-title">Overdue payment (invoice)</div>
           </div>
           <div class="auto-trigger-flow">
             <span class="auto-flow-node">Reminder email</span>
-            <span class="auto-flow-arrow">→</span>
+            <span class="auto-flow-arrow">&#8594;</span>
             <span class="auto-flow-node">+7d second reminder</span>
-            <span class="auto-flow-arrow">→</span>
-            <span class="auto-flow-node">Sales rep alert</span>
+            <span class="auto-flow-arrow">&#8594;</span>
+            <span class="auto-flow-node">Sales alert</span>
           </div>
         </div>
         <div class="auto-bottom-note">
-          <strong>Describe it in plain English:</strong> "When an invoice isn't paid within 7 days, send a reminder email and create a task for the sales rep." — Blina builds the automation.
+          <strong>Describe it in plain English:</strong> "When an invoice isn't paid within 7 days, send a reminder email and create a task for the sales team." &#8212; Blina creates the automation.
         </div>
       </div>
     </div>
@@ -1410,55 +1569,55 @@ footer{
   <div class="sec-inner">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1100px;margin:0 auto" class="ai-pro-grid">
       <div>
-        <div class="tag reveal" style="margin-bottom:16px;background:rgba(37,99,235,0.12);color:#3b82f6;border-color:rgba(37,99,235,0.25)">💬 Blina WhatsApp</div>
-        <h2 class="sec-title reveal" style="color:var(--ink)">Your team talks to<br>your <em style="color:#2563eb">AI</em> — via WhatsApp.</h2>
-        <p class="sec-sub reveal" style="color:var(--ink3);max-width:440px">Your team talks directly to Blina AI through WhatsApp. Create tasks, book appointments, open tickets, check orders — all from a simple chat.</p>
+        <div class="tag reveal" style="margin-bottom:16px;background:rgba(37,99,235,0.12);color:#3b82f6;border-color:rgba(37,99,235,0.25)">&#128172; Blina WhatsApp</div>
+        <h2 class="sec-title reveal" style="color:var(--ink)">Your team talks to<br>your <em style="color:#2563eb">AI</em> &#8212; via WhatsApp.</h2>
+        <p class="sec-sub reveal" style="color:var(--ink3);max-width:440px">Your team talks directly to Blina AI through WhatsApp. Create tasks, book appointments, open tickets, check orders &#8212; all from a simple chat.</p>
         <div style="margin-top:32px;display:flex;flex-direction:column;gap:16px">
           <div class="contact-feat reveal" style="background:#fff;border:1px solid #bfdbfe;border-radius:12px;padding:14px 16px;box-shadow:0 1px 3px rgba(37,99,235,0.08)">
-            <div class="contact-feat-icon" style="background:rgba(37,99,235,0.1);border-color:rgba(37,99,235,0.2)">📅</div>
-            <div><div class="contact-feat-title" style="color:var(--ink)">Appointments by chat</div><div class="contact-feat-sub" style="color:var(--ink3)">"I need an appointment Thursday at 3pm" → Blina creates the appointment automatically.</div></div>
+            <div class="contact-feat-icon" style="background:rgba(37,99,235,0.1);border-color:rgba(37,99,235,0.2)">&#128197;</div>
+            <div><div class="contact-feat-title" style="color:var(--ink)">Appointments via chat</div><div class="contact-feat-sub" style="color:var(--ink3)">"I need an appointment on Thursday at 3pm" &#8594; Blina creates the appointment automatically.</div></div>
           </div>
           <div class="contact-feat reveal d1" style="background:#fff;border:1px solid #bfdbfe;border-radius:12px;padding:14px 16px;box-shadow:0 1px 3px rgba(37,99,235,0.08)">
-            <div class="contact-feat-icon" style="background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.2)">🎫</div>
-            <div><div class="contact-feat-title" style="color:var(--ink)">Support via WhatsApp</div><div class="contact-feat-sub" style="color:var(--ink3)">"My printer isn't working" → Helpdesk ticket created with full details.</div></div>
+            <div class="contact-feat-icon" style="background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.2)">&#127915;</div>
+            <div><div class="contact-feat-title" style="color:var(--ink)">Support via WhatsApp</div><div class="contact-feat-sub" style="color:var(--ink3)">"The printer isn't working" &#8594; Helpdesk ticket created with all the details.</div></div>
           </div>
           <div class="contact-feat reveal d2" style="background:#fff;border:1px solid #bfdbfe;border-radius:12px;padding:14px 16px;box-shadow:0 1px 3px rgba(37,99,235,0.08)">
-            <div class="contact-feat-icon" style="background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.2)">📦</div>
-            <div><div class="contact-feat-title" style="color:var(--ink)">Check order status</div><div class="contact-feat-sub" style="color:var(--ink3)">"What's the status of order #4521?" → Instant response with status and details.</div></div>
+            <div class="contact-feat-icon" style="background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.2)">&#128230;</div>
+            <div><div class="contact-feat-title" style="color:var(--ink)">Order status</div><div class="contact-feat-sub" style="color:var(--ink3)">"What's the status of order #4521?" &#8594; Instant reply with status and details.</div></div>
           </div>
           <div class="contact-feat reveal d3" style="background:#fff;border:1px solid #bfdbfe;border-radius:12px;padding:14px 16px;box-shadow:0 1px 3px rgba(37,99,235,0.08)">
-            <div class="contact-feat-icon" style="background:rgba(37,99,235,0.08);border-color:rgba(37,99,235,0.15)">🔒</div>
+            <div class="contact-feat-icon" style="background:rgba(37,99,235,0.08);border-color:rgba(37,99,235,0.15)">&#128274;</div>
             <div><div class="contact-feat-title" style="color:var(--ink)">Whitelist security</div><div class="contact-feat-sub" style="color:var(--ink3)">Only authorized contacts can communicate. Daily limits, rate limiting, HMAC-signed webhooks.</div></div>
           </div>
         </div>
         <div class="reveal d3" style="margin-top:28px">
-          <a href="https://app.blina-desk.com" class="btn btn-primary btn-lg" style="background:linear-gradient(135deg,#2563eb,#3b82f6)">Try Blina WhatsApp →</a>
-          <span style="display:block;margin-top:10px;font-size:12px;color:var(--ink3)">€39/month • 500 messages/month included. Extra packs available.</span>
+          <a href="https://app.blina-desk.com" class="btn btn-primary btn-lg" style="background:linear-gradient(135deg,#2563eb,#3b82f6)">Try Blina WhatsApp &#8594;</a>
+          <span style="display:block;margin-top:10px;font-size:12px;color:var(--ink3)">&#8364;39/month &#8226; Uses your AI token budget. Extra token packs available.</span>
         </div>
       </div>
       <!-- WhatsApp Chat mockup -->
       <div class="reveal d2">
         <div style="background:#fff;border:1px solid #bfdbfe;border-radius:var(--r2);overflow:hidden;box-shadow:0 8px 40px rgba(37,99,235,0.12)">
           <div style="background:linear-gradient(135deg,#2563eb,#3b82f6);padding:10px 16px;display:flex;align-items:center;gap:10px">
-            <span style="font-size:12px;font-weight:700;color:#fff">💬 Blina WhatsApp</span>
+            <span style="font-size:12px;font-weight:700;color:#fff">&#128172; Blina WhatsApp</span>
           </div>
           <div style="padding:16px;display:flex;flex-direction:column;gap:12px;min-height:320px;background:#f8fafc">
-            <div style="align-self:flex-end;background:#2563eb;border-radius:12px 12px 4px 12px;padding:10px 14px;max-width:85%;font-size:12px;color:#fff">I need an appointment on Friday at 10am with Dr. Smith.</div>
+            <div style="align-self:flex-end;background:#2563eb;border-radius:12px 12px 4px 12px;padding:10px 14px;max-width:85%;font-size:12px;color:#fff">I need an appointment on Friday at 10 with Dr. Rossi.</div>
             <div style="align-self:flex-start;background:#fff;border:1px solid #dbeafe;border-radius:12px 12px 12px 4px;padding:10px 14px;max-width:85%;font-size:12px;color:var(--ink2)">
-              <div style="margin-bottom:8px">📅 <strong style="color:#3b82f6">Appointment created</strong></div>
+              <div style="margin-bottom:8px">&#128197; <strong style="color:#3b82f6">Appointment created</strong></div>
               <div style="font-size:11px;color:var(--ink3);display:flex;flex-direction:column;gap:3px">
-                <span>📆 Friday, April 4, 2026 — 10:00 AM</span>
-                <span>👨‍⚕️ Dr. Smith</span>
-                <span>✅ Confirmation sent</span>
+                <span>&#128198; Friday 04/04/2026 &#8212; 10:00 AM</span>
+                <span>&#128104;&#8205;&#9877;&#65039; Dr. Rossi</span>
+                <span>&#9989; Confirmation sent</span>
               </div>
             </div>
             <div style="align-self:flex-end;background:#2563eb;border-radius:12px 12px 4px 12px;padding:10px 14px;max-width:85%;font-size:12px;color:#fff">What's the status of order #1234?</div>
             <div style="align-self:flex-start;background:#fff;border:1px solid #dbeafe;border-radius:12px 12px 12px 4px;padding:10px 14px;max-width:85%;font-size:12px;color:var(--ink2)">
-              <div style="margin-bottom:8px">📦 <strong style="color:#3b82f6">Order #1234</strong></div>
+              <div style="margin-bottom:8px">&#128230; <strong style="color:#3b82f6">Order #1234</strong></div>
               <div style="font-size:11px;color:var(--ink3);display:flex;flex-direction:column;gap:3px">
-                <span>Status: <strong style="color:#16a34a">In Progress</strong></span>
-                <span>Amount: €2,340.00</span>
-                <span>Delivery: April 7, 2026</span>
+                <span>Status: <strong style="color:#16a34a">In progress</strong></span>
+                <span>Amount: &#8364;2,340.00</span>
+                <span>Expected delivery: 04/07/2026</span>
               </div>
             </div>
           </div>
@@ -1474,7 +1633,7 @@ footer{
     <div class="sec-head reveal">
       <div class="tag" style="margin-bottom:14px">Pricing</div>
       <h2 class="sec-title">Build your <em>perfect plan</em>.</h2>
-      <p class="sec-sub">For €49/session you get the complete Base Platform with <strong>unlimited users and zero per-seat costs</strong>. Add only the modules you need.</p>
+      <p class="sec-sub">&#8364;49 per session &#8212; you only pay for <strong>users active at the same time</strong>, not registered users or seats. Add modules at a fixed monthly price.</p>
     </div>
 
     <div style="text-align:center;margin-bottom:20px" class="reveal">
@@ -1488,41 +1647,47 @@ footer{
       <div class="pricing-hero-info">
         <div class="pricing-hero-lbl">Always included</div>
         <div class="pricing-hero-name">Base Platform</div>
-        <div class="pricing-hero-desc">CRM + AI Semantic Search + OCR Scanner + RAG Chat + Documents + Notes + Tasks + Appointments — all AI-powered, all included.</div>
+        <div class="pricing-hero-desc">CRM + Semantic AI Search + OCR Scanner + RAG Chat + Documents + Notes + Tasks + Appointments. All AI-powered.</div>
       </div>
       <div style="text-align:center;flex-shrink:0">
-        <div class="pricing-hero-amount" data-monthly="€49" data-annual="€39">€49</div>
+        <div class="pricing-hero-amount" data-monthly="&#8364;49" data-annual="&#8364;39">&#8364;49</div>
         <div class="pricing-hero-per" data-monthly="/session/month" data-annual="/session/month (billed annually)">/session/month</div>
       </div>
     </div>
 
     <div class="pricing-perks reveal">
-      <div class="pricing-perk"><div class="pricing-perk-ck">✓</div><span><strong>Pay per session</strong> — not per user. One price, whole team.</span></div>
-      <div class="pricing-perk"><div class="pricing-perk-ck">✓</div><span><strong>Unlimited users</strong> — 5 or 500 people, same price.</span></div>
-      <div class="pricing-perk"><div class="pricing-perk-ck">✓</div><span><strong>14 days free</strong> — all modules, no credit card.</span></div>
+      <div class="pricing-perk"><div class="pricing-perk-ck">&#10003;</div><span><strong>1 session = 1 active user at a time</strong> &#8212; register unlimited users, you only pay for those online simultaneously.</span></div>
+      <div class="pricing-perk"><div class="pricing-perk-ck">&#10003;</div><span><strong>Modules = flat monthly price</strong> &#8212; add Sales at &#8364;45/month, same price with 1 or 10 sessions.</span></div>
+      <div class="pricing-perk"><div class="pricing-perk-ck">&#10003;</div><span><strong>14 days free</strong> &#8212; all modules, no credit card.</span></div>
     </div>
 
     <div style="font-size:12px;font-weight:700;color:var(--ink3);margin-bottom:12px;text-transform:uppercase;letter-spacing:.08em">Add-on Modules</div>
     <div class="addons-grid reveal">
-      <div class="addon"><div><div class="addon-name">💰 Sales</div><div class="addon-sub">Pipeline, deals, invoices — flat team price</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€45" data-annual="€36">€45</div><div class="addon-unit">/mo</div></div></div>
-      <div class="addon"><div><div class="addon-name">📦 Purchasing</div><div class="addon-sub">Orders, suppliers, RT stock, OCR invoices</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€45" data-annual="€36">€45</div><div class="addon-unit">/mo</div></div></div>
-      <div class="addon"><div><div class="addon-name">👥 HR</div><div class="addon-sub">Employees, contracts, certifications</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€39" data-annual="€31">€39</div><div class="addon-unit">/mo</div></div></div>
-      <div class="addon"><div><div class="addon-name">🎧 Helpdesk</div><div class="addon-sub">Tickets, SLA, AI knowledge base — flat</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€39" data-annual="€31">€39</div><div class="addon-unit">/mo</div></div></div>
-      <div class="addon"><div><div class="addon-name">⚖️ Legal</div><div class="addon-sub">Case files, contracts, deadlines</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€69" data-annual="€55">€69</div><div class="addon-unit">/mo</div></div></div>
-      <div class="addon"><div><div class="addon-name">🏠 Real Estate</div><div class="addon-sub">Portfolio, leases, maintenance</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€69" data-annual="€55">€69</div><div class="addon-unit">/mo</div></div></div>
-      <div class="addon"><div><div class="addon-name">🏥 Clinic</div><div class="addon-sub">Patient records, OCR reports, GDPR</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€69" data-annual="€55">€69</div><div class="addon-unit">/mo</div></div></div>
-      <div class="addon"><div><div class="addon-name">🤝 Associations</div><div class="addon-sub">Members, fees, events, email/WhatsApp</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€39" data-annual="€31">€39</div><div class="addon-unit">/mo</div></div></div>
-      <div class="addon" style="grid-column:span 1"><div><div class="addon-name">📒 Accounting</div><div class="addon-sub">P&amp;L, balance sheet, FatturaPA, CSV import, DATEV</div><div style="font-size:10px;color:var(--ink3);margin-top:3px">E-invoicing · OCR receipts · AI · DATEV</div></div><div style="text-align:right;flex-shrink:0"><div class="addon-price" data-monthly="€69" data-annual="€55">€69</div><div class="addon-unit">/mo</div></div></div>
-      <div class="addon"><div><div class="addon-name">📧 Email &amp; Phone</div><div class="addon-sub">Unified inbox, calls, templates, CRM sync</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€29" data-annual="€23">€29</div><div class="addon-unit">/mo</div></div></div>
-      <div class="addon"><div><div class="addon-name">📋 Projects</div><div class="addon-sub">Kanban, GPS time clock, worker portal</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€45" data-annual="€36">€45</div><div class="addon-unit">/mo</div></div></div>
-      <div class="addon" style="border-color:rgba(232,92,42,0.3);background:var(--accent-soft)"><div><div class="addon-name">⚡ Automations</div><div class="addon-sub">AI workflows, 50+ ready templates</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€69" data-annual="€55">€69</div><div class="addon-unit">/mo</div></div></div>
-      <div class="addon" style="border-color:rgba(37,99,235,0.3);background:rgba(37,99,235,0.05)"><div><div class="addon-name">💬 Blina WhatsApp <span style="font-size:9px;background:#2563eb;color:#fff;padding:2px 6px;border-radius:4px;margin-left:4px">NEW</span></div><div class="addon-sub">Tasks, tickets, appointments — via WhatsApp chat</div></div><div style="text-align:right"><div class="addon-price" data-monthly="€39" data-annual="€31">€39</div><div class="addon-unit">/mo</div></div></div>
+      <div class="addon"><div><div class="addon-name">&#128176; Sales</div><div class="addon-sub">Pipeline, deals, invoices &#8212; flat team price</div></div><div style="text-align:right"><div class="addon-price" data-monthly="&#8364;45" data-annual="&#8364;36">&#8364;45</div><div class="addon-unit">/month</div></div></div>
+      <div class="addon"><div><div class="addon-name">&#128230; Purchasing</div><div class="addon-sub">Orders, suppliers, real-time stock, OCR invoices</div></div><div style="text-align:right"><div class="addon-price" data-monthly="&#8364;45" data-annual="&#8364;36">&#8364;45</div><div class="addon-unit">/month</div></div></div>
+      <div class="addon"><div><div class="addon-name">&#128101; HR</div><div class="addon-sub">Employees, contracts, certifications</div></div><div style="text-align:right"><div class="addon-price" data-monthly="&#8364;39" data-annual="&#8364;31">&#8364;39</div><div class="addon-unit">/month</div></div></div>
+      <div class="addon"><div><div class="addon-name">&#127911; Helpdesk</div><div class="addon-sub">Tickets, SLA, AI knowledge base &#8212; flat</div></div><div style="text-align:right"><div class="addon-price" data-monthly="&#8364;39" data-annual="&#8364;31">&#8364;39</div><div class="addon-unit">/month</div></div></div>
+      <div class="addon"><div><div class="addon-name">&#9878;&#65039; Legal</div><div class="addon-sub">Case files, contracts, deadlines</div></div><div style="text-align:right"><div class="addon-price" data-monthly="&#8364;69" data-annual="&#8364;55">&#8364;69</div><div class="addon-unit">/month</div></div></div>
+      <div class="addon"><div><div class="addon-name">&#127968; Real Estate</div><div class="addon-sub">Portfolio, leases, maintenance</div></div><div style="text-align:right"><div class="addon-price" data-monthly="&#8364;69" data-annual="&#8364;55">&#8364;69</div><div class="addon-unit">/month</div></div></div>
+      <div class="addon"><div><div class="addon-name">&#127973; Clinic</div><div class="addon-sub">Medical records, OCR reports, GDPR</div></div><div style="text-align:right"><div class="addon-price" data-monthly="&#8364;69" data-annual="&#8364;55">&#8364;69</div><div class="addon-unit">/month</div></div></div>
+      <div class="addon"><div><div class="addon-name">&#129309; Associations</div><div class="addon-sub">Members, dues, events, email/WhatsApp</div></div><div style="text-align:right"><div class="addon-price" data-monthly="&#8364;39" data-annual="&#8364;31">&#8364;39</div><div class="addon-unit">/month</div></div></div>
+      <div class="addon" style="grid-column:span 1"><div><div class="addon-name">&#128210; Accounting</div><div class="addon-sub">P&amp;L, balance sheet, e-invoicing, CSV import, DATEV</div><div style="font-size:10px;color:var(--ink3);margin-top:3px">E-invoicing · Receipt OCR · AI · DATEV</div></div><div style="text-align:right;flex-shrink:0"><div class="addon-price" data-monthly="&#8364;69" data-annual="&#8364;55">&#8364;69</div><div class="addon-unit">/month</div></div></div>
+      <div class="addon"><div><div class="addon-name">&#128231; Email &amp; Phone</div><div class="addon-sub">Unified inbox, calls, templates, CRM sync</div></div><div style="text-align:right"><div class="addon-price" data-monthly="&#8364;29" data-annual="&#8364;23">&#8364;29</div><div class="addon-unit">/month</div></div></div>
+      <div class="addon"><div><div class="addon-name">&#128203; Projects</div><div class="addon-sub">Kanban, GPS time clock, worker portal</div></div><div style="text-align:right"><div class="addon-price" data-monthly="&#8364;45" data-annual="&#8364;36">&#8364;45</div><div class="addon-unit">/month</div></div></div>
+      <div class="addon"><div><div class="addon-name">&#128667; Fleet</div><div class="addon-sub">Vehicles, drivers, fuel, maintenance, fines</div></div><div style="text-align:right"><div class="addon-price" data-monthly="&#8364;39" data-annual="&#8364;31">&#8364;39</div><div class="addon-unit">/month</div></div></div>
+    </div>
+
+    <div style="font-size:12px;font-weight:700;color:var(--ink3);margin-bottom:12px;margin-top:24px;text-transform:uppercase;letter-spacing:.08em">Tools &amp; AI</div>
+    <div class="addons-grid reveal">
+      <div class="addon" style="border-color:rgba(232,92,42,0.3);background:var(--accent-soft)"><div><div class="addon-name">&#9889; Automations</div><div class="addon-sub">Describe it. Blina builds it. &#8212; AI workflows, triggers, 50+ templates, email/WhatsApp/notifications</div></div><div style="text-align:right"><div class="addon-price" data-monthly="&#8364;69" data-annual="&#8364;55">&#8364;69</div><div class="addon-unit">/month</div></div></div>
+      <div class="addon" style="border-color:rgba(37,99,235,0.3);background:rgba(37,99,235,0.05)"><div><div class="addon-name">&#128172; Blina WhatsApp <span style="font-size:9px;background:#2563eb;color:#fff;padding:2px 6px;border-radius:4px;margin-left:4px">NEW</span></div><div class="addon-sub">Tasks, tickets, appointments &#8212; via WhatsApp chat</div></div><div style="text-align:right"><div class="addon-price" data-monthly="&#8364;39" data-annual="&#8364;31">&#8364;39</div><div class="addon-unit">/month</div></div></div>
+      <div class="addon" style="border-color:rgba(139,92,246,0.3);background:rgba(139,92,246,0.06)"><div><div class="addon-name">&#10024; Blina AI</div><div class="addon-sub">Command your business. AI that acts. &#8212; Invoices, reports, workflows from chat</div></div><div style="text-align:right"><div class="addon-price" data-monthly="&#8364;79" data-annual="&#8364;63">&#8364;79</div><div class="addon-unit">/month</div></div></div>
     </div>
 
     <div class="volume-bar reveal">
-      <span style="font-size:13px;font-weight:600;color:var(--ink2)">Volume session discounts</span>
+      <span style="font-size:13px;font-weight:600;color:var(--ink2)">Session volume discounts</span>
       <div class="vtiers">
-        <div class="vtier"><div class="vtier-n">1</div><div class="vtier-l">sess</div><div class="vtier-d" style="color:var(--ink4)">—</div></div>
+        <div class="vtier"><div class="vtier-n">1</div><div class="vtier-l">sess</div><div class="vtier-d" style="color:var(--ink4)">&#8212;</div></div>
         <div class="vtier"><div class="vtier-n">3</div><div class="vtier-l">sess</div><div class="vtier-d">-10%</div></div>
         <div class="vtier"><div class="vtier-n">5</div><div class="vtier-l">sess</div><div class="vtier-d">-15%</div></div>
         <div class="vtier hot"><div class="vtier-n">10</div><div class="vtier-l">sess</div><div class="vtier-d">-20%</div></div>
@@ -1531,100 +1696,69 @@ footer{
       <span style="font-size:12px;color:var(--ink3)">15+ sessions? <a href="#contact" style="color:var(--accent);font-weight:600">Contact us</a> for enterprise.</span>
     </div>
 
-
-    <!-- SUITE BUNDLES -->
-    <div style="margin-bottom:28px">
-      <div style="font-size:12px;font-weight:700;color:var(--ink3);margin-bottom:14px;text-transform:uppercase;letter-spacing:.08em;text-align:center">Suite Bundles — Save ~12%</div>
-      <div class="suite-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
-        <div class="addon reveal" style="flex-direction:column;align-items:flex-start;gap:4px">
-          <div><div class="addon-name">🏢 Business</div><div class="addon-sub">Base + Sales + Purchasing + Email</div></div>
-          <div style="display:flex;align-items:baseline;gap:5px;margin-top:6px"><span style="font-size:22px;font-weight:900;color:var(--ink)">€99</span><span style="font-size:12px;color:var(--ink4);text-decoration:line-through">€116</span><span style="font-size:11px;color:var(--green);font-weight:600">/sess</span></div>
-        </div>
-        <div class="addon reveal d1" style="flex-direction:column;align-items:flex-start;gap:4px">
-          <div><div class="addon-name">🏢 Business Plus</div><div class="addon-sub">Base + Sales + Purchasing + HR + Helpdesk + Email</div></div>
-          <div style="display:flex;align-items:baseline;gap:5px;margin-top:6px"><span style="font-size:22px;font-weight:900;color:var(--ink)">€129</span><span style="font-size:12px;color:var(--ink4);text-decoration:line-through">€154</span><span style="font-size:11px;color:var(--green);font-weight:600">/sess</span></div>
-        </div>
-        <div class="addon reveal d2" style="flex-direction:column;align-items:flex-start;gap:4px">
-          <div><div class="addon-name">⚖️ Legal Suite</div><div class="addon-sub">Base + Legal + Email</div></div>
-          <div style="display:flex;align-items:baseline;gap:5px;margin-top:6px"><span style="font-size:22px;font-weight:900;color:var(--ink)">€89</span><span style="font-size:12px;color:var(--ink4);text-decoration:line-through">€101</span><span style="font-size:11px;color:var(--green);font-weight:600">/sess</span></div>
-        </div>
-        <div class="addon reveal" style="flex-direction:column;align-items:flex-start;gap:4px">
-          <div><div class="addon-name">🏥 Healthcare</div><div class="addon-sub">Base + Clinic + Email</div></div>
-          <div style="display:flex;align-items:baseline;gap:5px;margin-top:6px"><span style="font-size:22px;font-weight:900;color:var(--ink)">€95</span><span style="font-size:12px;color:var(--ink4);text-decoration:line-through">€108</span><span style="font-size:11px;color:var(--green);font-weight:600">/sess</span></div>
-        </div>
-        <div class="addon reveal d1" style="flex-direction:column;align-items:flex-start;gap:4px">
-          <div><div class="addon-name">🏠 Real Estate</div><div class="addon-sub">Base + Real Estate + Email</div></div>
-          <div style="display:flex;align-items:baseline;gap:5px;margin-top:6px"><span style="font-size:22px;font-weight:900;color:var(--ink)">€89</span><span style="font-size:12px;color:var(--ink4);text-decoration:line-through">€101</span><span style="font-size:11px;color:var(--green);font-weight:600">/sess</span></div>
-        </div>
-        <div class="addon reveal d2" style="flex-direction:column;align-items:flex-start;gap:4px;border-color:rgba(232,92,42,0.35);background:var(--accent-soft)">
-          <div><div class="addon-name">🚀 All-in-One SMB <span style="font-size:9px;background:var(--accent);color:#fff;padding:2px 6px;border-radius:4px;margin-left:4px">TOP</span></div><div class="addon-sub">Base + Sales + Purchasing + Accounting + HR + Email + Automations</div></div>
-          <div style="display:flex;align-items:baseline;gap:5px;margin-top:6px"><span style="font-size:22px;font-weight:900;color:var(--ink)">€179</span><span style="font-size:12px;color:var(--ink4);text-decoration:line-through">€213</span><span style="font-size:11px;color:var(--green);font-weight:600">/sess</span></div>
-        </div>
-      </div>
-    </div>
     <div style="text-align:center;margin-bottom:36px">
       <a href="https://app.blina-desk.com/en/auth/login" class="btn btn-primary btn-lg">
-        Free trial 14 days
+        Free 14-day trial
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </a>
-      <div style="font-size:12px;color:var(--ink4);margin-top:10px">All modules · 3 sessions · No credit card</div>
+      <div style="font-size:12px;color:var(--ink4);margin-top:10px">All modules · 3 sessions · No credit card required</div>
     </div>
 
     <!-- Cloud vs On-premise -->
     <div class="deploy-duo" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:36px">
       <div class="deploy-card rec reveal" style="background:var(--accent);border-color:var(--accent)">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-          <div style="width:38px;height:38px;background:rgba(255,255,255,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px">☁️</div>
+          <div style="width:38px;height:38px;background:rgba(255,255,255,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px">&#9729;&#65039;</div>
           <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.7)">Cloud SaaS</div>
         </div>
         <div style="font-size:19px;font-weight:800;color:#fff;margin-bottom:10px">Managed Cloud</div>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:20px">
-          <li style="font-size:13px;color:rgba(255,255,255,0.87);display:flex;gap:7px;align-items:flex-start"><span style="font-weight:700;color:#fff;flex-shrink:0">✓</span>No server — we manage everything</li>
-          <li style="font-size:13px;color:rgba(255,255,255,0.87);display:flex;gap:7px;align-items:flex-start"><span style="font-weight:700;color:#fff;flex-shrink:0">✓</span>Access from anywhere, any device</li>
-          <li style="font-size:13px;color:rgba(255,255,255,0.87);display:flex;gap:7px;align-items:flex-start"><span style="font-weight:700;color:#fff;flex-shrink:0">✓</span>Automatic backups and updates</li>
-          <li style="font-size:13px;color:rgba(255,255,255,0.87);display:flex;gap:7px;align-items:flex-start"><span style="font-weight:700;color:#fff;flex-shrink:0">✓</span>Free 14-day trial, no credit card</li>
+          <li style="font-size:13px;color:rgba(255,255,255,0.87);display:flex;gap:7px;align-items:flex-start"><span style="font-weight:700;color:#fff;flex-shrink:0">&#10003;</span>No servers &#8212; we handle everything</li>
+          <li style="font-size:13px;color:rgba(255,255,255,0.87);display:flex;gap:7px;align-items:flex-start"><span style="font-weight:700;color:#fff;flex-shrink:0">&#10003;</span>Access from anywhere, any device</li>
+          <li style="font-size:13px;color:rgba(255,255,255,0.87);display:flex;gap:7px;align-items:flex-start"><span style="font-weight:700;color:#fff;flex-shrink:0">&#10003;</span>Automatic backups and updates</li>
+          <li style="font-size:13px;color:rgba(255,255,255,0.87);display:flex;gap:7px;align-items:flex-start"><span style="font-weight:700;color:#fff;flex-shrink:0">&#10003;</span>Free 14-day trial, no credit card</li>
         </ul>
         <a href="https://app.blina-desk.com/en/auth/login" style="display:block;text-align:center;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;font-weight:700;padding:11px;border-radius:var(--r);font-size:14px;transition:all .2s">Free Trial</a>
       </div>
       <div class="deploy-card reveal d1">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-          <div style="width:38px;height:38px;background:var(--bg-card2);border:1px solid var(--brd);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px">🏢</div>
+          <div style="width:38px;height:38px;background:var(--bg-card2);border:1px solid var(--brd);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px">&#127970;</div>
           <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4)">On-Premise</div>
         </div>
-        <div class="deploy-name">On-Premise Installation</div>
+        <div class="deploy-name">Local Installation</div>
         <ul class="deploy-list" style="margin-bottom:20px">
-          <li>Installed on your servers</li>
+          <li>Installed on your own servers</li>
           <li>100% of data stays in your network</li>
           <li>Full control over config and updates</li>
-          <li>Ideal for professional firms in DACH and Italy</li>
+          <li>Ideal for DACH and Italian professional firms</li>
         </ul>
-        <a href="#contact" class="btn btn-outline" style="display:block;text-align:center;width:100%;justify-content:center">Request Quote</a>
+        <a href="#contact" class="btn btn-outline" style="display:block;text-align:center;width:100%;justify-content:center">Request a Quote</a>
       </div>
     </div>
 
     <!-- AI Profiles -->
     <div style="text-align:center;margin-bottom:20px">
-      <div class="tag" style="margin-bottom:10px">AI Profiles — On-Premise</div>
+      <div class="tag" style="margin-bottom:10px">AI Profiles &#8212; On-Premise</div>
       <h3 style="font-size:20px;font-weight:800;color:var(--ink);margin-bottom:6px">Three levels of <em style="color:var(--accent);font-style:italic">intelligence</em>.</h3>
     </div>
     <div class="deploy-grid">
       <div class="deploy-card reveal">
         <div class="deploy-tier">CORE</div>
-        <div class="deploy-name">Core — No AI</div>
+        <div class="deploy-name">Core &#8212; No AI</div>
         <div class="deploy-desc">Full-text, OCR, documents. No AI calls. Pure speed.</div>
         <ul class="deploy-list"><li>Full-text + semantic search (pgvector)</li><li>Multilingual OCR</li><li>Document history</li><li>Zero AI dependency</li></ul>
       </div>
       <div class="deploy-card reveal d1">
         <div class="deploy-tier">LOCAL AI</div>
-        <div class="deploy-name">Local AI — Ollama</div>
-        <div class="deploy-desc">Full AI on your hardware. Llama 3, Mistral — no data leaves your network.</div>
-        <ul class="deploy-list"><li>Llama 3, Mistral, Gemma &amp; others</li><li>Fully offline RAG AI chat</li><li>Local embeddings &amp; vector search</li><li>Total data sovereignty</li></ul>
+        <div class="deploy-name">Local AI &#8212; Ollama</div>
+        <div class="deploy-desc">Full AI on your hardware. Llama 3, Mistral &#8212; no data leaves your network.</div>
+        <ul class="deploy-list"><li>Llama 3, Mistral, Gemma &amp; more</li><li>Fully offline RAG AI chat</li><li>Local embeddings &amp; vector search</li><li>Total data sovereignty</li></ul>
       </div>
       <div class="deploy-card rec reveal d2">
         <div class="deploy-badge">Recommended</div>
         <div class="deploy-tier">CLOUD AI</div>
-        <div class="deploy-name">Cloud AI — External</div>
-        <div class="deploy-desc">Best models from OpenAI, Google, Anthropic. Maximum quality and speed.</div>
+        <div class="deploy-name">Cloud AI &#8212; External</div>
+        <div class="deploy-desc">Top models from OpenAI, Google, Anthropic. Maximum quality and speed.</div>
         <ul class="deploy-list"><li>GPT-4o, Gemini, Claude</li><li>Bring your own API key</li><li>Highest model quality</li><li>Combinable with local storage</li></ul>
       </div>
     </div>
@@ -1637,30 +1771,30 @@ footer{
   <div class="sec-inner">
     <div class="admin-split" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;max-width:1100px;margin:0 auto">
       <div>
-        <div class="tag reveal" style="margin-bottom:16px">🔐 Administration</div>
-        <h2 class="sec-title reveal" style="text-align:left">Sign in as admin.<br>Manage rights, <em>roles and groups</em>.</h2>
+        <div class="tag reveal" style="margin-bottom:16px">&#128272; Administration</div>
+        <h2 class="sec-title reveal" style="text-align:left">Log in as administrator.<br>Manage rights, <em>roles and groups</em>.</h2>
         <p class="sec-sub reveal" style="text-align:left;max-width:420px">The SuperAdmin controls every aspect of the platform: who can see what, which modules to activate for each user or group, and how employees authenticate.</p>
         <div style="margin-top:28px;display:flex;flex-direction:column;gap:14px">
           <div class="contact-feat reveal">
-            <div class="contact-feat-icon" style="background:var(--blue-s);border-color:rgba(37,99,235,0.2)">👤</div>
+            <div class="contact-feat-icon" style="background:var(--blue-s);border-color:rgba(37,99,235,0.2)">&#128100;</div>
             <div><div class="contact-feat-title">Unlimited users, granular permissions</div><div class="contact-feat-sub">Create users, assign predefined roles (Admin, Manager, User, Viewer) or define custom roles with permissions on every module and field.</div></div>
           </div>
           <div class="contact-feat reveal d1">
-            <div class="contact-feat-icon" style="background:var(--purple-s);border-color:rgba(124,58,237,0.2)">👥</div>
-            <div><div class="contact-feat-title">Groups and teams</div><div class="contact-feat-sub">Organize users into groups (e.g. Sales Team, Legal Team, Administration) and assign access and modules per group in one click.</div></div>
+            <div class="contact-feat-icon" style="background:var(--purple-s);border-color:rgba(124,58,237,0.2)">&#128101;</div>
+            <div><div class="contact-feat-title">Groups and teams</div><div class="contact-feat-sub">Organize users into groups (e.g., Sales Team, Legal Team, Administration) and assign access and modules per group in one click.</div></div>
           </div>
           <div class="contact-feat reveal d2">
-            <div class="contact-feat-icon" style="background:var(--green-s);border-color:rgba(22,163,74,0.2)">🔑</div>
-            <div><div class="contact-feat-title">RBAC + Row-Level Security</div><div class="contact-feat-sub">Access control is enforced at database level (PostgreSQL RLS). Every user sees only data they own — security by design.</div></div>
+            <div class="contact-feat-icon" style="background:var(--green-s);border-color:rgba(22,163,74,0.2)">&#128273;</div>
+            <div><div class="contact-feat-title">RBAC + Row-Level Security</div><div class="contact-feat-sub">Access control is enforced at the database level (PostgreSQL RLS). Each user sees only the data they own &#8212; security by design.</div></div>
           </div>
 
         </div>
       </div>
-      <!-- Pannello admin mockup -->
+      <!-- Admin panel mockup -->
       <div class="reveal d2">
         <div style="background:var(--bg-card);border:1px solid var(--brd);border-radius:var(--r2);overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
           <div style="background:var(--ink);padding:10px 16px;display:flex;align-items:center;gap:10px">
-            <span style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.8)">⚙️ Administration — Users &amp; Roles</span>
+            <span style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.8)">&#9881;&#65039; Administration &#8212; Users &amp; Roles</span>
           </div>
           <!-- Tab bar -->
           <div style="display:flex;gap:1px;background:var(--bg-card2);border-bottom:1px solid var(--brd);padding:0 12px">
@@ -1671,47 +1805,47 @@ footer{
           </div>
           <!-- User table -->
           <div style="padding:12px">
-            <div style="font-size:10px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.07em;display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;padding:0 8px 6px;border-bottom:1px solid var(--brd2)" class="admin-tbl-head">
+            <div class="admin-tbl-head" style="font-size:10px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.07em;display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;padding:0 8px 6px;border-bottom:1px solid var(--brd2)">
               <span>User</span><span>Role</span><span>Modules</span><span>Status</span>
             </div>
             <div style="display:flex;flex-direction:column;gap:1px;margin-top:4px">
-              <div style="display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;padding:7px 8px;" class="admin-tbl-rowbackground:var(--accent-soft);border-radius:6px;border:1px solid rgba(232,92,42,0.15);font-size:11px;align-items:center">
-                <span style="font-weight:700;color:var(--ink)">🔑 SuperAdmin</span>
+              <div class="admin-tbl-row" style="display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;padding:7px 8px;background:var(--accent-soft);border-radius:6px;border:1px solid rgba(232,92,42,0.15);font-size:11px;align-items:center">
+                <span style="font-weight:700;color:var(--ink)">&#128273; SuperAdmin</span>
                 <span><span style="background:var(--accent);color:#fff;font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px">Admin</span></span>
                 <span style="color:var(--ink3)">All</span>
-                <span style="color:var(--green);font-weight:700;font-size:10px">● Active</span>
+                <span style="color:var(--green);font-weight:700;font-size:10px">&#9679; Active</span>
               </div>
-              <div style="display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;padding:7px 8px;" class="admin-tbl-rowborder-radius:6px;font-size:11px;align-items:center">
-                <span style="color:var(--ink)">👤 Marco Rossi</span>
+              <div class="admin-tbl-row" style="display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;padding:7px 8px;border-radius:6px;font-size:11px;align-items:center">
+                <span style="color:var(--ink)">&#128100; Marco Rossi</span>
                 <span><span style="background:var(--blue-s);color:var(--blue);font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px">Manager</span></span>
                 <span style="color:var(--ink3)">Sales, CRM</span>
-                <span style="color:var(--green);font-weight:700;font-size:10px">● Active</span>
+                <span style="color:var(--green);font-weight:700;font-size:10px">&#9679; Active</span>
               </div>
-              <div style="display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;padding:7px 8px;" class="admin-tbl-rowborder-radius:6px;font-size:11px;align-items:center">
-                <span style="color:var(--ink)">👤 Sara Bianchi</span>
+              <div class="admin-tbl-row" style="display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;padding:7px 8px;border-radius:6px;font-size:11px;align-items:center">
+                <span style="color:var(--ink)">&#128100; Sara Bianchi</span>
                 <span><span style="background:var(--purple-s);color:var(--purple);font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px">HR</span></span>
                 <span style="color:var(--ink3)">HR, Documents</span>
-                <span style="color:var(--green);font-weight:700;font-size:10px">● Active</span>
+                <span style="color:var(--green);font-weight:700;font-size:10px">&#9679; Active</span>
               </div>
-              <div style="display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;padding:7px 8px;" class="admin-tbl-rowborder-radius:6px;font-size:11px;align-items:center">
-                <span style="color:var(--ink)">👤 Luca Ferrari</span>
+              <div class="admin-tbl-row" style="display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;padding:7px 8px;border-radius:6px;font-size:11px;align-items:center">
+                <span style="color:var(--ink)">&#128100; Luca Ferrari</span>
                 <span><span style="background:var(--green-s);color:var(--green);font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px">User</span></span>
                 <span style="color:var(--ink3)">Helpdesk</span>
-                <span style="color:var(--amber);font-weight:700;font-size:10px">● Invited</span>
+                <span style="color:var(--amber);font-weight:700;font-size:10px">&#9679; Invited</span>
               </div>
-              <div style="display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;padding:7px 8px;" class="admin-tbl-rowborder-radius:6px;font-size:11px;align-items:center">
-                <span style="color:var(--ink)">👤 Atty. Müller</span>
+              <div class="admin-tbl-row" style="display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;padding:7px 8px;border-radius:6px;font-size:11px;align-items:center">
+                <span style="color:var(--ink)">&#128100; Att. Mueller</span>
                 <span><span style="background:var(--indigo-s);color:var(--indigo);font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px">Viewer</span></span>
-                <span style="color:var(--ink3)">Legal (read-only)</span>
-                <span style="color:var(--green);font-weight:700;font-size:10px">● Active</span>
+                <span style="color:var(--ink3)">Legal (read only)</span>
+                <span style="color:var(--green);font-weight:700;font-size:10px">&#9679; Active</span>
               </div>
             </div>
-            <!-- Permessi modulo mockup -->
+            <!-- Module permissions mockup -->
             <div style="margin-top:14px;padding:10px 12px;background:var(--bg-card2);border:1px solid var(--brd);border-radius:var(--r)">
-              <div style="font-size:10px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px">Permissions by role — Manager</div>
+              <div style="font-size:10px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px">Permissions by role &#8212; Manager</div>
               <div style="display:flex;flex-direction:column;gap:5px">
                 <div style="display:flex;align-items:center;justify-content:space-between;font-size:11px">
-                  <span style="color:var(--ink2)">💰 Sales</span>
+                  <span style="color:var(--ink2)">&#128176; Sales</span>
                   <div style="display:flex;gap:4px">
                     <span style="background:var(--green-s);color:var(--green);font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px">Read</span>
                     <span style="background:var(--green-s);color:var(--green);font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px">Write</span>
@@ -1719,7 +1853,7 @@ footer{
                   </div>
                 </div>
                 <div style="display:flex;align-items:center;justify-content:space-between;font-size:11px">
-                  <span style="color:var(--ink2)">👥 HR</span>
+                  <span style="color:var(--ink2)">&#128101; HR</span>
                   <div style="display:flex;gap:4px">
                     <span style="background:var(--green-s);color:var(--green);font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px">Read</span>
                     <span style="background:var(--brd2);color:var(--ink4);font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px">Write</span>
@@ -1727,7 +1861,7 @@ footer{
                   </div>
                 </div>
                 <div style="display:flex;align-items:center;justify-content:space-between;font-size:11px">
-                  <span style="color:var(--ink2)">⚖️ Legal</span>
+                  <span style="color:var(--ink2)">&#9878;&#65039; Legal</span>
                   <div style="display:flex;gap:4px">
                     <span style="background:var(--brd2);color:var(--ink4);font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px">None</span>
                   </div>
@@ -1748,16 +1882,16 @@ footer{
       <div>
         <div class="tag reveal" style="margin-bottom:16px">Contact</div>
         <h2 class="sec-title reveal" style="text-align:left">Let's talk about your <em>setup</em>.</h2>
-        <p class="sec-sub reveal" style="text-align:left;max-width:360px">On-premise installations, custom modules or enterprise plans — we respond within 24 hours.</p>
+        <p class="sec-sub reveal" style="text-align:left;max-width:360px">On-premise installations, custom modules or enterprise plans &#8212; we respond within 24 hours.</p>
         <div style="margin-top:24px">
-          <div class="contact-feat reveal"><div class="contact-feat-icon">🏢</div><div><div class="contact-feat-title">Custom On-Premise</div><div class="contact-feat-sub">Install Blina on your servers, with your security rules.</div></div></div>
-          <div class="contact-feat reveal d1"><div class="contact-feat-icon">🔧</div><div><div class="contact-feat-title">Custom modules</div><div class="contact-feat-sub">Custom workflows, integrations with existing systems.</div></div></div>
-          <div class="contact-feat reveal d2"><div class="contact-feat-icon">🎯</div><div><div class="contact-feat-title">Guided demo</div><div class="contact-feat-sub">30-minute live demo with your use case — no obligation.</div></div></div>
+          <div class="contact-feat reveal"><div class="contact-feat-icon">&#127970;</div><div><div class="contact-feat-title">Custom On-Premise</div><div class="contact-feat-sub">Install Blina on your servers, with your security rules.</div></div></div>
+          <div class="contact-feat reveal d1"><div class="contact-feat-icon">&#128295;</div><div><div class="contact-feat-title">Custom modules</div><div class="contact-feat-sub">Custom workflows, integrations with existing systems.</div></div></div>
+          <div class="contact-feat reveal d2"><div class="contact-feat-icon">&#127919;</div><div><div class="contact-feat-title">Guided demo</div><div class="contact-feat-sub">30-minute live demo with your use case &#8212; no commitment.</div></div></div>
         </div>
       </div>
       <div class="cf-form reveal d2">
         <form action="https://formsubmit.co/info@blina-desk.com" method="POST">
-          <input type="hidden" name="_subject" value="Blina Desk — Contact from blina-desk.com">
+          <input type="hidden" name="_subject" value="Blina Desk &#8212; Contact from blina-desk.com">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_next" value="https://blina-desk.com/">
           <div class="cf-row">
@@ -1790,13 +1924,12 @@ footer{
 <div class="langs-bar">
   <div class="langs-lbl">Interface available in</div>
   <div class="lang-pills">
-    <div class="lpill"><span class="flag">🇮🇹</span> Italiano</div>
-    <div class="lpill"><span class="flag">🇩🇪</span> Deutsch</div>
-    <div class="lpill on"><span class="flag">🇬🇧</span> English</div>
-    <div class="lpill"><span class="flag">🇫🇷</span> Français</div>
-    <div class="lpill"><span class="flag">🇦🇱</span> Shqip</div>
+    <div class="lpill on"><span class="flag">&#127468;&#127463;</span> English</div>
+    <div class="lpill"><span class="flag">&#127465;&#127466;</span> Deutsch</div>
+    <div class="lpill"><span class="flag">&#127470;&#127481;</span> Italiano</div>
+    <div class="lpill"><span class="flag">&#127467;&#127479;</span> Fran&#231;ais</div>
   </div>
-  <div style="margin-left:auto;font-size:12px;color:var(--ink4)">AI responds in the language of the question</div>
+  <div style="margin-left:auto;font-size:12px;color:var(--ink4)">AI responds in the language of your question</div>
 </div>
 
 <!-- ── FOOTER ── -->
@@ -1813,17 +1946,17 @@ footer{
         </div>
       </div>
       <div class="footer-links">
-        <a href="mailto:info@blina-desk.com" class="footer-link"><div class="footer-link-icon">✉</div>info@blina-desk.com</a>
-        <a href="https://arti-it.de" target="_blank" rel="noopener" class="footer-link"><div class="footer-link-icon">→</div>arti-it.de</a>
+        <a href="mailto:info@blina-desk.com" class="footer-link"><div class="footer-link-icon">&#9993;</div>info@blina-desk.com</a>
+        <a href="https://arti-it.de" target="_blank" rel="noopener" class="footer-link"><div class="footer-link-icon">&#8594;</div>arti-it.de</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-copy">© 2026 Arti-IT · <a href="https://arti-it.de" target="_blank" rel="noopener">arti-it.de</a></div>
+      <div class="footer-copy">&#169; 2026 Arti-IT &#183; <a href="https://arti-it.de" target="_blank" rel="noopener">arti-it.de</a></div>
       <div class="footer-legal">
         <a href="https://app.blina-desk.com/en/legal/privacy">Privacy Policy</a>
-        <span class="sep">·</span>
+        <span class="sep">&#183;</span>
         <a href="https://app.blina-desk.com/en/legal/terms">Terms of Service</a>
-        <span class="sep">·</span>
+        <span class="sep">&#183;</span>
         <a href="https://app.blina-desk.com/en/legal/impressum">Legal Notice</a>
       </div>
       <div class="footer-status"><span class="status-dot"></span>System online</div>
